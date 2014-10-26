@@ -1,0 +1,124 @@
+#include "HelloWorldScene.h"
+#include "network/HttpClient.h"
+
+USING_NS_CC;
+using namespace cocos2d::network;
+
+HttpRequest* createRequest(HttpRequest::Type method, const std::string &requestURL);
+
+Scene* HelloWorld::createScene()
+{
+    // 'scene' is an autorelease object
+    auto scene = Scene::create();
+    
+    // 'layer' is an autorelease object
+    auto layer = HelloWorld::create();
+
+    // add layer as a child to scene
+    scene->addChild(layer);
+
+    // return the scene
+    return scene;
+}
+
+// on "init" you need to initialize your instance
+bool HelloWorld::init()
+{
+    //////////////////////////////
+    // 1. super init first
+    if ( !Layer::init() )
+    {
+        return false;
+    }
+    
+    Size visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+    /////////////////////////////
+    // 2. add a menu item with "X" image, which is clicked to quit the program
+    //    you may modify it.
+
+    // add a "close" icon to exit the progress. it's an autorelease object
+    auto closeItem = MenuItemImage::create(
+                                           "CloseNormal.png",
+                                           "CloseSelected.png",
+                                           CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+    
+	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
+                                origin.y + closeItem->getContentSize().height/2));
+
+    ///////////////////////////
+    // ここからHttp通信
+    
+    // login通信
+    auto request = createRequest(HttpRequest::Type::GET, "http://localhost:8000/login/hoge");
+    // Cookieを有効にする
+    HttpClient::getInstance()->enableCookies(nullptr);
+    HttpClient::getInstance()->send(request);
+    request->release();
+    
+    // MenuItemLabelをタッチするとクエスト一覧を取得
+    auto l2 = Label::createWithSystemFont("GET quest", "Arial", 20);
+    auto menuItem = MenuItemLabel::create(l2, [this](Ref *ref){
+        // クエスト一覧取得（要ログイン）
+        auto request = createRequest(HttpRequest::Type::GET, "http://localhost:8000/quest");
+        HttpClient::getInstance()->send(request);
+        request->release();
+    });
+    menuItem->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    
+    // create menu, it's an autorelease object
+    auto menu = Menu::create(closeItem, menuItem, NULL);
+    menu->setPosition(Vec2::ZERO);
+    this->addChild(menu, 1);
+    
+    return true;
+}
+
+HttpRequest* createRequest(HttpRequest::Type method, const std::string &requestURL)
+{
+    HttpRequest* request = new HttpRequest();
+    request->setUrl(requestURL.c_str());
+    request->setRequestType(method);
+    request->setResponseCallback([](HttpClient* client, HttpResponse* response) {
+        if (!response) {
+            CCLOG("%s response not found", response->getHttpRequest()->getTag());
+            return;
+        }
+        
+        if (0 != std::strlen(response->getHttpRequest()->getTag())) {
+            CCLOG("%s completed", response->getHttpRequest()->getTag());
+        }
+        
+        long statusCode = response->getResponseCode();
+        auto statusString = StringUtils::format("HTTP Status Code: %ld, tag = %s", statusCode, response->getHttpRequest()->getTag());
+        CCLOG("response code: %ld", statusCode);
+        
+        if (!response->isSucceed()) {
+            CCLOG("response failed");
+            CCLOG("error buffer: %s", response->getErrorBuffer());
+            return;
+        }
+        
+        std::string responseString(response->getResponseData()->begin(), response->getResponseData()->end());
+        CCLOG("response = %s", responseString.c_str());
+    });
+    request->setTag(requestURL.c_str());
+    
+    return request;
+}
+
+
+void HelloWorld::menuCloseCallback(Ref* pSender)
+{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+	MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
+    return;
+#endif
+
+    Director::getInstance()->end();
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    exit(0);
+#endif
+}
