@@ -4,7 +4,11 @@
 USING_NS_CC;
 using namespace cocos2d::network;
 
-HttpRequest* createRequest(HttpRequest::Type method, const std::string &requestURL);
+typedef std::function<void(long status, std::string response)> HttpRequestListener;
+typedef std::function<void(long status, std::string error)> HttpRequestErrorListener;
+HttpRequest* createRequest(HttpRequest::Type method, const std::string &requestURL,
+                           const HttpRequestListener &listener,
+                           const HttpRequestErrorListener &errorListener);
 
 Scene* HelloWorld::createScene()
 {
@@ -51,7 +55,11 @@ bool HelloWorld::init()
     // ここからHttp通信
     
     // login通信
-    auto request = createRequest(HttpRequest::Type::GET, "http://localhost:8000/login/hoge");
+    auto request = createRequest(HttpRequest::Type::GET, "http://localhost:8000/login/hoge", [](long statusCode, std::string response) {
+        CCLOG("response code: %ld response = %s", statusCode, response.c_str());
+    }, [](long statusCode, std::string error) {
+        CCLOG("response code: %ld error = %s", statusCode, error.c_str());
+    });
     // Cookieを有効にする
     HttpClient::getInstance()->enableCookies(nullptr);
     HttpClient::getInstance()->send(request);
@@ -61,7 +69,11 @@ bool HelloWorld::init()
     auto l2 = Label::createWithSystemFont("GET quest", "Arial", 20);
     auto menuItem = MenuItemLabel::create(l2, [this](Ref *ref){
         // クエスト一覧取得（要ログイン）
-        auto request = createRequest(HttpRequest::Type::GET, "http://localhost:8000/quest");
+        auto request = createRequest(HttpRequest::Type::GET, "http://localhost:8000/quest", [](long statusCode, std::string response) {
+            CCLOG("response code: %ld response = %s", statusCode, response.c_str());
+        }, [](long statusCode, std::string error) {
+            CCLOG("response code: %ld error = %s", statusCode, error.c_str());
+        });
         HttpClient::getInstance()->send(request);
         request->release();
     });
@@ -75,33 +87,26 @@ bool HelloWorld::init()
     return true;
 }
 
-HttpRequest* createRequest(HttpRequest::Type method, const std::string &requestURL)
+HttpRequest* createRequest(HttpRequest::Type method, const std::string &requestURL, const HttpRequestListener &listener, const HttpRequestErrorListener &errorListener)
 {
     HttpRequest* request = new HttpRequest();
     request->setUrl(requestURL.c_str());
     request->setRequestType(method);
-    request->setResponseCallback([](HttpClient* client, HttpResponse* response) {
+    request->setResponseCallback([listener, errorListener](HttpClient* client, HttpResponse* response) {
         if (!response) {
-            CCLOG("%s response not found", response->getHttpRequest()->getTag());
+            errorListener(500L, "response is null");
             return;
         }
-        
-        if (0 != std::strlen(response->getHttpRequest()->getTag())) {
-            CCLOG("%s completed", response->getHttpRequest()->getTag());
+        // error
+        if (!response->isSucceed()) {
+            errorListener(response->getResponseCode(), std::string(response->getErrorBuffer()));
+            return;
         }
         
         long statusCode = response->getResponseCode();
-        auto statusString = StringUtils::format("HTTP Status Code: %ld, tag = %s", statusCode, response->getHttpRequest()->getTag());
-        CCLOG("response code: %ld", statusCode);
-        
-        if (!response->isSucceed()) {
-            CCLOG("response failed");
-            CCLOG("error buffer: %s", response->getErrorBuffer());
-            return;
-        }
         
         std::string responseString(response->getResponseData()->begin(), response->getResponseData()->end());
-        CCLOG("response = %s", responseString.c_str());
+        listener(statusCode, responseString);
     });
     request->setTag(requestURL.c_str());
     
