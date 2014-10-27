@@ -3,6 +3,7 @@
 
 #include "cocostudio/CocoStudio.h"
 #include "ui/UIListView.h"
+#include "ui/UIText.h"
 
 USING_NS_CC;
 using namespace cocos2d::network;
@@ -98,7 +99,7 @@ bool HelloWorld::init()
     for (int i = 0; i < 10; i++) {
         auto listParts = GUIReader::getInstance()->widgetFromJsonFile("ListParts/ListParts.json");
         auto text = StringUtils::format("Label Text %d", i);
-        listParts->getChildByName<Label*>("Label_2")->setString(text);
+        listParts->getChildByName<ui::Text*>("Label_2")->setString(text);
         listView->pushBackCustomItem(listParts);
     }
     this->addChild(layout);
