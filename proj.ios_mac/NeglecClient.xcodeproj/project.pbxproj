@@ -58,6 +58,7 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		CE4930A919FE7E3E003E9E59 /* MyPageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4930A719FE7E3E003E9E59 /* MyPageScene.cpp */; };
 		CE4930CB19FE7F3A003E9E59 /* FotterParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4930BE19FE7F3A003E9E59 /* FotterParts.json */; };
 		CE4930CC19FE7F3A003E9E59 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = CE4930BF19FE7F3A003E9E59 /* GUI */; };
 		CE4930CD19FE7F3A003E9E59 /* HeaderParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C019FE7F3A003E9E59 /* HeaderParts.json */; };
@@ -157,6 +158,8 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CE4930A719FE7E3E003E9E59 /* MyPageScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyPageScene.cpp; sourceTree = "<group>"; };
+		CE4930A819FE7E3E003E9E59 /* MyPageScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageScene.h; sourceTree = "<group>"; };
 		CE4930BE19FE7F3A003E9E59 /* FotterParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FotterParts.json; sourceTree = "<group>"; };
 		CE4930BF19FE7F3A003E9E59 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
 		CE4930C019FE7F3A003E9E59 /* HeaderParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HeaderParts.json; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 		CE4930C819FE7F3A003E9E59 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		CE4930C919FE7F3A003E9E59 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		CE4930CA19FE7F3A003E9E59 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
+		CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClientUtil.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -308,10 +312,13 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CE4930DA19FE803A003E9E59 /* util */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
+				CE4930A719FE7E3E003E9E59 /* MyPageScene.cpp */,
+				CE4930A819FE7E3E003E9E59 /* MyPageScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -363,6 +370,14 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		CE4930DA19FE803A003E9E59 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -522,6 +537,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				CE4930A919FE7E3E003E9E59 /* MyPageScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

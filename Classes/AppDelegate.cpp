@@ -1,7 +1,10 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
+#include "MyPageScene.h"
 
 USING_NS_CC;
+
+void fitDesignResolutionSize(GLView *glview, float width, float height, float scale = 1.00f);
 
 AppDelegate::AppDelegate() {
 
@@ -38,15 +41,36 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // CocosStudioで作ったレイアウトサイズにする
-    glview->setDesignResolutionSize(480, 320, ResolutionPolicy::SHOW_ALL);
+    fitDesignResolutionSize(glview, 640, 960);
 
     // create a scene. it's an autorelease object
-    auto scene = HelloWorld::createScene();
+    auto scene = MyPageScene::createScene();
 
     // run
     director->runWithScene(scene);
 
     return true;
+}
+
+void fitDesignResolutionSize(GLView *glview, float width, float height, float scale)
+{
+    const float baseScaleWidth  = width * scale;
+    const float baseScaleHeight = height * scale;
+    
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    
+    const int widthDiff = abs((int)visibleSize.width - (int)width);
+    const int heightDiff = abs((int)visibleSize.height - (int)height);
+    
+    if (widthDiff == 0 && heightDiff == 0) {
+        glview->setDesignResolutionSize(baseScaleWidth, baseScaleHeight, ResolutionPolicy::SHOW_ALL);
+    } else {
+        float divX = visibleSize.width / width;
+        float divY = visibleSize.height / height;
+        float fixWidth = baseScaleWidth + (widthDiff / divY);
+        float fixHeight = baseScaleHeight + (heightDiff / divX);
+        glview->setDesignResolutionSize(fixWidth, fixHeight, ResolutionPolicy::SHOW_ALL);
+    }
 }
 
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
