@@ -102,6 +102,20 @@ bool HelloWorld::init()
         listParts->getChildByName<ui::Text*>("Label_2")->setString(text);
         listView->pushBackCustomItem(listParts);
     }
+    listView->addEventListener([](Ref *ref, ui::ListView::EventType eventType){
+        if (eventType == ui::ListView::EventType::ON_SELECTED_ITEM_END) {
+            auto listView = static_cast<ui::ListView*>(ref);
+            // 選択状態を戻す
+            for (auto widget : listView->getItems()) {
+                widget->getChildByName<ui::Text*>("Label_2")->setColor(Color3B::WHITE);
+            }
+            // 選択した行の色を変える
+            auto selectedIndex = listView->getCurSelectedIndex();
+            listView->getItem(selectedIndex)->getChildByName<ui::Text*>("Label_2")->setColor(Color3B::GREEN);
+            
+            CCLOG("selected index %ld", selectedIndex);
+        }
+    });
     this->addChild(layout);
     
     return true;
