@@ -9,8 +9,8 @@
 #include "MyPageScene.h"
 
 #include "HttpClientUtil.h"
+#include "WidgetUtil.h"
 
-#include "cocostudio/CocoStudio.h"
 #include "ui/UIListView.h"
 #include "ui/UIText.h"
 
@@ -92,19 +92,15 @@ bool MyPageScene::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
     
-    // TODO: header fotter あとで共通クラスにする
-    auto header = GUIReader::getInstance()->widgetFromJsonFile("HeaderParts.json");
-    header->setContentSize(Size(visibleSize.width, header->getContentSize().height));
-    header->setPosition(Vec2(0, visibleSize.height - header->getContentSize().height));
-    this->addChild(header);
-    auto fotter = GUIReader::getInstance()->widgetFromJsonFile("FotterParts.json");
-    fotter->setContentSize(Size(visibleSize.width, fotter->getContentSize().height));
-    fotter->setPosition(Vec2(0, 0));
-    this->addChild(fotter);
-    
     // CocosStudioのLayout読み込み
     auto layout = GUIReader::getInstance()->widgetFromJsonFile("MyPageScene.json");
     this->addChild(layout);
+    
+    auto header = WidgetUtil::widgetHeaderFromJsonFile("HeaderParts.json");
+    this->addChild(header);
+    
+    auto fotter = WidgetUtil::widgetFotterFromJsonFile("FotterParts.json");
+    this->addChild(fotter);
     
     return true;
 }
