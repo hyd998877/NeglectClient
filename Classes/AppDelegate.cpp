@@ -54,22 +54,35 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
 void fitDesignResolutionSize(GLView *glview, float width, float height, float scale)
 {
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    
     const float baseScaleWidth  = width * scale;
     const float baseScaleHeight = height * scale;
-    
-    auto visibleSize = Director::getInstance()->getVisibleSize();
     
     const int widthDiff = abs((int)visibleSize.width - (int)width);
     const int heightDiff = abs((int)visibleSize.height - (int)height);
     
     if (widthDiff == 0 && heightDiff == 0) {
-        glview->setDesignResolutionSize(baseScaleWidth, baseScaleHeight, ResolutionPolicy::SHOW_ALL);
+        glview->setDesignResolutionSize(baseScaleWidth,
+                                        baseScaleHeight,
+                                        ResolutionPolicy::SHOW_ALL);
     } else {
         float divX = visibleSize.width / width;
         float divY = visibleSize.height / height;
-        float fixWidth = baseScaleWidth + (widthDiff / divY);
-        float fixHeight = baseScaleHeight + (heightDiff / divX);
-        glview->setDesignResolutionSize(fixWidth, fixHeight, ResolutionPolicy::SHOW_ALL);
+        float fixWidth = 0.0f;
+        float fixHeight = 0.0f;
+        if (width > height) {
+            // 横画面
+            fixWidth = widthDiff / divX;
+            fixHeight = heightDiff / divY;
+        } else {
+            // 縦画面
+            fixWidth = widthDiff / divY;
+            fixHeight = heightDiff / divX;
+        }
+        glview->setDesignResolutionSize(baseScaleWidth + fixWidth,
+                                        baseScaleHeight + fixHeight,
+                                        ResolutionPolicy::SHOW_ALL);
     }
 }
 
