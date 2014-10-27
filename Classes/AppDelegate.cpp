@@ -2,9 +2,9 @@
 #include "HelloWorldScene.h"
 #include "MyPageScene.h"
 
-USING_NS_CC;
+#include "GLViewUtil.h"
 
-void fitDesignResolutionSize(GLView *glview, float width, float height, float scale = 1.00f);
+USING_NS_CC;
 
 AppDelegate::AppDelegate() {
 
@@ -41,7 +41,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // CocosStudioで作ったレイアウトサイズにする
-    fitDesignResolutionSize(glview, 640, 960);
+    GLViewUtil::fitDesignResolutionSize(glview, 640, 960);
 
     // create a scene. it's an autorelease object
     auto scene = MyPageScene::createScene();
@@ -50,40 +50,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->runWithScene(scene);
 
     return true;
-}
-
-void fitDesignResolutionSize(GLView *glview, float width, float height, float scale)
-{
-    auto visibleSize = Director::getInstance()->getVisibleSize();
-    
-    const float baseScaleWidth  = width * scale;
-    const float baseScaleHeight = height * scale;
-    
-    const int widthDiff = abs((int)visibleSize.width - (int)width);
-    const int heightDiff = abs((int)visibleSize.height - (int)height);
-    
-    if (widthDiff == 0 && heightDiff == 0) {
-        glview->setDesignResolutionSize(baseScaleWidth,
-                                        baseScaleHeight,
-                                        ResolutionPolicy::SHOW_ALL);
-    } else {
-        float divX = visibleSize.width / width;
-        float divY = visibleSize.height / height;
-        float fixWidth = 0.0f;
-        float fixHeight = 0.0f;
-        if (width > height) {
-            // 横画面
-            fixWidth = widthDiff / divX;
-            fixHeight = heightDiff / divY;
-        } else {
-            // 縦画面
-            fixWidth = widthDiff / divY;
-            fixHeight = heightDiff / divX;
-        }
-        glview->setDesignResolutionSize(baseScaleWidth + fixWidth,
-                                        baseScaleHeight + fixHeight,
-                                        ResolutionPolicy::SHOW_ALL);
-    }
 }
 
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
