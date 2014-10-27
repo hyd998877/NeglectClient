@@ -1,8 +1,12 @@
 #include "HelloWorldScene.h"
 #include "network/HttpClient.h"
 
+#include "cocostudio/CocoStudio.h"
+#include "ui/UIListView.h"
+
 USING_NS_CC;
 using namespace cocos2d::network;
+using namespace cocostudio;
 
 typedef std::function<void(long status, std::string response)> HttpRequestListener;
 typedef std::function<void(long status, std::string error)> HttpRequestErrorListener;
@@ -83,6 +87,21 @@ bool HelloWorld::init()
     auto menu = Menu::create(closeItem, menuItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
+
+    // ListView
+    
+    // CocosStudioのLayout読み込み
+    auto layout = GUIReader::getInstance()->widgetFromJsonFile("ListScene/ListScene.json");
+    // Listを取得
+    auto listView = layout->getChildByName<ui::ListView*>("ListView_2");
+    // Listの中身をセット
+    for (int i = 0; i < 10; i++) {
+        auto listParts = GUIReader::getInstance()->widgetFromJsonFile("ListParts/ListParts.json");
+        auto text = StringUtils::format("Label Text %d", i);
+        listParts->getChildByName<Label*>("Label_2")->setString(text);
+        listView->pushBackCustomItem(listParts);
+    }
+    this->addChild(layout);
     
     return true;
 }
