@@ -30,7 +30,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("My Game");
+        glview = GLViewImpl::create("NeglectGame");
         director->setOpenGLView(glview);
     }
 
@@ -41,7 +41,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // CocosStudioで作ったレイアウトサイズにする
-    GLViewUtil::fitDesignResolutionSize(glview, 640, 960);
+    auto fitSize = GLViewUtil::getFitDesignResolutionSize(640, 960);
+    glview->setDesignResolutionSize(fitSize.width, fitSize.height, ResolutionPolicy::SHOW_ALL);
 
     // create a scene. it's an autorelease object
     auto scene = MyPageScene::createScene();

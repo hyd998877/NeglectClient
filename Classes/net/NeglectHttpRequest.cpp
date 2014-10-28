@@ -25,16 +25,20 @@ void NeglectHttpRequest::questList(const HttpClientUtil::HttpRequestListener &li
 
 void NeglectHttpRequest::Get(const std::string &url, const HttpClientUtil::HttpRequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {
+    // TODO: Loading表示
+    
     auto request = HttpClientUtil::createGetRequest(BASE_URL + url, [listener](long statusCode, std::string response) {
         CCLOG("response code: %ld response = %s", statusCode, response.c_str());
         if (listener) {
             listener(statusCode, response);
         }
+        // TODO: Loading終了
     }, [errorListener](long statusCode, std::string error) {
         CCLOG("response code: %ld error = %s", statusCode, error.c_str());
         if (errorListener) {
             errorListener(statusCode, error);
         }
+        // TODO: Loading終了
     });
     cocos2d::network::HttpClient::getInstance()->send(request);
     request->release();
@@ -42,16 +46,20 @@ void NeglectHttpRequest::Get(const std::string &url, const HttpClientUtil::HttpR
 
 void NeglectHttpRequest::Post(const std::string &url, const json11::Json &json, const HttpClientUtil::HttpRequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {
+    // TODO: Loading表示
+    
     auto request = HttpClientUtil::createPostRequest(BASE_URL + url, "param=" + json.dump(), [listener](long statusCode, std::string response) {
         CCLOG("response code: %ld response = %s", statusCode, response.c_str());
         if (listener) {
             listener(statusCode, response);
         }
+        // TODO: Loading終了
     }, [errorListener](long statusCode, std::string error) {
         CCLOG("response code: %ld error = %s", statusCode, error.c_str());
         if (errorListener) {
             errorListener(statusCode, error);
         }
+        // TODO: Loading終了
     });
     cocos2d::network::HttpClient::getInstance()->send(request);
     request->release();
