@@ -70,6 +70,10 @@
 		CE4930D519FE7F3A003E9E59 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C819FE7F3A003E9E59 /* ui */; };
 		CE4930D619FE7F3A003E9E59 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C919FE7F3A003E9E59 /* fonts */; };
 		CE4930D719FE7F3A003E9E59 /* res in Resources */ = {isa = PBXBuildFile; fileRef = CE4930CA19FE7F3A003E9E59 /* res */; };
+		CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */; };
+		CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D919FF161C001DF599 /* json11.cpp */; };
+		CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE8FC2DB19FF161C001DF599 /* LICENSE.txt */; };
+		CE8FC2DF19FF161C001DF599 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2DC19FF161C001DF599 /* README.md */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -174,6 +178,12 @@
 		CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClientUtil.h; sourceTree = "<group>"; };
 		CE8FC2D219FEEECE001DF599 /* GLViewUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLViewUtil.h; sourceTree = "<group>"; };
 		CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetUtil.h; sourceTree = "<group>"; };
+		CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NeglectHttpRequest.cpp; path = net/NeglectHttpRequest.cpp; sourceTree = "<group>"; };
+		CE8FC2D519FF0A77001DF599 /* NeglectHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeglectHttpRequest.h; path = net/NeglectHttpRequest.h; sourceTree = "<group>"; };
+		CE8FC2D919FF161C001DF599 /* json11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json11.cpp; sourceTree = "<group>"; };
+		CE8FC2DA19FF161C001DF599 /* json11.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json11.hpp; sourceTree = "<group>"; };
+		CE8FC2DB19FF161C001DF599 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		CE8FC2DC19FF161C001DF599 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -314,6 +324,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CE8FC2D719FF15C9001DF599 /* modules */,
 				CE4930DA19FE803A003E9E59 /* util */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
@@ -321,6 +332,8 @@
 				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 				CE4930A719FE7E3E003E9E59 /* MyPageScene.cpp */,
 				CE4930A819FE7E3E003E9E59 /* MyPageScene.h */,
+				CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */,
+				CE8FC2D519FF0A77001DF599 /* NeglectHttpRequest.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -381,6 +394,25 @@
 				CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		CE8FC2D719FF15C9001DF599 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FC2D819FF161C001DF599 /* json11 */,
+			);
+			path = modules;
+			sourceTree = "<group>";
+		};
+		CE8FC2D819FF161C001DF599 /* json11 */ = {
+			isa = PBXGroup;
+			children = (
+				CE8FC2D919FF161C001DF599 /* json11.cpp */,
+				CE8FC2DA19FF161C001DF599 /* json11.hpp */,
+				CE8FC2DB19FF161C001DF599 /* LICENSE.txt */,
+				CE8FC2DC19FF161C001DF599 /* README.md */,
+			);
+			path = json11;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,6 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
@@ -542,6 +575,9 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				CE4930A919FE7E3E003E9E59 /* MyPageScene.cpp in Sources */,
+				CE8FC2DF19FF161C001DF599 /* README.md in Sources */,
+				CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */,
+				CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
