@@ -8,10 +8,11 @@
 
 #include "MyPageScene.h"
 
-#include "WidgetUtil.h"
+#include "ui/CocosGUI.h"
+#include "cocostudio/CocoStudio.h"
 
-#include "ui/UIListView.h"
-#include "ui/UIText.h"
+#include "CommonHeaderParts.h"
+#include "CommonFotterParts.h"
 
 #include "NeglectHttpRequest.h"
 
@@ -28,21 +29,6 @@ MyPageScene::MyPageScene()
 MyPageScene::~MyPageScene()
 {
     
-}
-
-Scene* MyPageScene::createScene()
-{
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = MyPageScene::create();
-    
-    // add layer as a child to scene
-    scene->addChild(layer);
-    
-    // return the scene
-    return scene;
 }
 
 // on "init" you need to initialize your instance
@@ -65,16 +51,15 @@ bool MyPageScene::init()
             return;
         }
         
-        auto userNameText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_20/Label_11");
-        auto detailText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_20/Panel_19/Label_11_1");
+        auto userNameText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_unitStatus/Label_name");
+        auto detailText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_message/Label_message_1");
         
+        auto detail = json["Description"].string_value();
+        if (detail == "") {
+            detail = "特にお知らせはないわ";
+        }
+        detailText->setString(detail);
         userNameText->setString(json["Name"].string_value());
-        detailText->setString(json["Description"].string_value());
-        
-//        // クエスト情報取得（要login）
-//        NeglectHttpRequest::questList([](long statusCode, std::string response) {
-//            
-//        });
     });
     
     // TODO: Loading表示（画面ロック）
@@ -83,10 +68,11 @@ bool MyPageScene::init()
     this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("MyPageScene.json");
     this->addChild(this->_baseLayout);
     
-    auto header = WidgetUtil::widgetHeaderFromJsonFile("HeaderParts.json");
+    auto header = CommonHeaderParts::create();
     this->addChild(header);
-    
-    auto fotter = WidgetUtil::widgetFotterFromJsonFile("FotterParts.json");
+
+    auto fotter = CommonFotterParts::create();
+    fotter->setLockMenu(1);
     this->addChild(fotter);
     
     return true;

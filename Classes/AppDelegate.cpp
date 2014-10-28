@@ -1,6 +1,6 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
-#include "MyPageScene.h"
+#include "NeglectSceneHelper.h"
 
 #include "GLViewUtil.h"
 
@@ -45,7 +45,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     glview->setDesignResolutionSize(fitSize.width, fitSize.height, ResolutionPolicy::SHOW_ALL);
 
     // create a scene. it's an autorelease object
-    auto scene = MyPageScene::createScene();
+    auto scene = NeglectSceneHelper::createScene(NeglectSceneHelper::SceneID::MY_PAGE);
 
     // run
     director->runWithScene(scene);

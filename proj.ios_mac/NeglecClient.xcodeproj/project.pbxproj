@@ -20,8 +20,6 @@
 		46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -58,7 +56,6 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
-		CE4930A919FE7E3E003E9E59 /* MyPageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4930A719FE7E3E003E9E59 /* MyPageScene.cpp */; };
 		CE4930CB19FE7F3A003E9E59 /* FotterParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4930BE19FE7F3A003E9E59 /* FotterParts.json */; };
 		CE4930CC19FE7F3A003E9E59 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = CE4930BF19FE7F3A003E9E59 /* GUI */; };
 		CE4930CD19FE7F3A003E9E59 /* HeaderParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C019FE7F3A003E9E59 /* HeaderParts.json */; };
@@ -71,9 +68,16 @@
 		CE4930D619FE7F3A003E9E59 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C919FE7F3A003E9E59 /* fonts */; };
 		CE4930D719FE7F3A003E9E59 /* res in Resources */ = {isa = PBXBuildFile; fileRef = CE4930CA19FE7F3A003E9E59 /* res */; };
 		CE56FAF719FF6F7A0009A41F /* bg in Resources */ = {isa = PBXBuildFile; fileRef = CE56FAF619FF6F7A0009A41F /* bg */; };
+		CE56FAFA19FF74D00009A41F /* NeglectSceneHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FAF819FF74D00009A41F /* NeglectSceneHelper.cpp */; };
+		CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */; };
+		CE56FB0319FF789E0009A41F /* MyPageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB0019FF789E0009A41F /* MyPageScene.cpp */; };
+		CE56FB0619FF7CAA0009A41F /* QuestListScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB0419FF7CAA0009A41F /* QuestListScene.cpp */; };
 		CE56FB1519FF7D560009A41F /* QuestListParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE56FB0D19FF7D560009A41F /* QuestListParts.json */; };
 		CE56FB1619FF7D560009A41F /* QuestListScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE56FB0E19FF7D560009A41F /* QuestListScene.json */; };
+		CE56FB1A19FF857E0009A41F /* CommonFotterParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB1819FF857E0009A41F /* CommonFotterParts.cpp */; };
+		CE56FB1D19FF85900009A41F /* CommonHeaderParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB1B19FF85900009A41F /* CommonHeaderParts.cpp */; };
 		CE56FB1F19FF97420009A41F /* QuestStartScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE56FB1E19FF97420009A41F /* QuestStartScene.json */; };
+		CE56FB2219FF97730009A41F /* QuestStartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB2019FF97730009A41F /* QuestStartScene.cpp */; };
 		CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */; };
 		CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D919FF161C001DF599 /* json11.cpp */; };
 		CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE8FC2DB19FF161C001DF599 /* LICENSE.txt */; };
@@ -127,8 +131,6 @@
 		46880B7A19C43A67006E1F66 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
-		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -166,8 +168,6 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CE4930A719FE7E3E003E9E59 /* MyPageScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyPageScene.cpp; sourceTree = "<group>"; };
-		CE4930A819FE7E3E003E9E59 /* MyPageScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageScene.h; sourceTree = "<group>"; };
 		CE4930BE19FE7F3A003E9E59 /* FotterParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FotterParts.json; sourceTree = "<group>"; };
 		CE4930BF19FE7F3A003E9E59 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
 		CE4930C019FE7F3A003E9E59 /* HeaderParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HeaderParts.json; sourceTree = "<group>"; };
@@ -181,9 +181,23 @@
 		CE4930CA19FE7F3A003E9E59 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClientUtil.h; sourceTree = "<group>"; };
 		CE56FAF619FF6F7A0009A41F /* bg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bg; sourceTree = "<group>"; };
+		CE56FAF819FF74D00009A41F /* NeglectSceneHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NeglectSceneHelper.cpp; sourceTree = "<group>"; };
+		CE56FAF919FF74D00009A41F /* NeglectSceneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeglectSceneHelper.h; sourceTree = "<group>"; };
+		CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
+		CE56FAFF19FF789E0009A41F /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
+		CE56FB0019FF789E0009A41F /* MyPageScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyPageScene.cpp; sourceTree = "<group>"; };
+		CE56FB0119FF789E0009A41F /* MyPageScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageScene.h; sourceTree = "<group>"; };
+		CE56FB0419FF7CAA0009A41F /* QuestListScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestListScene.cpp; sourceTree = "<group>"; };
+		CE56FB0519FF7CAA0009A41F /* QuestListScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestListScene.h; sourceTree = "<group>"; };
 		CE56FB0D19FF7D560009A41F /* QuestListParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListParts.json; sourceTree = "<group>"; };
 		CE56FB0E19FF7D560009A41F /* QuestListScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListScene.json; sourceTree = "<group>"; };
+		CE56FB1819FF857E0009A41F /* CommonFotterParts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonFotterParts.cpp; sourceTree = "<group>"; };
+		CE56FB1919FF857E0009A41F /* CommonFotterParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFotterParts.h; sourceTree = "<group>"; };
+		CE56FB1B19FF85900009A41F /* CommonHeaderParts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonHeaderParts.cpp; sourceTree = "<group>"; };
+		CE56FB1C19FF85900009A41F /* CommonHeaderParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHeaderParts.h; sourceTree = "<group>"; };
 		CE56FB1E19FF97420009A41F /* QuestStartScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestStartScene.json; sourceTree = "<group>"; };
+		CE56FB2019FF97730009A41F /* QuestStartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestStartScene.cpp; sourceTree = "<group>"; };
+		CE56FB2119FF97730009A41F /* QuestStartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestStartScene.h; sourceTree = "<group>"; };
 		CE8FC2D219FEEECE001DF599 /* GLViewUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLViewUtil.h; sourceTree = "<group>"; };
 		CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetUtil.h; sourceTree = "<group>"; };
 		CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NeglectHttpRequest.cpp; path = net/NeglectHttpRequest.cpp; sourceTree = "<group>"; };
@@ -336,16 +350,16 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CE56FB0719FF7D200009A41F /* parts */,
+				CE56FAFD19FF786E0009A41F /* scene */,
 				CE8FC2D719FF15C9001DF599 /* modules */,
 				CE4930DA19FE803A003E9E59 /* util */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
-				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
-				CE4930A719FE7E3E003E9E59 /* MyPageScene.cpp */,
-				CE4930A819FE7E3E003E9E59 /* MyPageScene.h */,
 				CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */,
 				CE8FC2D519FF0A77001DF599 /* NeglectHttpRequest.h */,
+				CE56FAF819FF74D00009A41F /* NeglectSceneHelper.cpp */,
+				CE56FAF919FF74D00009A41F /* NeglectSceneHelper.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -406,6 +420,32 @@
 				CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		CE56FAFD19FF786E0009A41F /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */,
+				CE56FAFF19FF789E0009A41F /* HelloWorldScene.h */,
+				CE56FB0019FF789E0009A41F /* MyPageScene.cpp */,
+				CE56FB0119FF789E0009A41F /* MyPageScene.h */,
+				CE56FB0419FF7CAA0009A41F /* QuestListScene.cpp */,
+				CE56FB0519FF7CAA0009A41F /* QuestListScene.h */,
+				CE56FB2019FF97730009A41F /* QuestStartScene.cpp */,
+				CE56FB2119FF97730009A41F /* QuestStartScene.h */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
+		CE56FB0719FF7D200009A41F /* parts */ = {
+			isa = PBXGroup;
+			children = (
+				CE56FB1819FF857E0009A41F /* CommonFotterParts.cpp */,
+				CE56FB1919FF857E0009A41F /* CommonFotterParts.h */,
+				CE56FB1B19FF85900009A41F /* CommonHeaderParts.cpp */,
+				CE56FB1C19FF85900009A41F /* CommonHeaderParts.h */,
+			);
+			path = parts;
 			sourceTree = "<group>";
 		};
 		CE8FC2D719FF15C9001DF599 /* modules */ = {
@@ -586,13 +626,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				CE56FB1A19FF857E0009A41F /* CommonFotterParts.cpp in Sources */,
+				CE56FB0319FF789E0009A41F /* MyPageScene.cpp in Sources */,
+				CE56FB0619FF7CAA0009A41F /* QuestListScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */,
+				CE56FAFA19FF74D00009A41F /* NeglectSceneHelper.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				CE4930A919FE7E3E003E9E59 /* MyPageScene.cpp in Sources */,
 				CE8FC2DF19FF161C001DF599 /* README.md in Sources */,
+				CE56FB2219FF97730009A41F /* QuestStartScene.cpp in Sources */,
 				CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */,
+				CE56FB1D19FF85900009A41F /* CommonHeaderParts.cpp in Sources */,
 				CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,7 +648,6 @@
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
-				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
