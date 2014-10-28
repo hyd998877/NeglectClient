@@ -65,6 +65,12 @@ bool MyPageScene::init()
             return;
         }
         
+        auto userNameText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_20/Label_11");
+        auto detailText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_20/Panel_19/Label_11_1");
+        
+        userNameText->setString(json["Name"].string_value());
+        detailText->setString(json["Description"].string_value());
+        
 //        // クエスト情報取得（要login）
 //        NeglectHttpRequest::questList([](long statusCode, std::string response) {
 //            

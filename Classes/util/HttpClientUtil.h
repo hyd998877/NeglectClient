@@ -53,7 +53,7 @@ namespace HttpClientUtil {
     
     static cocos2d::network::HttpRequest* createPostRequest(const std::string &requestURL, const std::string &requestData, const HttpRequestListener &listener, const HttpRequestErrorListener &errorListener)
     {
-        return HttpClientUtil::createRequest(cocos2d::network::HttpRequest::Type::POST, requestURL, requestURL, listener, errorListener);
+        return HttpClientUtil::createRequest(cocos2d::network::HttpRequest::Type::POST, requestURL, requestData, listener, errorListener);
     }
 }
 #endif

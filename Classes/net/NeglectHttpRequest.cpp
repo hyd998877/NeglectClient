@@ -13,9 +13,9 @@ using namespace json11;
 void NeglectHttpRequest::login(const HttpClientUtil::HttpRequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {
     // TODO: UUIDの取得 or 生成
-    auto uuid = "hoge";
+    auto uuid = "cocos";
     cocos2d::network::HttpClient::getInstance()->enableCookies(nullptr);
-    NeglectHttpRequest::Post("/login", Json::object{{"uuid", uuid}}, listener, errorListener);
+    NeglectHttpRequest::Post("/login", Json::object{{"uuid", uuid}, {"name", "kyokomi"}}, listener, errorListener);
 }
 
 void NeglectHttpRequest::questList(const HttpClientUtil::HttpRequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
@@ -42,7 +42,7 @@ void NeglectHttpRequest::Get(const std::string &url, const HttpClientUtil::HttpR
 
 void NeglectHttpRequest::Post(const std::string &url, const json11::Json &json, const HttpClientUtil::HttpRequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {
-    auto request = HttpClientUtil::createPostRequest(BASE_URL + url, json.dump(), [listener](long statusCode, std::string response) {
+    auto request = HttpClientUtil::createPostRequest(BASE_URL + url, "param=" + json.dump(), [listener](long statusCode, std::string response) {
         CCLOG("response code: %ld response = %s", statusCode, response.c_str());
         if (listener) {
             listener(statusCode, response);
