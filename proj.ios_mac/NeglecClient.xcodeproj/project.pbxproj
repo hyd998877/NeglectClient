@@ -70,6 +70,10 @@
 		CE4930D519FE7F3A003E9E59 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C819FE7F3A003E9E59 /* ui */; };
 		CE4930D619FE7F3A003E9E59 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C919FE7F3A003E9E59 /* fonts */; };
 		CE4930D719FE7F3A003E9E59 /* res in Resources */ = {isa = PBXBuildFile; fileRef = CE4930CA19FE7F3A003E9E59 /* res */; };
+		CE56FAF719FF6F7A0009A41F /* bg in Resources */ = {isa = PBXBuildFile; fileRef = CE56FAF619FF6F7A0009A41F /* bg */; };
+		CE56FB1519FF7D560009A41F /* QuestListParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE56FB0D19FF7D560009A41F /* QuestListParts.json */; };
+		CE56FB1619FF7D560009A41F /* QuestListScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE56FB0E19FF7D560009A41F /* QuestListScene.json */; };
+		CE56FB1F19FF97420009A41F /* QuestStartScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE56FB1E19FF97420009A41F /* QuestStartScene.json */; };
 		CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */; };
 		CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D919FF161C001DF599 /* json11.cpp */; };
 		CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE8FC2DB19FF161C001DF599 /* LICENSE.txt */; };
@@ -176,6 +180,10 @@
 		CE4930C919FE7F3A003E9E59 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		CE4930CA19FE7F3A003E9E59 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClientUtil.h; sourceTree = "<group>"; };
+		CE56FAF619FF6F7A0009A41F /* bg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bg; sourceTree = "<group>"; };
+		CE56FB0D19FF7D560009A41F /* QuestListParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListParts.json; sourceTree = "<group>"; };
+		CE56FB0E19FF7D560009A41F /* QuestListScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListScene.json; sourceTree = "<group>"; };
+		CE56FB1E19FF97420009A41F /* QuestStartScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestStartScene.json; sourceTree = "<group>"; };
 		CE8FC2D219FEEECE001DF599 /* GLViewUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLViewUtil.h; sourceTree = "<group>"; };
 		CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetUtil.h; sourceTree = "<group>"; };
 		CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NeglectHttpRequest.cpp; path = net/NeglectHttpRequest.cpp; sourceTree = "<group>"; };
@@ -302,6 +310,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE56FAF619FF6F7A0009A41F /* bg */,
 				CE4930BF19FE7F3A003E9E59 /* GUI */,
 				CE4930C119FE7F3A003E9E59 /* icon_set */,
 				CE4930C719FE7F3A003E9E59 /* novel */,
@@ -309,6 +318,9 @@
 				CE4930C919FE7F3A003E9E59 /* fonts */,
 				CE4930BE19FE7F3A003E9E59 /* FotterParts.json */,
 				CE4930C019FE7F3A003E9E59 /* HeaderParts.json */,
+				CE56FB0D19FF7D560009A41F /* QuestListParts.json */,
+				CE56FB1E19FF97420009A41F /* QuestStartScene.json */,
+				CE56FB0E19FF7D560009A41F /* QuestListScene.json */,
 				CE4930C619FE7F3A003E9E59 /* MyPageScene.json */,
 				CE4930CA19FE7F3A003E9E59 /* res */,
 				CE4930C319FE7F3A003E9E59 /* ListParts.json */,
@@ -520,10 +532,12 @@
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				CE4930CE19FE7F3A003E9E59 /* icon_set in Resources */,
+				CE56FAF719FF6F7A0009A41F /* bg in Resources */,
 				CE4930CB19FE7F3A003E9E59 /* FotterParts.json in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
+				CE56FB1519FF7D560009A41F /* QuestListParts.json in Resources */,
 				CE4930D319FE7F3A003E9E59 /* MyPageScene.json in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
@@ -547,6 +561,8 @@
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
+				CE56FB1F19FF97420009A41F /* QuestStartScene.json in Resources */,
+				CE56FB1619FF7D560009A41F /* QuestListScene.json in Resources */,
 				CE4930D719FE7F3A003E9E59 /* res in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

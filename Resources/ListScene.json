@@ -10,7 +10,15 @@
   "designHeight": 320,
   "designWidth": 480,
   "textures": [],
-  "texturesPng": [],
+  "texturesPng": [
+    "icon_set/item_702.png",
+    "icon_set/item_768.png",
+    "icon_set/item_1040.png",
+    "icon_set/item_641.png",
+    "icon_set/item_696.png",
+    "ui/dot_waku.png",
+    "GUI/button.png"
+  ],
   "version": "1.6.0.0",
   "widgetTree": {
     "classname": "Panel",
