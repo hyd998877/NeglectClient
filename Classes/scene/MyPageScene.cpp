@@ -62,18 +62,19 @@ bool MyPageScene::init()
         userNameText->setString(json["Name"].string_value());
     });
     
-    // TODO: Loading表示（画面ロック）
-
+    auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
-    this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("MyPageScene.json");
+    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("MyPageScene.csd");
+    this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
+                                   winSize.height/2 - this->_baseLayout->getContentSize().height/2);
     this->addChild(this->_baseLayout);
     
-    auto header = CommonHeaderParts::create();
-    this->addChild(header);
-
-    auto fotter = CommonFotterParts::create();
-    fotter->setLockMenu(1);
-    this->addChild(fotter);
+//    auto header = CommonHeaderParts::create();
+//    this->addChild(header);
+//
+//    auto fotter = CommonFotterParts::create();
+//    fotter->setLockMenu(1);
+//    this->addChild(fotter);
     
     return true;
 }
