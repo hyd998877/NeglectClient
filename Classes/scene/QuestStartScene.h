@@ -24,7 +24,7 @@ public:
     CREATE_FUNC(QuestStartScene);
     
 private:
-    cocos2d::ui::Widget *_baseLayout;
+    cocos2d::Node *_baseLayout;
 };
 
 #endif /* defined(__NeglecClient__QuestStartScene__) */

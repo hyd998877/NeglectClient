@@ -56,8 +56,11 @@ bool QuestStartScene::init()
     
     // TODO: Loading表示（画面ロック）
     
+    auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
-    this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("QuestStartScene.json");
+    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("QuestStartScene.csd");
+    this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
+                                   winSize.height/2 - this->_baseLayout->getContentSize().height/2);
     this->addChild(this->_baseLayout);
     
     auto header = CommonHeaderParts::create();
