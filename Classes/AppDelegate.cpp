@@ -41,7 +41,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // CocosStudioで作ったレイアウトサイズにする
-    auto fitSize = GLViewUtil::getFitDesignResolutionSize(640, 960);
+    auto fitSize = GLViewUtil::getFitDesignResolutionSize(640, 960, GLViewUtil::FitType::WIDTH);
+    CCLOG("fitSize w = %f h = %f", fitSize.width, fitSize.height);
     glview->setDesignResolutionSize(fitSize.width, fitSize.height, ResolutionPolicy::SHOW_ALL);
 
     // create a scene. it's an autorelease object

@@ -15,7 +15,12 @@
 
 namespace GLViewUtil {
     
-    cocos2d::Size getFitDesignResolutionSize(float width, float height, float scale = 1.0f)
+    enum class FitType {
+        WIDTH,
+        HEIGHT,
+    };
+    
+    cocos2d::Size calcFitDesignResolutionSize(float width, float height, FitType fitType, float scale)
     {
         auto visibleSize = cocos2d::Director::getInstance()->getVisibleSize();
         
@@ -33,7 +38,32 @@ namespace GLViewUtil {
         float divY = visibleSize.height / baseScaleHeight;
         float fixWidth = widthDiff / divY;
         float fixHeight = heightDiff / divX;
-        return cocos2d::Size(baseScaleWidth + fixWidth, baseScaleHeight + fixHeight);
+        if (fitType == FitType::HEIGHT) {
+            // 縦優先
+            float addWidth = (heightDiff / divY * (width / height));
+            fixWidth = baseScaleWidth + fixWidth - addWidth;
+            return cocos2d::Size(fixWidth, baseScaleHeight);
+        } else {
+            // 横優先
+            float addheight = (widthDiff / divX * (height / width));
+            fixHeight = baseScaleHeight + fixHeight - addheight;
+            return cocos2d::Size(baseScaleWidth, fixHeight);
+        }
+    }
+    
+    cocos2d::Size getFitDesignResolutionSize(float width, float height, FitType fitType, float scale = 1.0f)
+    {
+        cocos2d::Size fitSize = GLViewUtil::calcFitDesignResolutionSize(width, height, FitType::WIDTH, scale);
+        
+        float baseScaleWidth  = width * scale;
+        float baseScaleHeight = height * scale;
+        
+        if (fitType == FitType::HEIGHT && fitSize.width < baseScaleWidth) {
+            return GLViewUtil::calcFitDesignResolutionSize(width, height, FitType::WIDTH, scale);
+        } else if (fitType == FitType::WIDTH && fitSize.height < baseScaleHeight) {
+            return GLViewUtil::getFitDesignResolutionSize(width, height, FitType::HEIGHT, scale);
+        }
+        return fitSize;
     }
 }
 
