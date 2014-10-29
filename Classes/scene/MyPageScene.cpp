@@ -69,12 +69,12 @@ bool MyPageScene::init()
                                    winSize.height/2 - this->_baseLayout->getContentSize().height/2);
     this->addChild(this->_baseLayout);
     
-//    auto header = CommonHeaderParts::create();
-//    this->addChild(header);
-//
-//    auto fotter = CommonFotterParts::create();
-//    fotter->setLockMenu(1);
-//    this->addChild(fotter);
+    auto header = CommonHeaderParts::create();
+    this->addChild(header);
+
+    auto fotter = CommonFotterParts::create();
+    fotter->setLockMenu(1);
+    this->addChild(fotter);
     
     return true;
 }

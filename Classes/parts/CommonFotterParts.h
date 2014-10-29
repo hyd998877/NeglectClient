@@ -25,7 +25,7 @@ public:
 protected:
     
 private:
-    cocos2d::ui::Widget* _baseLayout;
+    cocos2d::Node* _baseLayout;
     
 };
 

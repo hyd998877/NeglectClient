@@ -3,16 +3,16 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1" />
-      <ObjectData Name="Node_1" CanEdit="False" FrameEvent="" ctype="SingleNodeObjectData">
+      <ObjectData Name="Node" CanEdit="False" FrameEvent="" ctype="SingleNodeObjectData">
         <Position X="0" Y="0" />
         <Scale ScaleX="1" ScaleY="1" />
         <AnchorPoint />
         <CColor A="255" R="255" G="255" B="255" />
-        <Size X="0" Y="0" />
+        <Size X="640" Y="80" />
         <PrePosition X="0" Y="0" />
         <PreSize X="0" Y="0" />
         <Children>
-          <NodeObjectData Name="Panel_1" ActionTag="-1" FrameEvent="" Tag="16" TouchEnable="True" BackColorAlpha="0" ComboBoxIndex="1" ColorAngle="270" ctype="PanelObjectData">
+          <NodeObjectData Name="Panel_main" ActionTag="9375330" FrameEvent="" Tag="32" TouchEnable="True" BackColorAlpha="100" ComboBoxIndex="1" ColorAngle="270" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
             <Position X="0" Y="0" />
             <Scale ScaleX="1" ScaleY="1" />
             <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
@@ -21,35 +21,20 @@
             <PrePosition X="0" Y="0" />
             <PreSize X="0" Y="0" />
             <Children>
-              <NodeObjectData Name="Panel_main" ActionTag="9375330" FrameEvent="" Tag="32" TouchEnable="True" BackColorAlpha="100" ComboBoxIndex="1" ColorAngle="270" ctype="PanelObjectData">
-                <Position X="0" Y="0" />
+              <NodeObjectData Name="Label_Title" ActionTag="63699100" IsAutoSize="True" FrameEvent="" Tag="18" FontSize="48" LabelText="Header Title" ctype="TextObjectData">
+                <Position X="320" Y="40" />
                 <Scale ScaleX="1" ScaleY="1" />
-                <AnchorPoint />
+                <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <Size X="640" Y="80" />
+                <Size X="288" Y="52" />
                 <PrePosition X="0" Y="0" />
                 <PreSize X="0" Y="0" />
-                <Children>
-                  <NodeObjectData Name="Label_Title" ActionTag="63699100" IsAutoSize="True" FrameEvent="" Tag="18" FontSize="48" LabelText="Header Title" ctype="TextObjectData">
-                    <Position X="320" Y="40" />
-                    <Scale ScaleX="1" ScaleY="1" />
-                    <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <Size X="288" Y="52" />
-                    <PrePosition X="0" Y="0" />
-                    <PreSize X="0" Y="0" />
-                    <FontResource Type="Normal" Path="fonts/misaki_gothic.ttf" />
-                  </NodeObjectData>
-                </Children>
-                <FileData Type="Normal" Path="ui/dot_waku.png" />
-                <SingleColor A="255" R="0" G="0" B="0" />
-                <FirstColor A="255" R="0" G="0" B="0" />
-                <EndColor A="255" R="150" G="200" B="255" />
-                <ColorVector ScaleX="8.742278E-08" ScaleY="-1" />
+                <FontResource Type="Normal" Path="fonts/misaki_gothic.ttf" />
               </NodeObjectData>
             </Children>
-            <SingleColor A="255" R="150" G="200" B="255" />
-            <FirstColor A="255" R="150" G="200" B="255" />
+            <FileData Type="Normal" Path="ui/dot_waku.png" />
+            <SingleColor A="255" R="0" G="0" B="0" />
+            <FirstColor A="255" R="0" G="0" B="0" />
             <EndColor A="255" R="150" G="200" B="255" />
             <ColorVector ScaleX="8.742278E-08" ScaleY="-1" />
           </NodeObjectData>

@@ -8,7 +8,7 @@
 
 #include "CommonHeaderParts.h"
 
-#include "WidgetUtil.h"
+#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 
 USING_NS_CC;
@@ -31,8 +31,11 @@ bool CommonHeaderParts::init()
     if (!Layer::init()) {
         return false;
     }
-
-    _baseLayout = WidgetUtil::widgetHeaderFromJsonFile("HeaderParts.json");
+    auto winSize = Director::getInstance()->getVisibleSize();
+    
+    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("HeaderParts.csd");
+    _baseLayout->setContentSize(cocos2d::Size(winSize.width, _baseLayout->getContentSize().height));
+    _baseLayout->setPosition(cocos2d::Vec2(winSize.width/2, winSize.height - _baseLayout->getContentSize().height/2));
     this->addChild(_baseLayout);
     
     return true;

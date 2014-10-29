@@ -8,8 +8,9 @@
 
 #include "CommonFotterParts.h"
 
-#include "WidgetUtil.h"
+#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+
 #include "NeglectSceneHelper.h"
 
 USING_NS_CC;
@@ -32,24 +33,29 @@ bool CommonFotterParts::init()
     if (!Layer::init()) {
         return false;
     }
+    auto winSize = Director::getInstance()->getVisibleSize();
+    
     // create Header
-    _baseLayout = WidgetUtil::widgetFotterFromJsonFile("FotterParts.json");
+    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("FotterParts.csd");
+    _baseLayout->setContentSize(cocos2d::Size(winSize.width, _baseLayout->getContentSize().height));
+    _baseLayout->setPosition(cocos2d::Vec2(winSize.width/2, _baseLayout->getContentSize().height/2));
+    
     // Button setting
-    _baseLayout->getChildByName<ui::Button*>("Button_1")->addClickEventListener([](Ref *ref){
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_1")->addClickEventListener([](Ref *ref){
         NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::MY_PAGE);
     });
-    _baseLayout->getChildByName<ui::Button*>("Button_2")->addClickEventListener([](Ref *ref){
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_2")->addClickEventListener([](Ref *ref){
         NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_LIST);
     });
-    _baseLayout->getChildByName<ui::Button*>("Button_3")->addClickEventListener([](Ref *ref){
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_3")->addClickEventListener([](Ref *ref){
         // 倉庫へ
         CCLOG("まだ未実装");
     });
-    _baseLayout->getChildByName<ui::Button*>("Button_4")->addClickEventListener([](Ref *ref){
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_4")->addClickEventListener([](Ref *ref){
         // お店へ
         CCLOG("まだ未実装");
     });
-    _baseLayout->getChildByName<ui::Button*>("Button_5")->addClickEventListener([](Ref *ref){
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_5")->addClickEventListener([](Ref *ref){
         // メニュー
         CCLOG("まだ未実装");
     });
@@ -61,7 +67,7 @@ bool CommonFotterParts::init()
 
 void CommonFotterParts::setLockMenu(int menuId)
 {
-    auto button = _baseLayout->getChildByName<ui::Button*>(cocos2d::StringUtils::format("Button_%d", menuId));
+    auto button = utils::findChildByName<ui::Button*>(*_baseLayout, cocos2d::StringUtils::format("Panel_main/Button_%d", menuId));
     button->setTitleColor(Color3B::GREEN);
     button->setColor(Color3B::GREEN);
     button->setEnabled(false);
