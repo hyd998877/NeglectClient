@@ -1,0 +1,93 @@
+<Solution>
+  <PropertyGroup Name="NeglecClient" Version="2.0.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="bg">
+          <Image Name="ad_forest01_c.jpg" />
+          <Image Name="ad_pass01_a.jpg" />
+          <Image Name="ci_shopbakery01a_b.jpg" />
+          <Image Name="co_city01b_a.jpg" />
+          <Image Name="saloon06_c.jpg" />
+          <Image Name="shop03_a.jpg" />
+        </Folder>
+        <Folder Name="fonts">
+          <File Name="misaki_gothic.ttf" />
+          <File Name="PixelMplus10-Regular.ttf" />
+          <File Name="PixelMplus12-Regular.ttf" />
+        </Folder>
+        <Folder Name="icon_set">
+          <Image Name="item_0.png" />
+          <Image Name="item_1040.png" />
+          <Image Name="item_1041.png" />
+          <Image Name="item_1042.png" />
+          <Image Name="item_1043.png" />
+          <Image Name="item_1044.png" />
+          <Image Name="item_1045.png" />
+          <Image Name="item_1046.png" />
+          <Image Name="item_641.png" />
+          <Image Name="item_645.png" />
+          <Image Name="item_654.png" />
+          <Image Name="item_669.png" />
+          <Image Name="item_670.png" />
+          <Image Name="item_671.png" />
+          <Image Name="item_696.png" />
+          <Image Name="item_697.png" />
+          <Image Name="item_702.png" />
+          <Image Name="item_768.png" />
+          <Image Name="item_772.png" />
+          <Image Name="item_774.png" />
+          <Image Name="item_778.png" />
+          <Image Name="item_780.png" />
+          <Image Name="item_782.png" />
+          <Image Name="item_786.png" />
+          <Image Name="item_787.png" />
+          <Image Name="item_788.png" />
+          <Image Name="item_790.png" />
+          <Image Name="item_816.png" />
+          <Image Name="item_841.png" />
+          <Image Name="item_847.png" />
+          <Image Name="item_848.png" />
+        </Folder>
+        <Folder Name="novel">
+          <Folder Name="json">
+            <File Name="scene_000.json" />
+            <File Name="scene_001.json" />
+            <File Name="scene_002.json" />
+            <File Name="scene_098.json" />
+            <File Name="scene_099.json" />
+          </Folder>
+          <Image Name="actor10_novel_s_1.png" />
+          <Image Name="actor110_novel_s_0.png" />
+          <Image Name="actor11_novel_s_0.png" />
+          <Image Name="actor4_novel_s_0.png" />
+          <Image Name="actor4_novel_s_6.png" />
+          <Image Name="actor5_novel_s_0.png" />
+        </Folder>
+        <Folder Name="ui">
+          <Image Name="a_button.png" />
+          <Image Name="a_button_press.png" />
+          <Image Name="b_button.png" />
+          <Image Name="b_button_press.png" />
+          <Image Name="c_button.png" />
+          <Image Name="c_button_press.png" />
+          <Image Name="dot_waku.9.png" />
+          <Image Name="dot_waku.png" />
+          <Image Name="d_button.png" />
+          <Image Name="d_button_press.png" />
+          <Image Name="keypad.png" />
+          <Image Name="keypad_press.png" />
+          <Image Name="l_image.png" />
+          <Image Name="window_b_00.png" />
+        </Folder>
+        <Project Name="FotterParts.csd" />
+        <Project Name="HeaderParts.csd" />
+        <Project Name="MyPageScene.csd" />
+        <Project Name="QuestListParts.csd" />
+        <Project Name="QuestListScene.csd" />
+        <Project Name="QuestStartScene.csd" />
+        <Project Name="HogeScene.csd" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

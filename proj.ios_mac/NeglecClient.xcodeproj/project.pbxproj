@@ -12,12 +12,6 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
-		46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
-		46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
-		46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
-		46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
-		46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
@@ -56,28 +50,25 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
-		CE4930CB19FE7F3A003E9E59 /* FotterParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4930BE19FE7F3A003E9E59 /* FotterParts.json */; };
-		CE4930CC19FE7F3A003E9E59 /* GUI in Resources */ = {isa = PBXBuildFile; fileRef = CE4930BF19FE7F3A003E9E59 /* GUI */; };
-		CE4930CD19FE7F3A003E9E59 /* HeaderParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C019FE7F3A003E9E59 /* HeaderParts.json */; };
-		CE4930CE19FE7F3A003E9E59 /* icon_set in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C119FE7F3A003E9E59 /* icon_set */; };
-		CE4930D019FE7F3A003E9E59 /* ListParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C319FE7F3A003E9E59 /* ListParts.json */; };
-		CE4930D219FE7F3A003E9E59 /* ListScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C519FE7F3A003E9E59 /* ListScene.json */; };
-		CE4930D319FE7F3A003E9E59 /* MyPageScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C619FE7F3A003E9E59 /* MyPageScene.json */; };
-		CE4930D419FE7F3A003E9E59 /* novel in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C719FE7F3A003E9E59 /* novel */; };
-		CE4930D519FE7F3A003E9E59 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C819FE7F3A003E9E59 /* ui */; };
-		CE4930D619FE7F3A003E9E59 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CE4930C919FE7F3A003E9E59 /* fonts */; };
-		CE4930D719FE7F3A003E9E59 /* res in Resources */ = {isa = PBXBuildFile; fileRef = CE4930CA19FE7F3A003E9E59 /* res */; };
-		CE56FAF719FF6F7A0009A41F /* bg in Resources */ = {isa = PBXBuildFile; fileRef = CE56FAF619FF6F7A0009A41F /* bg */; };
 		CE56FAFA19FF74D00009A41F /* NeglectSceneHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FAF819FF74D00009A41F /* NeglectSceneHelper.cpp */; };
 		CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */; };
 		CE56FB0319FF789E0009A41F /* MyPageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB0019FF789E0009A41F /* MyPageScene.cpp */; };
 		CE56FB0619FF7CAA0009A41F /* QuestListScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB0419FF7CAA0009A41F /* QuestListScene.cpp */; };
-		CE56FB1519FF7D560009A41F /* QuestListParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE56FB0D19FF7D560009A41F /* QuestListParts.json */; };
-		CE56FB1619FF7D560009A41F /* QuestListScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE56FB0E19FF7D560009A41F /* QuestListScene.json */; };
 		CE56FB1A19FF857E0009A41F /* CommonFotterParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB1819FF857E0009A41F /* CommonFotterParts.cpp */; };
 		CE56FB1D19FF85900009A41F /* CommonHeaderParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB1B19FF85900009A41F /* CommonHeaderParts.cpp */; };
-		CE56FB1F19FF97420009A41F /* QuestStartScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE56FB1E19FF97420009A41F /* QuestStartScene.json */; };
 		CE56FB2219FF97730009A41F /* QuestStartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB2019FF97730009A41F /* QuestStartScene.cpp */; };
+		CE70E4591A00FD990078C3C4 /* MyPageScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4581A00FD990078C3C4 /* MyPageScene.csd */; };
+		CE70E4671A0102A80078C3C4 /* bg in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45C1A0102A80078C3C4 /* bg */; };
+		CE70E4681A0102A80078C3C4 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45D1A0102A80078C3C4 /* fonts */; };
+		CE70E4691A0102A80078C3C4 /* FotterParts.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45E1A0102A80078C3C4 /* FotterParts.csd */; };
+		CE70E46A1A0102A80078C3C4 /* HeaderParts.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45F1A0102A80078C3C4 /* HeaderParts.csd */; };
+		CE70E46B1A0102A80078C3C4 /* HogeScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4601A0102A80078C3C4 /* HogeScene.csd */; };
+		CE70E46C1A0102A80078C3C4 /* icon_set in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4611A0102A80078C3C4 /* icon_set */; };
+		CE70E46D1A0102A80078C3C4 /* novel in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4621A0102A80078C3C4 /* novel */; };
+		CE70E46E1A0102A80078C3C4 /* QuestListParts.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4631A0102A80078C3C4 /* QuestListParts.csd */; };
+		CE70E46F1A0102A80078C3C4 /* QuestListScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4641A0102A80078C3C4 /* QuestListScene.csd */; };
+		CE70E4701A0102A80078C3C4 /* QuestStartScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4651A0102A80078C3C4 /* QuestStartScene.csd */; };
+		CE70E4711A0102A80078C3C4 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4661A0102A80078C3C4 /* ui */; };
 		CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */; };
 		CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D919FF161C001DF599 /* json11.cpp */; };
 		CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE8FC2DB19FF161C001DF599 /* LICENSE.txt */; };
@@ -126,9 +117,6 @@
 		1D6058910D05DD3D006BFB54 /* NeglecClient iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeglecClient iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
-		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
-		46880B7A19C43A67006E1F66 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -168,19 +156,7 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CE4930BE19FE7F3A003E9E59 /* FotterParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FotterParts.json; sourceTree = "<group>"; };
-		CE4930BF19FE7F3A003E9E59 /* GUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GUI; sourceTree = "<group>"; };
-		CE4930C019FE7F3A003E9E59 /* HeaderParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HeaderParts.json; sourceTree = "<group>"; };
-		CE4930C119FE7F3A003E9E59 /* icon_set */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon_set; sourceTree = "<group>"; };
-		CE4930C319FE7F3A003E9E59 /* ListParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListParts.json; sourceTree = "<group>"; };
-		CE4930C519FE7F3A003E9E59 /* ListScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListScene.json; sourceTree = "<group>"; };
-		CE4930C619FE7F3A003E9E59 /* MyPageScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MyPageScene.json; sourceTree = "<group>"; };
-		CE4930C719FE7F3A003E9E59 /* novel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = novel; sourceTree = "<group>"; };
-		CE4930C819FE7F3A003E9E59 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
-		CE4930C919FE7F3A003E9E59 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
-		CE4930CA19FE7F3A003E9E59 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClientUtil.h; sourceTree = "<group>"; };
-		CE56FAF619FF6F7A0009A41F /* bg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bg; sourceTree = "<group>"; };
 		CE56FAF819FF74D00009A41F /* NeglectSceneHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NeglectSceneHelper.cpp; sourceTree = "<group>"; };
 		CE56FAF919FF74D00009A41F /* NeglectSceneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeglectSceneHelper.h; sourceTree = "<group>"; };
 		CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
@@ -189,15 +165,24 @@
 		CE56FB0119FF789E0009A41F /* MyPageScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageScene.h; sourceTree = "<group>"; };
 		CE56FB0419FF7CAA0009A41F /* QuestListScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestListScene.cpp; sourceTree = "<group>"; };
 		CE56FB0519FF7CAA0009A41F /* QuestListScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestListScene.h; sourceTree = "<group>"; };
-		CE56FB0D19FF7D560009A41F /* QuestListParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListParts.json; sourceTree = "<group>"; };
-		CE56FB0E19FF7D560009A41F /* QuestListScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListScene.json; sourceTree = "<group>"; };
 		CE56FB1819FF857E0009A41F /* CommonFotterParts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonFotterParts.cpp; sourceTree = "<group>"; };
 		CE56FB1919FF857E0009A41F /* CommonFotterParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFotterParts.h; sourceTree = "<group>"; };
 		CE56FB1B19FF85900009A41F /* CommonHeaderParts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonHeaderParts.cpp; sourceTree = "<group>"; };
 		CE56FB1C19FF85900009A41F /* CommonHeaderParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHeaderParts.h; sourceTree = "<group>"; };
-		CE56FB1E19FF97420009A41F /* QuestStartScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestStartScene.json; sourceTree = "<group>"; };
 		CE56FB2019FF97730009A41F /* QuestStartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestStartScene.cpp; sourceTree = "<group>"; };
 		CE56FB2119FF97730009A41F /* QuestStartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestStartScene.h; sourceTree = "<group>"; };
+		CE70E4581A00FD990078C3C4 /* MyPageScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyPageScene.csd; sourceTree = "<group>"; };
+		CE70E45C1A0102A80078C3C4 /* bg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bg; sourceTree = "<group>"; };
+		CE70E45D1A0102A80078C3C4 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		CE70E45E1A0102A80078C3C4 /* FotterParts.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FotterParts.csd; sourceTree = "<group>"; };
+		CE70E45F1A0102A80078C3C4 /* HeaderParts.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeaderParts.csd; sourceTree = "<group>"; };
+		CE70E4601A0102A80078C3C4 /* HogeScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HogeScene.csd; sourceTree = "<group>"; };
+		CE70E4611A0102A80078C3C4 /* icon_set */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon_set; sourceTree = "<group>"; };
+		CE70E4621A0102A80078C3C4 /* novel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = novel; sourceTree = "<group>"; };
+		CE70E4631A0102A80078C3C4 /* QuestListParts.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestListParts.csd; sourceTree = "<group>"; };
+		CE70E4641A0102A80078C3C4 /* QuestListScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestListScene.csd; sourceTree = "<group>"; };
+		CE70E4651A0102A80078C3C4 /* QuestStartScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestStartScene.csd; sourceTree = "<group>"; };
+		CE70E4661A0102A80078C3C4 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		CE8FC2D219FEEECE001DF599 /* GLViewUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLViewUtil.h; sourceTree = "<group>"; };
 		CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetUtil.h; sourceTree = "<group>"; };
 		CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NeglectHttpRequest.cpp; path = net/NeglectHttpRequest.cpp; sourceTree = "<group>"; };
@@ -324,24 +309,18 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CE56FAF619FF6F7A0009A41F /* bg */,
-				CE4930BF19FE7F3A003E9E59 /* GUI */,
-				CE4930C119FE7F3A003E9E59 /* icon_set */,
-				CE4930C719FE7F3A003E9E59 /* novel */,
-				CE4930C819FE7F3A003E9E59 /* ui */,
-				CE4930C919FE7F3A003E9E59 /* fonts */,
-				CE4930BE19FE7F3A003E9E59 /* FotterParts.json */,
-				CE4930C019FE7F3A003E9E59 /* HeaderParts.json */,
-				CE56FB0D19FF7D560009A41F /* QuestListParts.json */,
-				CE56FB1E19FF97420009A41F /* QuestStartScene.json */,
-				CE56FB0E19FF7D560009A41F /* QuestListScene.json */,
-				CE4930C619FE7F3A003E9E59 /* MyPageScene.json */,
-				CE4930CA19FE7F3A003E9E59 /* res */,
-				CE4930C319FE7F3A003E9E59 /* ListParts.json */,
-				CE4930C519FE7F3A003E9E59 /* ListScene.json */,
-				46880B7619C43A67006E1F66 /* CloseNormal.png */,
-				46880B7719C43A67006E1F66 /* CloseSelected.png */,
-				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
+				CE70E45C1A0102A80078C3C4 /* bg */,
+				CE70E45D1A0102A80078C3C4 /* fonts */,
+				CE70E45E1A0102A80078C3C4 /* FotterParts.csd */,
+				CE70E45F1A0102A80078C3C4 /* HeaderParts.csd */,
+				CE70E4601A0102A80078C3C4 /* HogeScene.csd */,
+				CE70E4611A0102A80078C3C4 /* icon_set */,
+				CE70E4621A0102A80078C3C4 /* novel */,
+				CE70E4631A0102A80078C3C4 /* QuestListParts.csd */,
+				CE70E4641A0102A80078C3C4 /* QuestListScene.csd */,
+				CE70E4651A0102A80078C3C4 /* QuestStartScene.csd */,
+				CE70E4661A0102A80078C3C4 /* ui */,
+				CE70E4581A00FD990078C3C4 /* MyPageScene.csd */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -569,41 +548,35 @@
 			files = (
 				CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				CE70E46A1A0102A80078C3C4 /* HeaderParts.csd in Resources */,
+				CE70E4671A0102A80078C3C4 /* bg in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				CE70E4691A0102A80078C3C4 /* FotterParts.csd in Resources */,
+				CE70E46E1A0102A80078C3C4 /* QuestListParts.csd in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
-				CE4930CE19FE7F3A003E9E59 /* icon_set in Resources */,
-				CE56FAF719FF6F7A0009A41F /* bg in Resources */,
-				CE4930CB19FE7F3A003E9E59 /* FotterParts.json in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
-				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
-				CE56FB1519FF7D560009A41F /* QuestListParts.json in Resources */,
-				CE4930D319FE7F3A003E9E59 /* MyPageScene.json in Resources */,
-				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				CE70E4591A00FD990078C3C4 /* MyPageScene.csd in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
-				CE4930D619FE7F3A003E9E59 /* fonts in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
-				CE4930D419FE7F3A003E9E59 /* novel in Resources */,
+				CE70E4681A0102A80078C3C4 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				CE70E46B1A0102A80078C3C4 /* HogeScene.csd in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
-				CE4930CC19FE7F3A003E9E59 /* GUI in Resources */,
+				CE70E46F1A0102A80078C3C4 /* QuestListScene.csd in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
-				CE4930D519FE7F3A003E9E59 /* ui in Resources */,
-				CE4930CD19FE7F3A003E9E59 /* HeaderParts.json in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
-				CE4930D219FE7F3A003E9E59 /* ListScene.json in Resources */,
-				CE4930D019FE7F3A003E9E59 /* ListParts.json in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
-				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				CE70E46D1A0102A80078C3C4 /* novel in Resources */,
+				CE70E4701A0102A80078C3C4 /* QuestStartScene.csd in Resources */,
+				CE70E4711A0102A80078C3C4 /* ui in Resources */,
+				CE70E46C1A0102A80078C3C4 /* icon_set in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
-				CE56FB1F19FF97420009A41F /* QuestStartScene.json in Resources */,
-				CE56FB1619FF7D560009A41F /* QuestListScene.json in Resources */,
-				CE4930D719FE7F3A003E9E59 /* res in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,10 +584,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
-				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
-				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
