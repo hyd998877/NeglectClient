@@ -12,17 +12,17 @@
         <PrePosition X="0" Y="0" />
         <PreSize X="0" Y="0" />
         <Children>
-          <NodeObjectData Name="Panel_equip" ActionTag="59395317" FrameEvent="" Tag="67" ObjectIndex="14" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" ctype="PanelObjectData">
-            <Position X="0" Y="343.8" />
+          <NodeObjectData Name="Panel_equip" ActionTag="59395317" FrameEvent="" Tag="67" ObjectIndex="14" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
+            <Position X="320" Y="337.8" />
             <Scale ScaleX="1" ScaleY="1" />
-            <AnchorPoint />
+            <AnchorPoint ScaleX="0.5" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="640" Y="422.4" />
-            <PrePosition X="0" Y="0.4476563" />
-            <PreSize X="1" Y="0.55" />
+            <Size X="627.2" Y="422.4" />
+            <PrePosition X="0.5" Y="0.4398438" />
+            <PreSize X="0.98" Y="0.55" />
             <Children>
               <NodeObjectData Name="Text_1" ActionTag="59395255" FrameEvent="" Tag="5" ObjectIndex="1" PrePositionEnabled="True" FontSize="32" LabelText=" そうび　" IsCustomSize="True" ctype="TextObjectData">
-                <Position X="1" Y="399.53" />
+                <Position X="0.98" Y="399.53" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleY="0.5" />
                 <CColor A="255" R="255" G="255" B="255" />
@@ -31,62 +31,63 @@
                 <PreSize X="0.1875" Y="0.09943181" />
               </NodeObjectData>
               <NodeObjectData Name="ProjectNode_1" ActionTag="59395433" FrameEvent="" Tag="55" ObjectIndex="1" IconVisible="True" ctype="ProjectNodeObjectData">
-                <Position X="3.661072" Y="286.366" />
-                <Scale ScaleX="1.5" ScaleY="1.5" />
+                <Position X="3.660767" Y="282.3654" />
+                <Scale ScaleX="1.47" ScaleY="1.47" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />
                 <Size X="0" Y="0" />
-                <PrePosition X="0.005720424" Y="0.6779497" />
+                <PrePosition X="0.005836681" Y="0.6684785" />
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="parts/EquipItemLayer.csd" />
               </NodeObjectData>
               <NodeObjectData Name="ProjectNode_1_Copy" ActionTag="59395444" FrameEvent="" Tag="66" ObjectIndex="2" IconVisible="True" ctype="ProjectNodeObjectData">
-                <Position X="3.661072" Y="191.0327" />
-                <Scale ScaleX="1.5" ScaleY="1.5" />
+                <Position X="3.660767" Y="189.0325" />
+                <Scale ScaleX="1.47" ScaleY="1.47" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />
                 <Size X="0" Y="0" />
-                <PrePosition X="0.005720424" Y="0.4522553" />
+                <PrePosition X="0.005836681" Y="0.44752" />
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="parts/EquipItemLayer.csd" />
               </NodeObjectData>
               <NodeObjectData Name="ProjectNode_1_Copy_0" ActionTag="59395450" FrameEvent="" Tag="72" ObjectIndex="3" IconVisible="True" ctype="ProjectNodeObjectData">
-                <Position X="3.661072" Y="95.69922" />
-                <Scale ScaleX="1.5" ScaleY="1.5" />
+                <Position X="3.660767" Y="97.6991" />
+                <Scale ScaleX="1.47" ScaleY="1.47" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />
                 <Size X="0" Y="0" />
-                <PrePosition X="0.005720424" Y="0.2265606" />
+                <PrePosition X="0.005836681" Y="0.2312952" />
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="parts/EquipItemLayer.csd" />
               </NodeObjectData>
               <NodeObjectData Name="ProjectNode_1_Copy_1" ActionTag="59395456" FrameEvent="" Tag="78" ObjectIndex="4" IconVisible="True" ctype="ProjectNodeObjectData">
-                <Position X="3.661072" Y="0.3659058" />
-                <Scale ScaleX="1.5" ScaleY="1.5" />
+                <Position X="3.661011" Y="6.365906" />
+                <Scale ScaleX="1.47" ScaleY="1.47" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />
                 <Size X="0" Y="0" />
-                <PrePosition X="0.005720424" Y="0.0008662541" />
+                <PrePosition X="0.005837071" Y="0.0150708" />
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="parts/EquipItemLayer.csd" />
               </NodeObjectData>
             </Children>
+            <FileData Type="Normal" Path="ui/dot_waku.png" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1" />
           </NodeObjectData>
-          <NodeObjectData Name="Panel_equip_Copy" ActionTag="59395318" FrameEvent="" Tag="68" ObjectIndex="15" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" ctype="PanelObjectData">
-            <Position X="0" Y="134.8" />
+          <NodeObjectData Name="Panel_equip_Copy" ActionTag="59395318" FrameEvent="" Tag="68" ObjectIndex="15" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
+            <Position X="320" Y="134.8" />
             <Scale ScaleX="1" ScaleY="1" />
-            <AnchorPoint />
+            <AnchorPoint ScaleX="0.5" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="640" Y="192" />
-            <PrePosition X="0" Y="0.1755208" />
-            <PreSize X="1" Y="0.25" />
+            <Size X="627.2" Y="192" />
+            <PrePosition X="0.5" Y="0.1755208" />
+            <PreSize X="0.98" Y="0.25" />
             <Children>
               <NodeObjectData Name="Text_1_Copy" ActionTag="59395319" FrameEvent="" Tag="69" ObjectIndex="12" PrePositionEnabled="True" FontSize="32" LabelText=" どうぐ　" IsCustomSize="True" ctype="TextObjectData">
-                <Position X="2" Y="168.4" />
+                <Position X="1.96" Y="168.4" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleY="0.5" />
                 <CColor A="255" R="255" G="255" B="255" />
@@ -145,6 +146,7 @@
                 <FileData Type="Normal" Path="parts/ItemLayer.csd" />
               </NodeObjectData>
             </Children>
+            <FileData Type="Normal" Path="ui/dot_waku.png" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />

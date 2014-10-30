@@ -62,7 +62,6 @@
 		CE70E4681A0102A80078C3C4 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45D1A0102A80078C3C4 /* fonts */; };
 		CE70E4691A0102A80078C3C4 /* FotterParts.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45E1A0102A80078C3C4 /* FotterParts.csd */; };
 		CE70E46A1A0102A80078C3C4 /* HeaderParts.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45F1A0102A80078C3C4 /* HeaderParts.csd */; };
-		CE70E46B1A0102A80078C3C4 /* HogeScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4601A0102A80078C3C4 /* HogeScene.csd */; };
 		CE70E46C1A0102A80078C3C4 /* icon_set in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4611A0102A80078C3C4 /* icon_set */; };
 		CE70E46D1A0102A80078C3C4 /* novel in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4621A0102A80078C3C4 /* novel */; };
 		CE70E46E1A0102A80078C3C4 /* QuestListParts.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4631A0102A80078C3C4 /* QuestListParts.csd */; };
@@ -74,10 +73,11 @@
 		CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */; };
 		CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D919FF161C001DF599 /* json11.cpp */; };
 		CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE8FC2DB19FF161C001DF599 /* LICENSE.txt */; };
-		CE8FC2DF19FF161C001DF599 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2DC19FF161C001DF599 /* README.md */; };
 		CEBB72591A022072007AE63F /* parts in Resources */ = {isa = PBXBuildFile; fileRef = CEBB72581A022072007AE63F /* parts */; };
 		CEBB725B1A0221A4007AE63F /* EquipLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725A1A0221A4007AE63F /* EquipLayer.csd */; };
 		CEBB725D1A022ED6007AE63F /* Default in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725C1A022ED6007AE63F /* Default */; };
+		CEBB72601A025231007AE63F /* actor in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725E1A025231007AE63F /* actor */; };
+		CEBB72611A025231007AE63F /* QuestPlayScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725F1A025231007AE63F /* QuestPlayScene.csd */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -181,7 +181,6 @@
 		CE70E45D1A0102A80078C3C4 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		CE70E45E1A0102A80078C3C4 /* FotterParts.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FotterParts.csd; sourceTree = "<group>"; };
 		CE70E45F1A0102A80078C3C4 /* HeaderParts.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeaderParts.csd; sourceTree = "<group>"; };
-		CE70E4601A0102A80078C3C4 /* HogeScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HogeScene.csd; sourceTree = "<group>"; };
 		CE70E4611A0102A80078C3C4 /* icon_set */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon_set; sourceTree = "<group>"; };
 		CE70E4621A0102A80078C3C4 /* novel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = novel; sourceTree = "<group>"; };
 		CE70E4631A0102A80078C3C4 /* QuestListParts.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestListParts.csd; sourceTree = "<group>"; };
@@ -197,10 +196,11 @@
 		CE8FC2D919FF161C001DF599 /* json11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json11.cpp; sourceTree = "<group>"; };
 		CE8FC2DA19FF161C001DF599 /* json11.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json11.hpp; sourceTree = "<group>"; };
 		CE8FC2DB19FF161C001DF599 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		CE8FC2DC19FF161C001DF599 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CEBB72581A022072007AE63F /* parts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = parts; sourceTree = "<group>"; };
 		CEBB725A1A0221A4007AE63F /* EquipLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EquipLayer.csd; sourceTree = "<group>"; };
 		CEBB725C1A022ED6007AE63F /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
+		CEBB725E1A025231007AE63F /* actor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = actor; sourceTree = "<group>"; };
+		CEBB725F1A025231007AE63F /* QuestPlayScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestPlayScene.csd; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -319,22 +319,23 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEBB725E1A025231007AE63F /* actor */,
 				CEBB725C1A022ED6007AE63F /* Default */,
-				CEBB725A1A0221A4007AE63F /* EquipLayer.csd */,
 				CEBB72581A022072007AE63F /* parts */,
+				CEBB725A1A0221A4007AE63F /* EquipLayer.csd */,
 				CE70E4781A0146340078C3C4 /* QuestListScene.json */,
 				CE70E4761A0145C90078C3C4 /* QuestListParts.json */,
-				CE70E45C1A0102A80078C3C4 /* bg */,
-				CE70E45D1A0102A80078C3C4 /* fonts */,
 				CE70E45E1A0102A80078C3C4 /* FotterParts.csd */,
 				CE70E45F1A0102A80078C3C4 /* HeaderParts.csd */,
-				CE70E4601A0102A80078C3C4 /* HogeScene.csd */,
+				CE70E45C1A0102A80078C3C4 /* bg */,
+				CE70E45D1A0102A80078C3C4 /* fonts */,
 				CE70E4611A0102A80078C3C4 /* icon_set */,
 				CE70E4621A0102A80078C3C4 /* novel */,
+				CE70E4661A0102A80078C3C4 /* ui */,
 				CE70E4631A0102A80078C3C4 /* QuestListParts.csd */,
 				CE70E4641A0102A80078C3C4 /* QuestListScene.csd */,
+				CEBB725F1A025231007AE63F /* QuestPlayScene.csd */,
 				CE70E4651A0102A80078C3C4 /* QuestStartScene.csd */,
-				CE70E4661A0102A80078C3C4 /* ui */,
 				CE70E4581A00FD990078C3C4 /* MyPageScene.csd */,
 			);
 			name = Resources;
@@ -456,7 +457,6 @@
 				CE8FC2D919FF161C001DF599 /* json11.cpp */,
 				CE8FC2DA19FF161C001DF599 /* json11.hpp */,
 				CE8FC2DB19FF161C001DF599 /* LICENSE.txt */,
-				CE8FC2DC19FF161C001DF599 /* README.md */,
 			);
 			path = json11;
 			sourceTree = "<group>";
@@ -579,16 +579,17 @@
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				CE70E4681A0102A80078C3C4 /* fonts in Resources */,
 				CEBB72591A022072007AE63F /* parts in Resources */,
+				CEBB72601A025231007AE63F /* actor in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
-				CE70E46B1A0102A80078C3C4 /* HogeScene.csd in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				CE70E4791A0146340078C3C4 /* QuestListScene.json in Resources */,
 				CE70E46F1A0102A80078C3C4 /* QuestListScene.csd in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				CEBB72611A025231007AE63F /* QuestPlayScene.csd in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				CE70E46D1A0102A80078C3C4 /* novel in Resources */,
@@ -624,7 +625,6 @@
 				CE56FAFA19FF74D00009A41F /* NeglectSceneHelper.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				CE8FC2DF19FF161C001DF599 /* README.md in Sources */,
 				CE56FB2219FF97730009A41F /* QuestStartScene.cpp in Sources */,
 				CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */,
 				CE56FB1D19FF85900009A41F /* CommonHeaderParts.cpp in Sources */,

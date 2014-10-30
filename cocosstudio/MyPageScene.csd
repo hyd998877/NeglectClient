@@ -45,20 +45,18 @@
                     <Scale ScaleX="1" ScaleY="1" />
                     <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <Size X="144" Y="39" />
+                    <Size X="154" Y="42" />
                     <PrePosition X="0" Y="0" />
                     <PreSize X="0" Y="0" />
-                    <FontResource Type="Normal" Path="fonts/misaki_gothic.ttf" />
                   </NodeObjectData>
                   <NodeObjectData Name="Label_name" ActionTag="40402971" ZOrder="10" IsAutoSize="True" FrameEvent="" Tag="28" FontSize="36" LabelText="UserName" ctype="TextObjectData">
                     <Position X="25" Y="48" />
                     <Scale ScaleX="1" ScaleY="1" />
                     <AnchorPoint ScaleY="0.5" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <Size X="144" Y="39" />
+                    <Size X="172" Y="42" />
                     <PrePosition X="0" Y="0" />
                     <PreSize X="0" Y="0" />
-                    <FontResource Type="Normal" Path="fonts/misaki_gothic.ttf" />
                   </NodeObjectData>
                 </Children>
                 <FileData Type="Normal" Path="ui/dot_waku.png" />
@@ -86,15 +84,14 @@
                 <PrePosition X="0.5" Y="0.15" />
                 <PreSize X="0.8" Y="0.2" />
                 <Children>
-                  <NodeObjectData Name="Label_message_1" ActionTag="24171026" ZOrder="1" IsAutoSize="True" FrameEvent="" Tag="35" FontSize="32" LabelText="Play Quest aaaaaaaaaaaa1111111&#xA;11111111&#xA;11111&#xA;1111&#xA;111&#xA;" ctype="TextObjectData">
+                  <NodeObjectData Name="Label_message_1" ActionTag="24171026" ZOrder="1" IsAutoSize="True" FrameEvent="" Tag="35" FontSize="32" LabelText="Play Quest aaaaaaaaaaaa11111&#xA;11111111 &#xA;11111&#xA;1111" IsCustomSize="True" TouchScaleChangeAble="True" ctype="TextObjectData">
                     <Position X="15.90793" Y="175.7264" />
                     <Scale ScaleX="1" ScaleY="1" />
                     <AnchorPoint ScaleY="1" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <Size X="480" Y="175" />
+                    <Size X="480" Y="160" />
                     <PrePosition X="0.01" Y="0.4" />
                     <PreSize X="0" Y="0" />
-                    <FontResource Type="Normal" Path="fonts/misaki_gothic.ttf" />
                   </NodeObjectData>
                 </Children>
                 <FileData Type="Normal" Path="ui/dot_waku.png" />
@@ -109,7 +106,7 @@
             <EndColor A="255" R="150" G="200" B="255" />
             <ColorVector ScaleX="8.742278E-08" ScaleY="-1" />
           </NodeObjectData>
-          <NodeObjectData Name="__debug_fotter__" ActionTag="48012457" ZOrder="10" VisibleForFrame="False" FrameEvent="" Tag="64" PrePositionEnabled="True" TouchEnable="True" BackColorAlpha="100" ComboBoxIndex="1" ColorAngle="270" ctype="PanelObjectData">
+          <NodeObjectData Name="__debug_fotter__" ActionTag="48012457" ZOrder="10" FrameEvent="" Tag="64" PrePositionEnabled="True" TouchEnable="True" BackColorAlpha="100" ComboBoxIndex="1" ColorAngle="270" ctype="PanelObjectData">
             <Position X="0" Y="0" />
             <Scale ScaleX="1" ScaleY="1" />
             <AnchorPoint />
@@ -122,7 +119,7 @@
             <EndColor A="255" R="150" G="200" B="255" />
             <ColorVector ScaleX="8.742278E-08" ScaleY="-1" />
           </NodeObjectData>
-          <NodeObjectData Name="__debug_header__" ActionTag="57612519" ZOrder="10" VisibleForFrame="False" FrameEvent="" Tag="78" PrePositionEnabled="True" BackColorAlpha="100" ComboBoxIndex="1" ColorAngle="270" ctype="PanelObjectData">
+          <NodeObjectData Name="__debug_header__" ActionTag="57612519" ZOrder="10" FrameEvent="" Tag="78" PrePositionEnabled="True" BackColorAlpha="100" ComboBoxIndex="1" ColorAngle="270" ctype="PanelObjectData">
             <Position X="0" Y="960" />
             <Scale ScaleX="1" ScaleY="1" />
             <AnchorPoint ScaleY="1" />

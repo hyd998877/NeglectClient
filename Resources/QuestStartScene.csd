@@ -57,28 +57,28 @@
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="bg/ad_forest01_c.jpg" />
               </NodeObjectData>
-              <NodeObjectData Name="Button_start" ActionTag="59395253" ZOrder="10" IsAutoSize="True" FrameEvent="" Tag="417" TouchEnable="True" FontSize="24" ButtonText="START" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="ButtonObjectData">
-                <Position X="315.6666" Y="192" />
-                <Scale ScaleX="2" ScaleY="2" />
-                <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <Size X="120" Y="32" />
-                <PrePosition X="0" Y="0" />
-                <PreSize X="0" Y="0" />
-                <TextColor A="255" R="255" G="255" B="255" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" />
-                <NormalFileData Type="Normal" Path="ui/dot_waku.png" />
-              </NodeObjectData>
               <NodeObjectData Name="ProjectNode_1" ActionTag="59395280" FrameEvent="" Tag="30" ObjectIndex="1" IconVisible="True" PrePositionEnabled="True" ctype="ProjectNodeObjectData">
-                <Position X="0" Y="115.2" />
+                <Position X="0" Y="98.2" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />
                 <Size X="0" Y="0" />
-                <PrePosition X="0" Y="0.12" />
+                <PrePosition X="0" Y="0.1022917" />
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="EquipLayer.csd" />
+              </NodeObjectData>
+              <NodeObjectData Name="Button_start" ActionTag="59396273" FrameEvent="" Tag="165" ObjectIndex="2" PrePositionEnabled="True" TouchEnable="True" FontSize="42" ButtonText="QUEST START" Scale9Enable="True" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="26" Scale9Height="16" ctype="ButtonObjectData">
+                <Position X="320" Y="172.8" />
+                <Scale ScaleX="1" ScaleY="1" />
+                <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <Size X="420" Y="60" />
+                <PrePosition X="0.5" Y="0.18" />
+                <PreSize X="0.65625" Y="0.0625" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" />
+                <PressedFileData Type="Default" Path="Default/Button_Press.png" />
+                <NormalFileData Type="Default" Path="Default/Button_Normal.png" />
               </NodeObjectData>
             </Children>
             <SingleColor A="255" R="150" G="200" B="255" />

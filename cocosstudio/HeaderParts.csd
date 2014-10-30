@@ -21,15 +21,14 @@
             <PrePosition X="0" Y="0" />
             <PreSize X="0" Y="0" />
             <Children>
-              <NodeObjectData Name="Label_Title" ActionTag="63699100" IsAutoSize="True" FrameEvent="" Tag="18" FontSize="48" LabelText="Header Title" ctype="TextObjectData">
+              <NodeObjectData Name="Label_Title" ActionTag="63699100" IsAutoSize="True" FrameEvent="" Tag="18" FontSize="48" LabelText="Header Title" IsCustomSize="True" HorizontalAlignmentType="HT_Center" ctype="TextObjectData">
                 <Position X="320" Y="40" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <Size X="288" Y="52" />
+                <Size X="620" Y="54" />
                 <PrePosition X="0" Y="0" />
                 <PreSize X="0" Y="0" />
-                <FontResource Type="Normal" Path="fonts/misaki_gothic.ttf" />
               </NodeObjectData>
             </Children>
             <FileData Type="Normal" Path="ui/dot_waku.png" />
