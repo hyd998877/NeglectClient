@@ -43,6 +43,6 @@ bool CommonHeaderParts::init()
 
 void CommonHeaderParts::setTitleText(const std::string& titleName)
 {
-    auto labelText = _baseLayout->getChildByName<ui::Text*>("Panel_main/Label_Title");
+    auto labelText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Label_Title");
     labelText->setString(titleName);
 }

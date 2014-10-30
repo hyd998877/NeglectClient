@@ -90,6 +90,7 @@ bool QuestListScene::init()
     this->addChild(this->_baseLayout);
     
     auto header = CommonHeaderParts::create();
+    header->setTitleText("ダンジョン一覧");
     this->addChild(header);
     
     auto fotter = CommonFotterParts::create();

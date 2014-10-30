@@ -69,6 +69,7 @@ bool QuestStartScene::init()
     this->addChild(this->_baseLayout);
     
     auto header = CommonHeaderParts::create();
+    header->setTitleText("最果ての洞窟 最下層 99F");
     this->addChild(header);
     
     auto fotter = CommonFotterParts::create();

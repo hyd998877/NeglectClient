@@ -70,6 +70,7 @@ bool MyPageScene::init()
     this->addChild(this->_baseLayout);
     
     auto header = CommonHeaderParts::create();
+    header->setTitleText("マイページ");
     this->addChild(header);
 
     auto fotter = CommonFotterParts::create();
@@ -78,6 +79,3 @@ bool MyPageScene::init()
     
     return true;
 }
-
-
-
