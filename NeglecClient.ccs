@@ -87,6 +87,11 @@
         <Project Name="QuestListScene.csd" />
         <Project Name="QuestStartScene.csd" />
         <Project Name="HogeScene.csd" />
+        <Folder Name="parts">
+          <Project Name="EquipItemLayer.csd" />
+          <Project Name="ItemLayer.csd" />
+        </Folder>
+        <Project Name="EquipLayer.csd" />
       </RootFolder>
     </Group>
   </SolutionFolder>

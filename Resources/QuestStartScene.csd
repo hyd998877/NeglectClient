@@ -57,24 +57,23 @@
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="bg/ad_forest01_c.jpg" />
               </NodeObjectData>
-              <NodeObjectData Name="Panel_questDetail" ActionTag="16361617" ZOrder="10" FrameEvent="" Tag="94" TouchEnable="True" BackColorAlpha="192" ComboBoxIndex="1" ColorAngle="270" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
-                <Position X="64" Y="743" />
+              <NodeObjectData Name="Panel_questDetail" ActionTag="16361617" ZOrder="10" FrameEvent="" Tag="94" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" ClipAble="True" BackColorAlpha="191" ComboBoxIndex="1" ColorAngle="270" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
+                <Position X="64" Y="768" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />
-                <Size X="512" Y="128" />
-                <PrePosition X="0" Y="0" />
-                <PreSize X="0.8" Y="0.1333333" />
+                <Size X="512" Y="96" />
+                <PrePosition X="0.1" Y="0.8" />
+                <PreSize X="0.8" Y="0.1" />
                 <Children>
                   <NodeObjectData Name="Label_detail" ActionTag="40402971" ZOrder="10" IsAutoSize="True" FrameEvent="" Tag="28" FontSize="36" LabelText="questTextTextTextTextTexta&#xA;aaaaaaaaaaaaaaaaaaaaaaa" ctype="TextObjectData">
-                    <Position X="25" Y="102" />
+                    <Position X="29.00256" Y="90.67023" />
                     <Scale ScaleX="1" ScaleY="1" />
                     <AnchorPoint ScaleY="1" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <Size X="468" Y="78" />
+                    <Size X="460" Y="84" />
                     <PrePosition X="0" Y="0" />
                     <PreSize X="0" Y="0" />
-                    <FontResource Type="Normal" Path="fonts/misaki_gothic.ttf" />
                   </NodeObjectData>
                 </Children>
                 <FileData Type="Normal" Path="ui/dot_waku.png" />
@@ -83,19 +82,28 @@
                 <EndColor A="255" R="150" G="200" B="255" />
                 <ColorVector ScaleX="8.742278E-08" ScaleY="-1" />
               </NodeObjectData>
-              <NodeObjectData Name="Button_start" ActionTag="59395253" ZOrder="10" Alpha="192" IsAutoSize="True" FrameEvent="" Tag="417" TouchEnable="True" FontSize="24" ButtonText="START" ctype="ButtonObjectData">
-                <Position X="319" Y="192" />
+              <NodeObjectData Name="Button_start" ActionTag="59395253" ZOrder="10" IsAutoSize="True" FrameEvent="" Tag="417" TouchEnable="True" FontSize="24" ButtonText="START" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="ButtonObjectData">
+                <Position X="315.6666" Y="192" />
                 <Scale ScaleX="2" ScaleY="2" />
                 <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
-                <CColor A="255" R="166" G="0" B="186" />
-                <Size X="60" Y="36" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <Size X="120" Y="32" />
                 <PrePosition X="0" Y="0" />
                 <PreSize X="0" Y="0" />
-                <FontResource Type="Normal" Path="fonts/misaki_gothic.ttf" />
                 <TextColor A="255" R="255" G="255" B="255" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" />
                 <PressedFileData Type="Default" Path="Default/Button_Press.png" />
-                <NormalFileData Type="Default" Path="Default/Button_Normal.png" />
+                <NormalFileData Type="Normal" Path="ui/dot_waku.png" />
+              </NodeObjectData>
+              <NodeObjectData Name="ProjectNode_1" ActionTag="59395280" FrameEvent="" Tag="30" ObjectIndex="1" IconVisible="True" PrePositionEnabled="True" ctype="ProjectNodeObjectData">
+                <Position X="63.99999" Y="0" />
+                <Scale ScaleX="1" ScaleY="1" />
+                <AnchorPoint />
+                <CColor A="255" R="255" G="255" B="255" />
+                <Size X="0" Y="0" />
+                <PrePosition X="0.09999999" Y="0" />
+                <PreSize X="0" Y="0" />
+                <FileData Type="Normal" Path="EquipLayer.csd" />
               </NodeObjectData>
             </Children>
             <SingleColor A="255" R="150" G="200" B="255" />
