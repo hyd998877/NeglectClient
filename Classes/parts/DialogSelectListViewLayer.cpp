@@ -62,7 +62,14 @@ bool DialogSelectListViewLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Eve
     return false;
 }
 
+void DialogSelectListViewLayer::pushListItem(Widget *listItem)
+{
+    auto listView = utils::findChildByName<ui::ListView*>(*_baseLayout, "Panel_main/ListView_list");
+    listView->pushBackCustomItem(listItem);
+}
+
 void DialogSelectListViewLayer::setTitleText(const std::string& titleName)
 {
-    
+    auto labelText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_title/Label_title");
+    labelText->setString(titleName);
 }

@@ -24,7 +24,7 @@ public:
 
 public:
     void setTitleText(const std::string& titleName);
-    
+    void pushListItem(cocos2d::ui::Widget *listItem);
 protected:
     
 private:

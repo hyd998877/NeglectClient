@@ -85,6 +85,7 @@
 		CEBB726C1A028CF9007AE63F /* ListViewLayerShow.json in Resources */ = {isa = PBXBuildFile; fileRef = CEBB72681A028CF9007AE63F /* ListViewLayerShow.json */; };
 		CEBB726F1A028E38007AE63F /* DialogShowListViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB726D1A028E38007AE63F /* DialogShowListViewLayer.cpp */; };
 		CEBB72721A028E93007AE63F /* DialogSelectListViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72701A028E93007AE63F /* DialogSelectListViewLayer.cpp */; };
+		CEBB727B1A02A094007AE63F /* ListViewPartsHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72791A02A094007AE63F /* ListViewPartsHelper.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -218,6 +219,8 @@
 		CEBB726E1A028E38007AE63F /* DialogShowListViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogShowListViewLayer.h; sourceTree = "<group>"; };
 		CEBB72701A028E93007AE63F /* DialogSelectListViewLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DialogSelectListViewLayer.cpp; sourceTree = "<group>"; };
 		CEBB72711A028E93007AE63F /* DialogSelectListViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogSelectListViewLayer.h; sourceTree = "<group>"; };
+		CEBB72791A02A094007AE63F /* ListViewPartsHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListViewPartsHelper.cpp; sourceTree = "<group>"; };
+		CEBB727A1A02A094007AE63F /* ListViewPartsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewPartsHelper.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -466,6 +469,8 @@
 				CEBB726E1A028E38007AE63F /* DialogShowListViewLayer.h */,
 				CEBB72701A028E93007AE63F /* DialogSelectListViewLayer.cpp */,
 				CEBB72711A028E93007AE63F /* DialogSelectListViewLayer.h */,
+				CEBB72791A02A094007AE63F /* ListViewPartsHelper.cpp */,
+				CEBB727A1A02A094007AE63F /* ListViewPartsHelper.h */,
 			);
 			path = parts;
 			sourceTree = "<group>";
@@ -653,6 +658,7 @@
 				CE56FB0319FF789E0009A41F /* MyPageScene.cpp in Sources */,
 				CE56FB0619FF7CAA0009A41F /* QuestListScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				CEBB727B1A02A094007AE63F /* ListViewPartsHelper.cpp in Sources */,
 				CEBB726F1A028E38007AE63F /* DialogShowListViewLayer.cpp in Sources */,
 				CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */,
 				CE56FAFA19FF74D00009A41F /* NeglectSceneHelper.cpp in Sources */,
