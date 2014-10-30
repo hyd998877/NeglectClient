@@ -57,31 +57,6 @@
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="bg/ad_forest01_c.jpg" />
               </NodeObjectData>
-              <NodeObjectData Name="Panel_questDetail" ActionTag="16361617" ZOrder="10" FrameEvent="" Tag="94" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" ClipAble="True" BackColorAlpha="191" ComboBoxIndex="1" ColorAngle="270" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
-                <Position X="64" Y="768" />
-                <Scale ScaleX="1" ScaleY="1" />
-                <AnchorPoint />
-                <CColor A="255" R="255" G="255" B="255" />
-                <Size X="512" Y="96" />
-                <PrePosition X="0.1" Y="0.8" />
-                <PreSize X="0.8" Y="0.1" />
-                <Children>
-                  <NodeObjectData Name="Label_detail" ActionTag="40402971" ZOrder="10" IsAutoSize="True" FrameEvent="" Tag="28" FontSize="36" LabelText="questTextTextTextTextTexta&#xA;aaaaaaaaaaaaaaaaaaaaaaa" ctype="TextObjectData">
-                    <Position X="29.00256" Y="90.67023" />
-                    <Scale ScaleX="1" ScaleY="1" />
-                    <AnchorPoint ScaleY="1" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <Size X="460" Y="84" />
-                    <PrePosition X="0" Y="0" />
-                    <PreSize X="0" Y="0" />
-                  </NodeObjectData>
-                </Children>
-                <FileData Type="Normal" Path="ui/dot_waku.png" />
-                <SingleColor A="255" R="0" G="0" B="0" />
-                <FirstColor A="255" R="0" G="0" B="0" />
-                <EndColor A="255" R="150" G="200" B="255" />
-                <ColorVector ScaleX="8.742278E-08" ScaleY="-1" />
-              </NodeObjectData>
               <NodeObjectData Name="Button_start" ActionTag="59395253" ZOrder="10" IsAutoSize="True" FrameEvent="" Tag="417" TouchEnable="True" FontSize="24" ButtonText="START" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="ButtonObjectData">
                 <Position X="315.6666" Y="192" />
                 <Scale ScaleX="2" ScaleY="2" />
@@ -96,12 +71,12 @@
                 <NormalFileData Type="Normal" Path="ui/dot_waku.png" />
               </NodeObjectData>
               <NodeObjectData Name="ProjectNode_1" ActionTag="59395280" FrameEvent="" Tag="30" ObjectIndex="1" IconVisible="True" PrePositionEnabled="True" ctype="ProjectNodeObjectData">
-                <Position X="63.99999" Y="0" />
+                <Position X="0" Y="115.2" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />
                 <Size X="0" Y="0" />
-                <PrePosition X="0.09999999" Y="0" />
+                <PrePosition X="0" Y="0.12" />
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="EquipLayer.csd" />
               </NodeObjectData>

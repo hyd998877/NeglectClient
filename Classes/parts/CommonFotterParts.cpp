@@ -58,6 +58,7 @@ bool CommonFotterParts::init()
     utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_5")->addClickEventListener([](Ref *ref){
         // メニュー
         CCLOG("まだ未実装");
+        NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
     });
     
     this->addChild(_baseLayout);
