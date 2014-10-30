@@ -1,12 +1,12 @@
 //
-//  QuestStartScene.cpp
+//  QuestPlayScene.cpp
 //  NeglecClient
 //
-//  Created by kyokomi on 2014/10/28.
+//  Created by kyokomi on 2014/10/30.
 //
 //
 
-#include "QuestStartScene.h"
+#include "QuestPlayScene.h"
 
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
@@ -15,25 +15,24 @@
 #include "CommonFotterParts.h"
 
 #include "NeglectHttpRequest.h"
-#include "NeglectSceneHelper.h"
 
 USING_NS_CC;
 using namespace cocos2d::network;
 using namespace cocostudio;
 
-QuestStartScene::QuestStartScene()
+QuestPlayScene::QuestPlayScene()
 : _baseLayout(nullptr)
 {
     
 }
 
-QuestStartScene::~QuestStartScene()
+QuestPlayScene::~QuestPlayScene()
 {
     
 }
 
 // on "init" you need to initialize your instance
-bool QuestStartScene::init()
+bool QuestPlayScene::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -42,33 +41,31 @@ bool QuestStartScene::init()
         return false;
     }
     
+    
     // login通信
-//    NeglectHttpRequest::questDetail(1, [this](long statusCode, std::string response) {
-//        std::string err = "";
-//        auto json = json11::Json::parse(response, err);
-//        
-//        if (!err.empty()) {
-//            CCLOG("json parse error %s", err.c_str());
-//            return;
-//        }
-//        
-//
-//    });
+    //    NeglectHttpRequest::questDetail(1, [this](long statusCode, std::string response) {
+    //        std::string err = "";
+    //        auto json = json11::Json::parse(response, err);
+    //
+    //        if (!err.empty()) {
+    //            CCLOG("json parse error %s", err.c_str());
+    //            return;
+    //        }
+    //
+    //
+    //    });
     
     // TODO: Loading表示（画面ロック）
     
     auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
-    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("QuestStartScene.csd");
+    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("QuestPlayScene.csd");
     this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
                                    winSize.height/2 - this->_baseLayout->getContentSize().height/2);
-    auto startButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_start");
-    startButton->addClickEventListener([](Ref *ref){
-        NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
-    });
     this->addChild(this->_baseLayout);
     
     auto header = CommonHeaderParts::create();
+    header->setTitleText("最果ての洞窟 最下層 99F");
     this->addChild(header);
     
     auto fotter = CommonFotterParts::create();

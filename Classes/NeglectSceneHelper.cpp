@@ -11,6 +11,7 @@
 #include "MyPageScene.h"
 #include "QuestListScene.h"
 #include "QuestStartScene.h"
+#include "QuestPlayScene.h"
 
 cocos2d::Scene* NeglectSceneHelper::createScene(SceneID sceneID)
 {
@@ -21,6 +22,8 @@ cocos2d::Scene* NeglectSceneHelper::createScene(SceneID sceneID)
             return createScene<QuestListScene>();
         case QUEST_DETAIL:
             return createScene<QuestStartScene>();
+        case QUEST_PLAY:
+            return createScene<QuestPlayScene>();
         default:
             break;
     }

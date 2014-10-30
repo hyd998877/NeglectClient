@@ -18,6 +18,7 @@ public:
         MY_PAGE,
         QUEST_LIST,
         QUEST_DETAIL,
+        QUEST_PLAY,
     };
 
     static cocos2d::Scene* createScene(SceneID sceneID);

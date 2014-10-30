@@ -78,6 +78,7 @@
 		CEBB725D1A022ED6007AE63F /* Default in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725C1A022ED6007AE63F /* Default */; };
 		CEBB72601A025231007AE63F /* actor in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725E1A025231007AE63F /* actor */; };
 		CEBB72611A025231007AE63F /* QuestPlayScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725F1A025231007AE63F /* QuestPlayScene.csd */; };
+		CEBB72641A02534C007AE63F /* QuestPlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72621A02534C007AE63F /* QuestPlayScene.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -201,6 +202,8 @@
 		CEBB725C1A022ED6007AE63F /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
 		CEBB725E1A025231007AE63F /* actor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = actor; sourceTree = "<group>"; };
 		CEBB725F1A025231007AE63F /* QuestPlayScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestPlayScene.csd; sourceTree = "<group>"; };
+		CEBB72621A02534C007AE63F /* QuestPlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestPlayScene.cpp; sourceTree = "<group>"; };
+		CEBB72631A02534C007AE63F /* QuestPlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestPlayScene.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -428,6 +431,8 @@
 				CE56FB0519FF7CAA0009A41F /* QuestListScene.h */,
 				CE56FB2019FF97730009A41F /* QuestStartScene.cpp */,
 				CE56FB2119FF97730009A41F /* QuestStartScene.h */,
+				CEBB72621A02534C007AE63F /* QuestPlayScene.cpp */,
+				CEBB72631A02534C007AE63F /* QuestPlayScene.h */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -623,6 +628,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */,
 				CE56FAFA19FF74D00009A41F /* NeglectSceneHelper.cpp in Sources */,
+				CEBB72641A02534C007AE63F /* QuestPlayScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				CE56FB2219FF97730009A41F /* QuestStartScene.cpp in Sources */,
