@@ -58,6 +58,11 @@ bool QuestListScene::init()
         // Listの中身をセット
         for (auto item : json.array_items()) {
             auto listParts = GUIReader::getInstance()->widgetFromJsonFile("QuestListParts.json");
+            auto winSize = Director::getInstance()->getVisibleSize();
+            auto baseWidth = utils::findChildByName(*_baseLayout, "Panel_main")->getContentSize().width;
+            listParts->setContentSize(Size(listParts->getContentSize().width * (winSize.width / baseWidth),
+                                          listParts->getContentSize().height));
+            
             // 行選択用にQuestIDをtagに埋め込む
             listParts->setTag(item["QuestID"].int_value());
             // 行の内容を設定

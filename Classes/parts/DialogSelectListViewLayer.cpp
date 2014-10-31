@@ -52,7 +52,7 @@ bool DialogSelectListViewLayer::init()
             return;
         }
         auto listView = static_cast<ui::ListView*>(ref);
-        int selectedIndex = listView->getCurSelectedIndex();
+        long selectedIndex = listView->getCurSelectedIndex();
         if (this->_selectedIndex == selectedIndex) {
             return;
         }
@@ -100,6 +100,11 @@ bool DialogSelectListViewLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Eve
 
 void DialogSelectListViewLayer::pushListItem(Widget *listItem)
 {
+    auto winSize = Director::getInstance()->getVisibleSize();
+    auto baseWidth = utils::findChildByName(*_baseLayout, "Panel_back")->getContentSize().width;
+    listItem->setContentSize(Size(listItem->getContentSize().width * (winSize.width / baseWidth),
+                                  listItem->getContentSize().height));
+    
     auto listView = utils::findChildByName<ui::ListView*>(*_baseLayout, "Panel_main/ListView_list");
     listView->pushBackCustomItem(listItem);
 }

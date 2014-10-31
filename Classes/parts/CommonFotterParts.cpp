@@ -37,7 +37,7 @@ bool CommonFotterParts::init()
     
     // create Header
     this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("FotterParts.csd");
-    _baseLayout->setContentSize(cocos2d::Size(winSize.width, _baseLayout->getContentSize().height));
+    _baseLayout->setScale(winSize.width / _baseLayout->getContentSize().width);
     _baseLayout->setPosition(cocos2d::Vec2(winSize.width/2, _baseLayout->getContentSize().height/2));
     
     // Button setting

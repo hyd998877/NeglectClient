@@ -62,6 +62,11 @@ bool DialogShowListViewLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event
 
 void DialogShowListViewLayer::pushListItem(Widget *listItem)
 {
+    auto winSize = Director::getInstance()->getVisibleSize();
+    auto baseWidth = utils::findChildByName(*_baseLayout, "Panel_back")->getContentSize().width;
+    listItem->setContentSize(Size(listItem->getContentSize().width * (winSize.width / baseWidth),
+                                  listItem->getContentSize().height));
+    
     auto listView = utils::findChildByName<ui::ListView*>(*_baseLayout, "Panel_main/ListView_list");
     listView->pushBackCustomItem(listItem);
 }
