@@ -98,7 +98,7 @@ bool QuestStartScene::init()
                 auto iconText = ListViewPartsHelper::createListViewIconTextParts(std::get<1>(item), std::get<0>(item));
                 dialog->pushListItem(iconText);
             }
-            dialog->setOkListener([dialog, itemArray, equipName, equipIcon](int selectedIndex) {
+            dialog->setOkListener([dialog, itemArray, equipName, equipIcon](long selectedIndex) {
                 if (selectedIndex >= 0 && itemArray.size() > selectedIndex) {
                     // 選択した行をもらう
                     auto item = itemArray.at(selectedIndex);
@@ -134,7 +134,7 @@ bool QuestStartScene::init()
                 auto iconText = ListViewPartsHelper::createListViewIconTextParts(std::get<1>(item), std::get<0>(item));
                 dialog->pushListItem(iconText);
             }
-            dialog->setOkListener([dialog, itemArray, itemIcon](int selectedIndex) {
+            dialog->setOkListener([dialog, itemArray, itemIcon](long selectedIndex) {
                 if (selectedIndex >= 0 && itemArray.size() > selectedIndex) {
                     // 選択した行をもらう
                     auto item = itemArray.at(selectedIndex);
