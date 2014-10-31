@@ -17,6 +17,8 @@ using namespace cocostudio;
 using namespace ui;
 
 DialogShowListViewLayer::DialogShowListViewLayer()
+: _baseLayout(nullptr)
+, _closeListener(nullptr)
 {
     
 }
@@ -42,6 +44,7 @@ bool DialogShowListViewLayer::init()
     this->addChild(this->_baseLayout);
     
     utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_close")->addClickEventListener([this](Ref *ref) {
+        if (_closeListener) _closeListener();
         this->setVisible(false);
         this->removeAllChildren();
     });
