@@ -17,6 +17,7 @@
 #include "NeglectHttpRequest.h"
 
 #include "NeglectSceneHelper.h"
+#include "ListViewPartsHelper.h"
 
 USING_NS_CC;
 using namespace cocos2d::network;
@@ -57,38 +58,33 @@ bool QuestListScene::init()
         auto listView = utils::findChildByName<ui::ListView*>(*_baseLayout, "Panel_main/ListView_quest");
         // Listの中身をセット
         for (auto item : json.array_items()) {
-            auto listParts = GUIReader::getInstance()->widgetFromJsonFile("QuestListParts.json");
+            auto listParts = ListViewPartsHelper::createListViewTextParts(item["QuestName"].string_value(),
+                                                                          StringUtils::format("%2dF", item["FloorCount"].int_value()));
+            // 行選択用にQuestIDをtagに埋め込む（いらないかも）
+            listParts->setTag(item["QuestID"].int_value());
+            
             auto winSize = Director::getInstance()->getVisibleSize();
             auto baseWidth = utils::findChildByName(*_baseLayout, "Panel_main")->getContentSize().width;
             listParts->setContentSize(Size(listParts->getContentSize().width * (winSize.width / baseWidth),
                                           listParts->getContentSize().height));
-            
-            // 行選択用にQuestIDをtagに埋め込む
-            listParts->setTag(item["QuestID"].int_value());
-            // 行の内容を設定
-            utils::findChildByName<ui::Text*>(*listParts, "Label_dName_1")->setString(item["QuestName"].string_value());
-            auto floorCountText = StringUtils::format("%2dF", item["FloorCount"].int_value());
-            utils::findChildByName<ui::Text*>(*listParts, "Label_dName_2")->setString(floorCountText);
             listView->pushBackCustomItem(listParts);
         }
         // Listの行選択イベントを制御
         listView->addEventListener([](Ref *ref, ui::ListView::EventType eventType){
-            if (eventType == ui::ListView::EventType::ON_SELECTED_ITEM_END) {
-                auto listView = static_cast<ui::ListView*>(ref);
-                
-                auto selectedIndex = listView->getCurSelectedIndex();
-                auto listItem = listView->getItem(selectedIndex);
-                CCLOG("selected QuestID %d", listItem->getTag());
-                listItem->getChildByName<ui::Layout*>("Panel_main")->setColor(Color3B::GREEN);
-                
-                // TODO: questIdを何とかして渡す
-                // クエスト詳細画面へ
-                NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
+            if (eventType != ui::ListView::EventType::ON_SELECTED_ITEM_END) {
+                return;
             }
+            auto listView = static_cast<ui::ListView*>(ref);
+            auto selectedIndex = listView->getCurSelectedIndex();
+            auto listItem = listView->getItem(selectedIndex);
+            CCLOG("selected QuestID %d", listItem->getTag());
+            listItem->getChildByName<ui::Layout*>("Panel_main")->setColor(Color3B::GREEN);
+            
+            // TODO: questIdを何とかして渡す
+            // クエスト詳細画面へ
+            NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
         });
     });
-    
-    // TODO: Loading表示（画面ロック）
     
     // CocosStudioのLayout読み込み
     this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("QuestListScene.json");

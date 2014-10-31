@@ -40,3 +40,11 @@ cocos2d::ui::Widget* ListViewPartsHelper::createListViewIconTextParts(const std:
     utils::findChildByName<ui::ImageView*>(*parts, LIST_PARTS_IMAGE_ICON)->loadTexture(fileName);
     return parts;
 }
+
+cocos2d::ui::Widget* ListViewPartsHelper::createListViewTextParts(const std::string &text1, const std::string &text2)
+{
+    auto parts = GUIReader::getInstance()->widgetFromJsonFile("QuestListParts.json");
+    utils::findChildByName<ui::Text*>(*parts, "Label_dName_1")->setString(text1);
+    utils::findChildByName<ui::Text*>(*parts, "Label_dName_2")->setString(text2);
+    return parts;
+}

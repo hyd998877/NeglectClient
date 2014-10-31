@@ -17,6 +17,7 @@ public:
     static cocos2d::ui::Widget* createListViewShortTextParts(const std::string &text);
     static cocos2d::ui::Widget* createListViewTextParts(const std::string &text);
     static cocos2d::ui::Widget* createListViewIconTextParts(const std::string &fileName, const std::string &text);
+    static cocos2d::ui::Widget* createListViewTextParts(const std::string &text1, const std::string &text2);
 };
 
 #endif /* defined(__NeglecClient__ListViewPartsHelper__) */
