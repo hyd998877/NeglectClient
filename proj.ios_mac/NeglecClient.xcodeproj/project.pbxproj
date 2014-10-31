@@ -75,6 +75,7 @@
 		CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE8FC2DB19FF161C001DF599 /* LICENSE.txt */; };
 		CEB6947B1A0336AF00AB627B /* EquipItemLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEB694791A0336AF00AB627B /* EquipItemLayer.csd */; };
 		CEB6947C1A0336AF00AB627B /* ItemLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEB6947A1A0336AF00AB627B /* ItemLayer.csd */; };
+		CEB6947E1A0350CF00AB627B /* ListPartsShortText.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB6947D1A0350CF00AB627B /* ListPartsShortText.json */; };
 		CEBB725B1A0221A4007AE63F /* EquipLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725A1A0221A4007AE63F /* EquipLayer.csd */; };
 		CEBB725D1A022ED6007AE63F /* Default in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725C1A022ED6007AE63F /* Default */; };
 		CEBB72601A025231007AE63F /* actor in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725E1A025231007AE63F /* actor */; };
@@ -207,6 +208,7 @@
 		CE8FC2DB19FF161C001DF599 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		CEB694791A0336AF00AB627B /* EquipItemLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EquipItemLayer.csd; sourceTree = "<group>"; };
 		CEB6947A1A0336AF00AB627B /* ItemLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ItemLayer.csd; sourceTree = "<group>"; };
+		CEB6947D1A0350CF00AB627B /* ListPartsShortText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListPartsShortText.json; sourceTree = "<group>"; };
 		CEBB725A1A0221A4007AE63F /* EquipLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EquipLayer.csd; sourceTree = "<group>"; };
 		CEBB725C1A022ED6007AE63F /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
 		CEBB725E1A025231007AE63F /* actor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = actor; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CEB6947D1A0350CF00AB627B /* ListPartsShortText.json */,
 				CEBB72651A028CF9007AE63F /* ListPartsIconText.json */,
 				CEBB72661A028CF9007AE63F /* ListPartsText.json */,
 				CEBB72671A028CF9007AE63F /* ListViewLayerSelect.json */,
@@ -628,6 +631,7 @@
 				CEB6947B1A0336AF00AB627B /* EquipItemLayer.csd in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				CEB6947E1A0350CF00AB627B /* ListPartsShortText.json in Resources */,
 				CEBB72611A025231007AE63F /* QuestPlayScene.csd in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,

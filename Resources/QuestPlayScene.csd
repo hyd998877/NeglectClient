@@ -73,25 +73,25 @@
             <PreSize X="0.98" Y="0.4" />
             <Children>
               <NodeObjectData Name="Text_status1" ActionTag="59396111" FrameEvent="" Tag="439" ObjectIndex="8" PrePositionEnabled="True" TouchEnable="True" FontSize="32" LabelText="Lv 999 HP 999/999" IsCustomSize="True" ctype="TextObjectData">
-                <Position X="31.36" Y="364.8" />
+                <Position X="12.544" Y="359.04" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleY="0.5" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <Size X="320" Y="37" />
-                <PrePosition X="0.05" Y="0.95" />
+                <PrePosition X="0.02" Y="0.935" />
                 <PreSize X="0.5102041" Y="0.09635416" />
               </NodeObjectData>
               <NodeObjectData Name="Text_status2" ActionTag="59396112" FrameEvent="" Tag="440" ObjectIndex="9" PrePositionEnabled="True" TouchEnable="True" FontSize="32" LabelText="疲労度 99%" IsCustomSize="True" HorizontalAlignmentType="HT_Right" ctype="TextObjectData">
-                <Position X="595.84" Y="364.8" />
+                <Position X="614.656" Y="359.04" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleX="1" ScaleY="0.5" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <Size X="200" Y="37" />
-                <PrePosition X="0.95" Y="0.95" />
+                <PrePosition X="0.98" Y="0.935" />
                 <PreSize X="0.3188775" Y="0.09635416" />
               </NodeObjectData>
               <NodeObjectData Name="Panel_item" ActionTag="59396203" FrameEvent="" Tag="95" ObjectIndex="26" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
-                <Position X="6.271973" Y="7" />
+                <Position X="6.271973" Y="7.000001" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />
@@ -227,7 +227,7 @@
                 <ColorVector ScaleY="1" />
               </NodeObjectData>
               <NodeObjectData Name="Panel_equip" ActionTag="59396204" FrameEvent="" Tag="96" ObjectIndex="27" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
-                <Position X="194.986" Y="87.49121" />
+                <Position X="194.9859" Y="87.49121" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />
@@ -324,14 +324,14 @@
             <PrePosition X="0.5" Y="0.135" />
             <PreSize X="0.98" Y="0.2" />
             <Children>
-              <NodeObjectData Name="Text_log" ActionTag="59396206" FrameEvent="" Tag="98" ObjectIndex="10" FontSize="26" LabelText="約10分前：99Fへ到達した。&#xA;約30分前：ハーブを拾った。&#xA;約40分前：スライムを倒した。&#xA;約40分前：スライムに100ダメージをうけた。&#xA;約50分前：スライムに出会った。" ctype="TextObjectData">
-                <Position X="10" Y="174" />
+              <NodeObjectData Name="Text_log" ActionTag="59396206" FrameEvent="" Tag="98" ObjectIndex="10" PreSizeEnable="True" FontSize="26" LabelText="約10分前：99Fへ到達した。&#xA;約30分前：ハーブを拾った。&#xA;約40分前：スライムを倒した。&#xA;約40分前：スライムに100ダメージをうけた。&#xA;約50分前：スライムに出会った。" IsCustomSize="True" ctype="TextObjectData">
+                <Position X="10" Y="184" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleY="1" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <Size X="534" Y="155" />
-                <PrePosition X="0.015625" Y="0.90625" />
-                <PreSize X="0.99" Y="1.13" />
+                <Size X="608.384" Y="176.64" />
+                <PrePosition X="0.01594388" Y="0.9583333" />
+                <PreSize X="0.97" Y="0.92" />
               </NodeObjectData>
             </Children>
             <FileData Type="Normal" Path="ui/dot_waku.png" />
