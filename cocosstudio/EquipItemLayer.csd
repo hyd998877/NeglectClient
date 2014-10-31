@@ -12,7 +12,7 @@
         <PrePosition X="0" Y="0" />
         <PreSize X="0" Y="0" />
         <Children>
-          <NodeObjectData Name="Panel_1" ActionTag="59395431" FrameEvent="" Tag="53" ObjectIndex="1" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
+          <NodeObjectData Name="Panel_main" ActionTag="59395431" FrameEvent="" Tag="53" ObjectIndex="1" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
             <Position X="0" Y="0" />
             <Scale ScaleX="1" ScaleY="1" />
             <AnchorPoint />
@@ -21,7 +21,7 @@
             <PrePosition X="0" Y="0" />
             <PreSize X="1" Y="1" />
             <Children>
-              <NodeObjectData Name="Sprite_1" ActionTag="59395428" FrameEvent="" Tag="50" ObjectIndex="1" PrePositionEnabled="True" ctype="SpriteObjectData">
+              <NodeObjectData Name="Sprite_icon" ActionTag="59395428" FrameEvent="" Tag="50" ObjectIndex="1" PrePositionEnabled="True" ctype="SpriteObjectData">
                 <Position X="33.6" Y="30" />
                 <Scale ScaleX="1.5" ScaleY="1.5" />
                 <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
@@ -31,7 +31,7 @@
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="icon_set/item_768.png" />
               </NodeObjectData>
-              <NodeObjectData Name="Text_1" ActionTag="59395429" FrameEvent="" Tag="51" ObjectIndex="1" PrePositionEnabled="True" FontSize="28" LabelText="アイアンソード + 99" IsCustomSize="True" ctype="TextObjectData">
+              <NodeObjectData Name="Text_name" ActionTag="59395429" FrameEvent="" Tag="51" ObjectIndex="1" PrePositionEnabled="True" FontSize="28" LabelText="アイアンソード + 99" IsCustomSize="True" ctype="TextObjectData">
                 <Position X="58.8" Y="30" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleY="0.5" />
@@ -40,7 +40,7 @@
                 <PrePosition X="0.14" Y="0.5" />
                 <PreSize X="0.6428571" Y="0.5333334" />
               </NodeObjectData>
-              <NodeObjectData Name="Button_1" ActionTag="59395430" FrameEvent="" Tag="52" ObjectIndex="1" PrePositionEnabled="True" TouchEnable="True" FontSize="24" ButtonText="変更" Scale9Enable="True" Scale9Width="46" Scale9Height="36" ctype="ButtonObjectData">
+              <NodeObjectData Name="Button_equip" ActionTag="59395430" FrameEvent="" Tag="52" ObjectIndex="1" PrePositionEnabled="True" TouchEnable="True" FontSize="24" ButtonText="変更" Scale9Enable="True" Scale9Width="46" Scale9Height="36" ctype="ButtonObjectData">
                 <Position X="407.4" Y="30" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleX="1" ScaleY="0.5" />

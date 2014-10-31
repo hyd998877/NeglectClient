@@ -86,10 +86,6 @@
         <Project Name="QuestListParts.csd" />
         <Project Name="QuestListScene.csd" />
         <Project Name="QuestStartScene.csd" />
-        <Folder Name="parts">
-          <Project Name="EquipItemLayer.csd" />
-          <Project Name="ItemLayer.csd" />
-        </Folder>
         <Project Name="EquipLayer.csd" />
         <Project Name="QuestPlayScene.csd" />
         <Folder Name="actor">
@@ -171,6 +167,8 @@
             </PlistImageFolder>
           </Folder>
         </Folder>
+        <Project Name="EquipItemLayer.csd" />
+        <Project Name="ItemLayer.csd" />
       </RootFolder>
     </Group>
   </SolutionFolder>

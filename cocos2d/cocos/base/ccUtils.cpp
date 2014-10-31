@@ -165,7 +165,7 @@ std::vector<Node*> findChildren(const Node &node, const std::string &name)
 
 Node* findChildByName(const Node &node, const std::string &name)
 {
-    Node* result;
+    Node* result = nullptr;
     
     node.enumerateChildren(name, [&result](Node* nodeFound) -> bool {
         result = nodeFound;

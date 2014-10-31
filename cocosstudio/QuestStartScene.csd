@@ -57,8 +57,8 @@
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="bg/ad_forest01_c.jpg" />
               </NodeObjectData>
-              <NodeObjectData Name="ProjectNode_1" ActionTag="59395280" FrameEvent="" Tag="30" ObjectIndex="1" IconVisible="True" PrePositionEnabled="True" ctype="ProjectNodeObjectData">
-                <Position X="0" Y="98.2" />
+              <NodeObjectData Name="EquipLayer" ActionTag="59395280" FrameEvent="" Tag="30" ObjectIndex="1" IconVisible="True" PrePositionEnabled="True" ctype="ProjectNodeObjectData">
+                <Position X="0" Y="98.20004" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint />
                 <CColor A="255" R="255" G="255" B="255" />

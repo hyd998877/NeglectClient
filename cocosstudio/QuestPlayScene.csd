@@ -107,7 +107,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.09288275" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_0" ActionTag="59396157" FrameEvent="" Tag="485" ObjectIndex="18" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="157.2728" Y="8" />
@@ -117,7 +117,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.2558713" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_Copy_0" ActionTag="59396162" FrameEvent="" Tag="490" ObjectIndex="19" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="207.3638" Y="8" />
@@ -127,7 +127,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.3373656" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_1" ActionTag="59396172" FrameEvent="" Tag="500" ObjectIndex="21" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="307.5457" Y="8" />
@@ -137,7 +137,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.5003541" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_Copy_Copy" ActionTag="59396167" FrameEvent="" Tag="495" ObjectIndex="20" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="257.4547" Y="8" />
@@ -147,7 +147,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.4188598" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_Copy_1" ActionTag="59396177" FrameEvent="" Tag="505" ObjectIndex="22" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="357.6366" Y="8" />
@@ -157,7 +157,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.5818484" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_Copy_Copy_0" ActionTag="59396182" FrameEvent="" Tag="510" ObjectIndex="23" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="407.7275" Y="8" />
@@ -167,7 +167,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.6633427" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14" ActionTag="59396137" FrameEvent="" Tag="465" ObjectIndex="14" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="7" Y="8" />
@@ -177,7 +177,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.01138848" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_Copy_0_Copy" ActionTag="59396192" FrameEvent="" Tag="520" ObjectIndex="25" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="507.9094" Y="8" />
@@ -187,7 +187,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.8263312" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_Copy_Copy_Copy" ActionTag="59396197" FrameEvent="" Tag="525" ObjectIndex="26" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="558.0004" Y="8" />
@@ -197,7 +197,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.9078255" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_Copy" ActionTag="59396152" FrameEvent="" Tag="480" ObjectIndex="17" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="107.1819" Y="8" />
@@ -207,7 +207,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.174377" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_14_Copy_0_Copy" ActionTag="59396187" FrameEvent="" Tag="515" ObjectIndex="24" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="457.8185" Y="8" />
@@ -217,7 +217,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.7448369" Y="0.1041667" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/ItemLayer.csd" />
+                    <FileData Type="Normal" Path="ItemLayer.csd" />
                   </NodeObjectData>
                 </Children>
                 <FileData Type="Normal" Path="ui/dot_waku.png" />
@@ -243,7 +243,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.009378752" Y="0.02367424" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/EquipItemLayer.csd" />
+                    <FileData Type="Normal" Path="EquipItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_10_Copy_0" ActionTag="59396125" FrameEvent="" Tag="453" ObjectIndex="12" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="4" Y="65.33331" />
@@ -253,7 +253,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.009378752" Y="0.2577861" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/EquipItemLayer.csd" />
+                    <FileData Type="Normal" Path="EquipItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_10_Copy" ActionTag="59396119" FrameEvent="" Tag="447" ObjectIndex="11" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="4" Y="124.6667" />
@@ -263,7 +263,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.009378752" Y="0.4918982" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/EquipItemLayer.csd" />
+                    <FileData Type="Normal" Path="EquipItemLayer.csd" />
                   </NodeObjectData>
                   <NodeObjectData Name="ProjectNode_10" ActionTag="59396113" FrameEvent="" Tag="441" ObjectIndex="10" IconVisible="True" ctype="ProjectNodeObjectData">
                     <Position X="4" Y="184" />
@@ -273,7 +273,7 @@
                     <Size X="0" Y="0" />
                     <PrePosition X="0.009378752" Y="0.7260101" />
                     <PreSize X="0" Y="0" />
-                    <FileData Type="Normal" Path="parts/EquipItemLayer.csd" />
+                    <FileData Type="Normal" Path="EquipItemLayer.csd" />
                   </NodeObjectData>
                 </Children>
                 <FileData Type="Normal" Path="ui/dot_waku.png" />

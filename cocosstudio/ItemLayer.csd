@@ -12,7 +12,7 @@
         <PrePosition X="0" Y="0" />
         <PreSize X="0" Y="0" />
         <Children>
-          <NodeObjectData Name="Panel_9" ActionTag="59395711" FrameEvent="" Tag="333" ObjectIndex="9" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
+          <NodeObjectData Name="Panel_main" ActionTag="59395711" FrameEvent="" Tag="333" ObjectIndex="9" PreSizeEnable="True" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90" Scale9Enable="True" LeftEage="3" RightEage="3" TopEage="3" BottomEage="3" Scale9OriginX="3" Scale9OriginY="3" Scale9Width="10" Scale9Height="10" ctype="PanelObjectData">
             <Position X="0" Y="0" />
             <Scale ScaleX="1" ScaleY="1" />
             <AnchorPoint />
@@ -21,7 +21,7 @@
             <PrePosition X="0" Y="0" />
             <PreSize X="1" Y="1" />
             <Children>
-              <NodeObjectData Name="Sprite_1" ActionTag="59395657" FrameEvent="" Tag="279" ObjectIndex="1" PrePositionEnabled="True" ctype="SpriteObjectData">
+              <NodeObjectData Name="Sprite_icon" ActionTag="59395657" FrameEvent="" Tag="279" ObjectIndex="1" PrePositionEnabled="True" ctype="SpriteObjectData">
                 <Position X="24" Y="44.8" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
@@ -31,7 +31,7 @@
                 <PreSize X="0" Y="0" />
                 <FileData Type="Normal" Path="icon_set/item_641.png" />
               </NodeObjectData>
-              <NodeObjectData Name="Button_1" ActionTag="59395658" FrameEvent="" Tag="280" ObjectIndex="1" PrePositionEnabled="True" TouchEnable="True" FontSize="14" ButtonText="変更" Scale9Enable="True" Scale9Width="46" Scale9Height="36" ctype="ButtonObjectData">
+              <NodeObjectData Name="Button_item" ActionTag="59395658" FrameEvent="" Tag="280" ObjectIndex="1" PrePositionEnabled="True" TouchEnable="True" FontSize="14" ButtonText="変更" Scale9Enable="True" Scale9Width="46" Scale9Height="36" ctype="ButtonObjectData">
                 <Position X="24" Y="16" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
