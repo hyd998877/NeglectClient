@@ -18,6 +18,7 @@ using namespace ui;
 
 DialogSelectListViewLayer::DialogSelectListViewLayer()
 : _baseLayout(nullptr)
+, _selectedIndex(-1)
 , _okListener(nullptr)
 , _closeListener(nullptr)
 {
@@ -45,14 +46,45 @@ bool DialogSelectListViewLayer::init()
     this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("ListViewLayerSelect.json");
     this->addChild(this->_baseLayout);
     
+    auto listView = utils::findChildByName<ui::ListView*>(*_baseLayout, "Panel_main/ListView_list");
+    listView->addEventListener([this](Ref *ref, ListView::EventType eventType) {
+        if (eventType != ListView::EventType::ON_SELECTED_ITEM_END) {
+            return;
+        }
+        auto listView = static_cast<ui::ListView*>(ref);
+        int selectedIndex = listView->getCurSelectedIndex();
+        if (this->_selectedIndex == selectedIndex) {
+            return;
+        }
+        
+        // 行選択されたらOKボタンを有効にする
+        if (this->_selectedIndex == -1) {
+            auto okButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_ok");
+            okButton->setColor(Color3B::WHITE);
+            okButton->setEnabled(true);
+        }
+        this->_selectedIndex = selectedIndex;
+        
+        // 選択状態を戻す
+        for (auto widget : listView->getItems()) {
+            widget->setColor(Color3B::WHITE);
+        }
+        // TODO: 本当は背景の色を変えたい・・・Panelを被せないと？
+        listView->getItem(selectedIndex)->setCascadeColorEnabled(true);
+        listView->getItem(selectedIndex)->setColor(Color3B::GREEN);
+    });
+    
     utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_close")->addClickEventListener([this](Ref *ref) {
-        if (_closeListener) _closeListener();
+        if (_closeListener) _closeListener(_selectedIndex);
         this->setVisible(false);
         this->removeAllChildren();
     });
-    
-    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_ok")->addClickEventListener([this](Ref *ref) {
-        if (_okListener) _okListener();
+
+    auto okButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_ok");
+    okButton->setColor(Color3B::BLACK);
+    okButton->setEnabled(false);
+    okButton->addClickEventListener([this](Ref *ref) {
+        if (_okListener) _okListener(_selectedIndex);
     });
     
     return true;

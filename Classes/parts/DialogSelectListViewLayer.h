@@ -15,7 +15,7 @@ class DialogSelectListViewLayer : public cocos2d::Layer
 {
     
 public:
-    typedef std::function<void(void)> DialogSelectListener;
+    typedef std::function<void(int selectedIndex)> DialogSelectListener;
     
     DialogSelectListViewLayer();
     virtual ~DialogSelectListViewLayer();
@@ -33,6 +33,7 @@ public:
 protected:
     
 private:
+    int _selectedIndex;
     cocos2d::Node* _baseLayout;
     
     DialogSelectListener _okListener;

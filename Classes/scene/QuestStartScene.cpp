@@ -77,16 +77,36 @@ bool QuestStartScene::init()
     for (int i = 0; i < 4; i++) {
         auto name = StringUtils::format("Panel_equip/EquipItem_%d", i + 1);
         auto equipItem = utils::findChildByName(*equipLayer, name);
-        utils::findChildByName<ui::Button*>(*equipItem, "Panel_main/Button_equip")->addClickEventListener([this](Ref *ref) {
+        auto equipName = utils::findChildByName<ui::Text*>(*equipItem, "Panel_main/Text_name");
+        auto equipIcon = utils::findChildByName<Sprite*>(*equipItem, "Panel_main/Sprite_icon");
+        utils::findChildByName<ui::Button*>(*equipItem, "Panel_main/Button_equip")->addClickEventListener([this, equipName, equipIcon](Ref *ref) {
+            
+            // TODO: テスト用
+            std::vector<std::tuple<std::string, std::string>> itemArray {
+                {"木の盾",                 "icon_set/item_1040.png"},
+                {"アイアンソード + 10",      "icon_set/item_768.png"},
+                {"デュランダル",             "icon_set/item_772.png"},
+                {"エクスカリバー",           "icon_set/item_774.png"},
+                {"レイピア",               "icon_set/item_778.png"},
+                {"12345678901234567890",  "icon_set/item_780.png"},
+            };
+            
             // TODO: Dialogを保持しておいて中身だけ切り替えるほうがいいかも
             auto dialog = DialogSelectListViewLayer::create();
             dialog->setTitleText("Show List");
-            for (int i = 0; i < 10; i++) {
-                auto iconText = ListViewPartsHelper::createListViewIconTextParts("icon_set/item_1040.png", "木の盾");
+            for (auto item : itemArray) {
+                auto iconText = ListViewPartsHelper::createListViewIconTextParts(std::get<1>(item), std::get<0>(item));
                 dialog->pushListItem(iconText);
             }
-            dialog->setOkListener([]() {
-                // TODO: 選択した行をもらう
+            dialog->setOkListener([dialog, itemArray, equipName, equipIcon](int selectedIndex) {
+                if (selectedIndex >= 0 && itemArray.size() > selectedIndex) {
+                    // 選択した行をもらう
+                    auto item = itemArray.at(selectedIndex);
+                    equipName->setString(std::get<0>(item));
+                    equipIcon->setTexture(std::get<1>(item));
+                }
+                dialog->setVisible(false);
+                dialog->removeAllChildren();
             });
             this->addChild(dialog);
         });
@@ -95,16 +115,33 @@ bool QuestStartScene::init()
     for (int i = 0; i < 5; i++) {
         auto name = StringUtils::format("Panel_item/Item_%d", i + 1);
         auto item = utils::findChildByName(*equipLayer, name);
-        utils::findChildByName<ui::Button*>(*item, "Panel_main/Button_item")->addClickEventListener([this](Ref *ref) {
+        auto itemIcon = utils::findChildByName<Sprite*>(*item, "Panel_main/Sprite_icon");
+        utils::findChildByName<ui::Button*>(*item, "Panel_main/Button_item")->addClickEventListener([this, itemIcon](Ref *ref) {
+            
+            // TODO: テスト用
+            std::vector<std::tuple<std::string, std::string>> itemArray {
+                {"ポーション",             "icon_set/item_641.png"},
+                {"ハイポーション",          "icon_set/item_645.png"},
+                {"帰還石",                 "icon_set/item_654.png"},
+                {"エナジードリンク",         "icon_set/item_669.png"},
+                {"エナジードリンクEX",       "icon_set/item_670.png"},
+                {"エナジードリンクEX-SUPER", "icon_set/item_671.png"},
+            };
             // TODO: Dialogを保持しておいて中身だけ切り替えるほうがいいかも
             auto dialog = DialogSelectListViewLayer::create();
             dialog->setTitleText("Show List");
-            for (int i = 0; i < 4; i++) {
-                auto iconText = ListViewPartsHelper::createListViewIconTextParts("icon_set/item_641.png", "ポーション");
+            for (auto item : itemArray) {
+                auto iconText = ListViewPartsHelper::createListViewIconTextParts(std::get<1>(item), std::get<0>(item));
                 dialog->pushListItem(iconText);
             }
-            dialog->setOkListener([]() {
-                // TODO: 選択した行をもらう
+            dialog->setOkListener([dialog, itemArray, itemIcon](int selectedIndex) {
+                if (selectedIndex >= 0 && itemArray.size() > selectedIndex) {
+                    // 選択した行をもらう
+                    auto item = itemArray.at(selectedIndex);
+                    itemIcon->setTexture(std::get<1>(item));
+                }
+                dialog->setVisible(false);
+                dialog->removeAllChildren();
             });
             this->addChild(dialog);
         });
