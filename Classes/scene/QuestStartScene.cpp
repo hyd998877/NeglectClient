@@ -78,6 +78,7 @@ bool QuestStartScene::init()
         auto name = StringUtils::format("Panel_equip/EquipItem_%d", i + 1);
         auto equipItem = utils::findChildByName(*equipLayer, name);
         utils::findChildByName<ui::Button*>(*equipItem, "Panel_main/Button_equip")->addClickEventListener([this](Ref *ref) {
+            // TODO: Dialogを保持しておいて中身だけ切り替えるほうがいいかも
             auto dialog = DialogSelectListViewLayer::create();
             dialog->setTitleText("Show List");
             for (int i = 0; i < 10; i++) {
@@ -95,6 +96,7 @@ bool QuestStartScene::init()
         auto name = StringUtils::format("Panel_item/Item_%d", i + 1);
         auto item = utils::findChildByName(*equipLayer, name);
         utils::findChildByName<ui::Button*>(*item, "Panel_main/Button_item")->addClickEventListener([this](Ref *ref) {
+            // TODO: Dialogを保持しておいて中身だけ切り替えるほうがいいかも
             auto dialog = DialogSelectListViewLayer::create();
             dialog->setTitleText("Show List");
             for (int i = 0; i < 4; i++) {

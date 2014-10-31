@@ -16,6 +16,10 @@
 
 #include "NeglectHttpRequest.h"
 
+#include "DialogSelectListViewLayer.h"
+#include "DialogShowListViewLayer.h"
+#include "ListViewPartsHelper.h"
+
 USING_NS_CC;
 using namespace cocos2d::network;
 using namespace cocostudio;
@@ -63,6 +67,24 @@ bool QuestPlayScene::init()
     this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
                                    winSize.height/2 - this->_baseLayout->getContentSize().height/2);
     this->addChild(this->_baseLayout);
+    
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Button_more")->addClickEventListener([this](Ref *ref) {
+        auto dialog = DialogShowListViewLayer::create();
+        dialog->setTitleText("Show List");
+        for (int i = 0; i < 5; i++) {
+            auto iconText = ListViewPartsHelper::createListViewShortTextParts("10分前: 99Fに到達した。");
+            dialog->pushListItem(iconText);
+        }
+//        dialog->setCloseListener([]() {});
+        this->addChild(dialog);
+    });
+    
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Button_item")->addClickEventListener([](Ref *ref) {
+        
+    });
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Button_menu")->addClickEventListener([](Ref *ref) {
+        
+    });
     
     auto header = CommonHeaderParts::create();
     header->setTitleText("最果ての洞窟 最下層 99F");
