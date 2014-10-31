@@ -61,7 +61,7 @@ namespace GLViewUtil {
         if (fitType == FitType::HEIGHT && fitSize.width < baseScaleWidth) {
             return GLViewUtil::calcFitDesignResolutionSize(width, height, FitType::WIDTH, scale);
         } else if (fitType == FitType::WIDTH && fitSize.height < baseScaleHeight) {
-            return GLViewUtil::getFitDesignResolutionSize(width, height, FitType::HEIGHT, scale);
+            return GLViewUtil::calcFitDesignResolutionSize(width, height, FitType::HEIGHT, scale);
         }
         return fitSize;
     }
