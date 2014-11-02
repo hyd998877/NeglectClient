@@ -23,6 +23,11 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(QuestStartScene);
     
+    struct Param {
+        int questID;
+    };
+    
+    void setup(Param param);
 private:
     cocos2d::Node *_baseLayout;
 };

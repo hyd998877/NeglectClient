@@ -59,17 +59,13 @@ bool QuestStartScene::init()
 //
 //    });
     
-    // TODO: Loading表示（画面ロック）
+    // TODO: 所持アイテム、装備品と倉庫情報を取得
     
     auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
     this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("QuestStartScene.csd");
     this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
                                    winSize.height/2 - this->_baseLayout->getContentSize().height/2);
-    auto startButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_start");
-    startButton->addClickEventListener([](Ref *ref){
-        NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
-    });
     this->addChild(this->_baseLayout);
 
     auto equipLayer = utils::findChildByName(*_baseLayout, "Panel_main/EquipLayer");
@@ -148,11 +144,24 @@ bool QuestStartScene::init()
     }
     
     auto header = CommonHeaderParts::create();
-    header->setTitleText("最果ての洞窟 最下層 99F");
     this->addChild(header);
     
     auto fotter = CommonFotterParts::create();
     this->addChild(fotter);
     
     return true;
+}
+
+void QuestStartScene::setup(Param param)
+{
+    // TODO: questIDでクエスト情報を取得（これはアプリ内でキャッシュしたいな・・・）
+    
+    // TODO: {xxxxxダンジョン名} 最下層 {xx}F
+    this->getChildByName<CommonHeaderParts*>("Header")->setTitleText("最果ての洞窟 最下層 5F");
+    
+    auto startButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_start");
+    startButton->addClickEventListener([](Ref *ref){
+        // TODO: questIDで通信してPlay中ページへ飛ぶ
+        NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
+    });
 }

@@ -17,6 +17,7 @@
 #include "NeglectHttpRequest.h"
 
 #include "NeglectSceneHelper.h"
+#include "QuestStartScene.h"
 #include "ListViewPartsHelper.h"
 
 USING_NS_CC;
@@ -70,19 +71,23 @@ bool QuestListScene::init()
             listView->pushBackCustomItem(listParts);
         }
         // Listの行選択イベントを制御
-        listView->addEventListener([](Ref *ref, ui::ListView::EventType eventType){
+        listView->addEventListener([json](Ref *ref, ui::ListView::EventType eventType){
             if (eventType != ui::ListView::EventType::ON_SELECTED_ITEM_END) {
                 return;
             }
             auto listView = static_cast<ui::ListView*>(ref);
             auto selectedIndex = listView->getCurSelectedIndex();
             auto listItem = listView->getItem(selectedIndex);
-            CCLOG("selected QuestID %d", listItem->getTag());
             listItem->getChildByName<ui::Layout*>("Panel_main")->setColor(Color3B::GREEN);
             
             // TODO: questIdを何とかして渡す
+            auto quest = json.array_items().at(selectedIndex);
             // クエスト詳細画面へ
-            NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
+            auto scene = NeglectSceneHelper::createScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
+            scene->getChildByName<QuestStartScene*>("SceneLayer")->setup(QuestStartScene::Param{
+                quest["QuestID"].int_value(),
+            });
+            Director::getInstance()->replaceScene(scene);
         });
     });
     
