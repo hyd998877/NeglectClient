@@ -15,19 +15,24 @@
 
 cocos2d::Scene* NeglectSceneHelper::createScene(SceneID sceneID)
 {
+    cocos2d::Scene* scene = nullptr;
     switch (sceneID) {
         case MY_PAGE:
-            return createScene<MyPageScene>();
+            scene = createScene<MyPageScene>();
+            break;
         case QUEST_LIST:
-            return createScene<QuestListScene>();
+            scene = createScene<QuestListScene>();
+            break;
         case QUEST_DETAIL:
-            return createScene<QuestStartScene>();
+            scene = createScene<QuestStartScene>();
+            break;
         case QUEST_PLAY:
-            return createScene<QuestPlayScene>();
+            scene = createScene<QuestPlayScene>();
+            break;
         default:
             break;
     }
-    return nullptr;
+    return scene;
 }
 
 void NeglectSceneHelper::replaceScene(SceneID sceneID)

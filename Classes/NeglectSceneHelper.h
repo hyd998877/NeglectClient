@@ -22,6 +22,7 @@ public:
     };
 
     static cocos2d::Scene* createScene(SceneID sceneID);
+    
     static void replaceScene(SceneID sceneID);
     
     template<typename T>
@@ -32,6 +33,7 @@ public:
         
         // 'layer' is an autorelease object
         auto layer = T::create();
+        layer->setName("SceneLayer");
         
         // add layer as a child to scene
         scene->addChild(layer);

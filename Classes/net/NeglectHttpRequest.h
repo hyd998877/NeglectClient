@@ -18,6 +18,7 @@ class NeglectHttpRequest
 public:
     static void login(const HttpClientUtil::HttpRequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     static void questList(const HttpClientUtil::HttpRequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
+    static void user(const HttpClientUtil::HttpRequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener);
 private:
     constexpr static auto BASE_URL = "http://localhost:8000";
     
