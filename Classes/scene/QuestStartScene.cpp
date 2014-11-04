@@ -154,14 +154,31 @@ bool QuestStartScene::init()
 
 void QuestStartScene::setup(Param param)
 {
-    // TODO: questIDでクエスト情報を取得（これはアプリ内でキャッシュしたいな・・・）
-    
-    // TODO: {xxxxxダンジョン名} 最下層 {xx}F
-    this->getChildByName<CommonHeaderParts*>("Header")->setTitleText("最果ての洞窟 最下層 5F");
-    
-    auto startButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_start");
-    startButton->addClickEventListener([](Ref *ref){
-        // TODO: questIDで通信してPlay中ページへ飛ぶ
-        NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
+    // questIDでクエスト情報を取得
+    NeglectHttpRequest::getInstance()->questList([this, param](json11::Json json) {
+        
+        // TODO: filterつくりたい
+        json11::Json selectQuest;
+        for (auto quest : json.array_items()) {
+            if (quest["QuestID"] != param.questID) {
+                continue;
+            }
+            selectQuest = quest;
+            break;
+        }
+        
+        // {xxxxxダンジョン名} 最下層 {xx}F
+        std::string questName = selectQuest["QuestName"].string_value();
+        int floorCount = selectQuest["FloorCount"].int_value();
+        auto titleStr = StringUtils::format("%s %2dF", questName.c_str(), floorCount);
+        this->getChildByName<CommonHeaderParts*>("Header")->setTitleText(titleStr);
+        
+        auto startButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_start");
+        startButton->addClickEventListener([](Ref *ref){
+            
+            // TODO: questIDで通信してPlay中ページへ飛ぶ
+            
+            NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
+        });
     });
 }
