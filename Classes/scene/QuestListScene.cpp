@@ -45,15 +45,11 @@ bool QuestListScene::init()
         return false;
     }
     
-    // login通信
-    NeglectHttpRequest::questList([this](long statusCode, std::string response) {
-        std::string err = "";
-        auto json = json11::Json::parse(response, err);
-        
-        if (!err.empty()) {
-            CCLOG("json parse error %s", err.c_str());
-            return;
-        }
+    // CocosStudioのLayout読み込み
+    this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("QuestListScene.json");
+    this->addChild(this->_baseLayout);
+    
+    NeglectHttpRequest::getInstance()->questList([this](json11::Json json) {
         
         // Listを取得
         auto listView = utils::findChildByName<ui::ListView*>(*_baseLayout, "Panel_main/ListView_quest");
@@ -80,7 +76,6 @@ bool QuestListScene::init()
             auto listItem = listView->getItem(selectedIndex);
             listItem->getChildByName<ui::Layout*>("Panel_main")->setColor(Color3B::GREEN);
             
-            // TODO: questIdを何とかして渡す
             auto quest = json.array_items().at(selectedIndex);
             // クエスト詳細画面へ
             auto scene = NeglectSceneHelper::createScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
@@ -90,10 +85,6 @@ bool QuestListScene::init()
             Director::getInstance()->replaceScene(scene);
         });
     });
-    
-    // CocosStudioのLayout読み込み
-    this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("QuestListScene.json");
-    this->addChild(this->_baseLayout);
     
     auto header = CommonHeaderParts::create();
     header->setTitleText("ダンジョン一覧");

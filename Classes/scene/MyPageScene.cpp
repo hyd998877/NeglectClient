@@ -42,15 +42,7 @@ bool MyPageScene::init()
     }
     
     // login通信
-    NeglectHttpRequest::login([this](long statusCode, std::string response) {
-        std::string err = "";
-        auto json = json11::Json::parse(response, err);
-        
-        if (!err.empty()) {
-            CCLOG("json parse error %s", err.c_str());
-            return;
-        }
-        
+    NeglectHttpRequest::getInstance()->login([this](json11::Json json) {
         auto userNameText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_unitStatus/Label_name");
         auto detailText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_message/Label_message_1");
         

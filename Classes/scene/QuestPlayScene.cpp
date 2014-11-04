@@ -59,8 +59,6 @@ bool QuestPlayScene::init()
     //
     //    });
     
-    // TODO: Loading表示（画面ロック）
-    
     auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
     this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("QuestPlayScene.csd");
