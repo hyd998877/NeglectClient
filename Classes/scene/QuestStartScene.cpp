@@ -160,12 +160,22 @@ void QuestStartScene::setup(Param param)
         auto titleStr = StringUtils::format("%s %2dF", questName.c_str(), floorCount);
         this->getChildByName<CommonHeaderParts*>("Header")->setTitleText(titleStr);
         
+        int questID = selectQuest["QuestID"].int_value();
         auto startButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_start");
-        startButton->addClickEventListener([](Ref *ref){
-            
-            // TODO: questIDで通信してPlay中ページへ飛ぶ
-            
-            NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
+        startButton->addClickEventListener([this, questID](Ref *ref){
+            this->startQuest(questID);
         });
+    });
+}
+
+void QuestStartScene::startQuest(int questID)
+{
+    // questIDで通信してクエストを開始
+    NeglectHttpRequest::getInstance()->startQuest(questID, [](json11::Json json) {
+        // Play中ページへ飛ぶ
+        NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
+    }, [](int statusCode, std::string error) {
+        // TODO: #12 errorダイアログ表示
+        CCLOG("errorだよ");
     });
 }

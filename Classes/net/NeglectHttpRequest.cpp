@@ -78,6 +78,12 @@ void NeglectHttpRequest::login(const RequestListener &listener, const HttpClient
     NeglectHttpRequest::Post("/login", Json::object{{"uuid", uuid}, {"name", "kyokomi"}}, listener, errorListener);
 }
 
+void NeglectHttpRequest::startQuest(int questID, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
+{
+    auto url = cocos2d::StringUtils::format("/quest/%d", questID);
+    NeglectHttpRequest::Post(url, json11::Json::NUL, listener, errorListener);
+}
+
 void NeglectHttpRequest::Post(const std::string &url, const json11::Json &json, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {
     // TODO: #6 Loading表示

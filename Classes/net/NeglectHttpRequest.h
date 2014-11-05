@@ -28,6 +28,7 @@ public:
     
     // POST
     void login(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
+    void startQuest(int questID, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     
     // GET
     void questList(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);

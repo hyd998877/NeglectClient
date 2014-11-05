@@ -28,6 +28,9 @@ public:
     };
     
     void setup(Param param);
+    
+private:
+    void startQuest(int questID);
 private:
     cocos2d::Node *_baseLayout;
 };
