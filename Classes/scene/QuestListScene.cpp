@@ -45,6 +45,7 @@ bool QuestListScene::init()
         return false;
     }
     
+    // TODO: #1 ccs v2対応する
     // CocosStudioのLayout読み込み
     this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("QuestListScene.json");
     this->addChild(this->_baseLayout);

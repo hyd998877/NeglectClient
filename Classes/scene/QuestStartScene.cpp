@@ -46,19 +46,6 @@ bool QuestStartScene::init()
         return false;
     }
     
-    // login通信
-//    NeglectHttpRequest::questDetail(1, [this](long statusCode, std::string response) {
-//        std::string err = "";
-//        auto json = json11::Json::parse(response, err);
-//        
-//        if (!err.empty()) {
-//            CCLOG("json parse error %s", err.c_str());
-//            return;
-//        }
-//        
-//
-//    });
-    
     // TODO: 所持アイテム、装備品と倉庫情報を取得
     
     auto winSize = Director::getInstance()->getVisibleSize();

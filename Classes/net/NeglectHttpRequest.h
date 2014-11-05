@@ -18,13 +18,20 @@
 class NeglectHttpRequest
 {
 public:
+    struct Option {
+        bool cache;
+    };
+    
     typedef std::function<void(json11::Json response)> RequestListener;
     
     static NeglectHttpRequest *getInstance();
     
+    // POST
     void login(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
+    
+    // GET
     void questList(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
-    void user(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener);
+    void user(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
 private:
     NeglectHttpRequest()
     : _reqsponseCache()
@@ -37,7 +44,7 @@ private:
     
     constexpr static auto BASE_URL = "http://localhost:8000";
     
-    void Get(const std::string &url, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener);
+    void Get(const std::string &url, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener, Option option = {});
     void Post(const std::string &url, const json11::Json &json, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener);
     
 private:

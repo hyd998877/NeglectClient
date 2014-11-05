@@ -45,26 +45,19 @@ bool QuestPlayScene::init()
         return false;
     }
     
-    
-    // login通信
-    //    NeglectHttpRequest::questDetail(1, [this](long statusCode, std::string response) {
-    //        std::string err = "";
-    //        auto json = json11::Json::parse(response, err);
-    //
-    //        if (!err.empty()) {
-    //            CCLOG("json parse error %s", err.c_str());
-    //            return;
-    //        }
-    //
-    //
-    //    });
-    
     auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
     this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("QuestPlayScene.csd");
     this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
                                    winSize.height/2 - this->_baseLayout->getContentSize().height/2);
     this->addChild(this->_baseLayout);
+    
+    auto header = CommonHeaderParts::create();
+    header->setTitleText("最果ての洞窟 最下層 99F");
+    this->addChild(header);
+    
+    auto fotter = CommonFotterParts::create();
+    this->addChild(fotter);
     
     utils::findChildByName<ui::Button*>(*_baseLayout, "Button_more")->addClickEventListener([this](Ref *ref) {
         auto dialog = DialogShowListViewLayer::create();
@@ -83,13 +76,6 @@ bool QuestPlayScene::init()
     utils::findChildByName<ui::Button*>(*_baseLayout, "Button_menu")->addClickEventListener([](Ref *ref) {
         
     });
-    
-    auto header = CommonHeaderParts::create();
-    header->setTitleText("最果ての洞窟 最下層 99F");
-    this->addChild(header);
-    
-    auto fotter = CommonFotterParts::create();
-    this->addChild(fotter);
     
     return true;
 }
