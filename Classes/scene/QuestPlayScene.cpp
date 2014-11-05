@@ -76,6 +76,13 @@ bool QuestPlayScene::init()
     utils::findChildByName<ui::Button*>(*_baseLayout, "Button_menu")->addClickEventListener([](Ref *ref) {
         
     });
+
+    // プレイ中クエストの情報を通信で取得
+    NeglectHttpRequest::getInstance()->playingQuest([](json11::Json json) {
+        CCLOG("playing quest %s", json.dump().c_str());
+        
+        // TODO: クエストプレイ中の情報をUIに反映する
+    });
     
     return true;
 }

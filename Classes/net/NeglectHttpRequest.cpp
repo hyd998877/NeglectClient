@@ -21,6 +21,12 @@ void NeglectHttpRequest::questList(const RequestListener &listener, const HttpCl
     NeglectHttpRequest::Get("/quest", listener, errorListener, Option{true});
 }
 
+// TODO: キャッシュOK 1分？
+void NeglectHttpRequest::playingQuest(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
+{
+    NeglectHttpRequest::Get("/play-quest", listener, errorListener);
+}
+
 // TODO: キャッシュOK
 void NeglectHttpRequest::user(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {

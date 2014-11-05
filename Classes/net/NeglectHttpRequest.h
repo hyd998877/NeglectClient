@@ -32,6 +32,7 @@ public:
     
     // GET
     void questList(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
+    void playingQuest(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     void user(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
 private:
     NeglectHttpRequest()
