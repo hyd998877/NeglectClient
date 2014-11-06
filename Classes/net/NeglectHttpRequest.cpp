@@ -8,6 +8,8 @@
 
 #include "NeglectHttpRequest.h"
 
+#include "deprecated/CCString.h"
+
 using namespace json11;
 
 NeglectHttpRequest *NeglectHttpRequest::getInstance() {
