@@ -47,7 +47,7 @@
             <PrePosition X="0.5" Y="0.82" />
             <PreSize X="0.98" Y="0.08" />
             <Children>
-              <NodeObjectData Name="Text_detail " ActionTag="59396109" FrameEvent="" Tag="437" ObjectIndex="7" PrePositionEnabled="True" FontSize="36" LabelText=" 現在 99F（残り時間：約8時間30分）" ctype="TextObjectData">
+              <NodeObjectData Name="Text_detail" ActionTag="59396109" FrameEvent="" Tag="437" ObjectIndex="7" PrePositionEnabled="True" FontSize="36" LabelText=" 現在 99F（残り時間：約8時間30分）" ctype="TextObjectData">
                 <Position X="313.6" Y="38.4" />
                 <Scale ScaleX="1" ScaleY="1" />
                 <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
