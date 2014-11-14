@@ -142,11 +142,13 @@ bool QuestStartScene::init()
 void QuestStartScene::setup(Param param)
 {
     // questIDでクエスト情報を取得
-    NeglectHttpRequest::getInstance()->questList([this, param](json11::Json json) {
+    NeglectHttpRequest::getInstance()->dataMasterLoad([this, param](json11::Json json) {
+        
+        auto mQuests = json["MQuest"];
         
         // TODO: filterつくりたい
         json11::Json selectQuest;
-        for (auto quest : json.array_items()) {
+        for (auto quest : mQuests.array_items()) {
             if (quest["QuestID"] != param.questID) {
                 continue;
             }

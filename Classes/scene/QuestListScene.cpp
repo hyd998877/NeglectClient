@@ -50,12 +50,14 @@ bool QuestListScene::init()
     this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("QuestListScene.json");
     this->addChild(this->_baseLayout);
     
-    NeglectHttpRequest::getInstance()->questList([this](json11::Json json) {
+    NeglectHttpRequest::getInstance()->dataMasterLoad([this](json11::Json json) {
+        
+        auto mQuests = json["MQuest"];
         
         // Listを取得
         auto listView = utils::findChildByName<ui::ListView*>(*_baseLayout, "Panel_main/ListView_quest");
         // Listの中身をセット
-        for (auto item : json.array_items()) {
+        for (auto item : mQuests.array_items()) {
             auto listParts = ListViewPartsHelper::createListViewTextParts(item["QuestName"].string_value(),
                                                                           StringUtils::format("%2dF", item["FloorCount"].int_value()));
             // 行選択用にQuestIDをtagに埋め込む（いらないかも）
@@ -68,7 +70,7 @@ bool QuestListScene::init()
             listView->pushBackCustomItem(listParts);
         }
         // Listの行選択イベントを制御
-        listView->addEventListener([json](Ref *ref, ui::ListView::EventType eventType){
+        listView->addEventListener([mQuests](Ref *ref, ui::ListView::EventType eventType){
             if (eventType != ui::ListView::EventType::ON_SELECTED_ITEM_END) {
                 return;
             }
@@ -77,7 +79,7 @@ bool QuestListScene::init()
             auto listItem = listView->getItem(selectedIndex);
             listItem->getChildByName<ui::Layout*>("Panel_main")->setColor(Color3B::GREEN);
             
-            auto quest = json.array_items().at(selectedIndex);
+            auto quest = mQuests.array_items().at(selectedIndex);
             // クエスト詳細画面へ
             auto scene = NeglectSceneHelper::createScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
             scene->getChildByName<QuestStartScene*>("SceneLayer")->setup(QuestStartScene::Param{

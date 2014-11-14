@@ -17,10 +17,10 @@ NeglectHttpRequest *NeglectHttpRequest::getInstance() {
     return &instance;
 }
 
-// TODO: キャッシュOK
-void NeglectHttpRequest::questList(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
+// キャッシュOK
+void NeglectHttpRequest::dataMasterLoad(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {
-    NeglectHttpRequest::Get("/quest", listener, errorListener, Option{true});
+    NeglectHttpRequest::Get("/data/master/load", listener, errorListener, Option{true});
 }
 
 // TODO: キャッシュOK 1分？
