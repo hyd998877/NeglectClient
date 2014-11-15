@@ -50,7 +50,6 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
-		CE56FAFA19FF74D00009A41F /* NeglectSceneHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FAF819FF74D00009A41F /* NeglectSceneHelper.cpp */; };
 		CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */; };
 		CE56FB0319FF789E0009A41F /* MyPageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB0019FF789E0009A41F /* MyPageScene.cpp */; };
 		CE56FB0619FF7CAA0009A41F /* QuestListScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB0419FF7CAA0009A41F /* QuestListScene.cpp */; };
@@ -70,9 +69,10 @@
 		CE70E4711A0102A80078C3C4 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4661A0102A80078C3C4 /* ui */; };
 		CE70E4771A0145C90078C3C4 /* QuestListParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4761A0145C90078C3C4 /* QuestListParts.json */; };
 		CE70E4791A0146340078C3C4 /* QuestListScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4781A0146340078C3C4 /* QuestListScene.json */; };
-		CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */; };
 		CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D919FF161C001DF599 /* json11.cpp */; };
 		CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE8FC2DB19FF161C001DF599 /* LICENSE.txt */; };
+		CE9CC1A41A1734C700AB9D0E /* NeglectHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE9CC1A21A1734C700AB9D0E /* NeglectHttpRequest.cpp */; };
+		CE9CC1AA1A17448600AB9D0E /* NeglectSceneHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE9CC1A81A17448600AB9D0E /* NeglectSceneHelper.cpp */; };
 		CEB6947B1A0336AF00AB627B /* EquipItemLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEB694791A0336AF00AB627B /* EquipItemLayer.csd */; };
 		CEB6947C1A0336AF00AB627B /* ItemLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEB6947A1A0336AF00AB627B /* ItemLayer.csd */; };
 		CEB6947E1A0350CF00AB627B /* ListPartsShortText.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB6947D1A0350CF00AB627B /* ListPartsShortText.json */; };
@@ -172,8 +172,6 @@
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClientUtil.h; sourceTree = "<group>"; };
-		CE56FAF819FF74D00009A41F /* NeglectSceneHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NeglectSceneHelper.cpp; sourceTree = "<group>"; };
-		CE56FAF919FF74D00009A41F /* NeglectSceneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeglectSceneHelper.h; sourceTree = "<group>"; };
 		CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
 		CE56FAFF19FF789E0009A41F /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		CE56FB0019FF789E0009A41F /* MyPageScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MyPageScene.cpp; sourceTree = "<group>"; };
@@ -201,13 +199,15 @@
 		CE70E4781A0146340078C3C4 /* QuestListScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListScene.json; sourceTree = "<group>"; };
 		CE8FC2D219FEEECE001DF599 /* GLViewUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLViewUtil.h; sourceTree = "<group>"; };
 		CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetUtil.h; sourceTree = "<group>"; };
-		CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NeglectHttpRequest.cpp; path = net/NeglectHttpRequest.cpp; sourceTree = "<group>"; };
-		CE8FC2D519FF0A77001DF599 /* NeglectHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NeglectHttpRequest.h; path = net/NeglectHttpRequest.h; sourceTree = "<group>"; };
 		CE8FC2D919FF161C001DF599 /* json11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json11.cpp; sourceTree = "<group>"; };
 		CE8FC2DA19FF161C001DF599 /* json11.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json11.hpp; sourceTree = "<group>"; };
 		CE8FC2DB19FF161C001DF599 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		CE9CC1A21A1734C700AB9D0E /* NeglectHttpRequest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NeglectHttpRequest.cpp; sourceTree = "<group>"; };
+		CE9CC1A31A1734C700AB9D0E /* NeglectHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeglectHttpRequest.h; sourceTree = "<group>"; };
 		CE9CC1A61A17434E00AB9D0E /* MasterData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterData.h; sourceTree = "<group>"; };
 		CE9CC1A71A17435800AB9D0E /* UserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		CE9CC1A81A17448600AB9D0E /* NeglectSceneHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NeglectSceneHelper.cpp; sourceTree = "<group>"; };
+		CE9CC1A91A17448600AB9D0E /* NeglectSceneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeglectSceneHelper.h; sourceTree = "<group>"; };
 		CEB694791A0336AF00AB627B /* EquipItemLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EquipItemLayer.csd; sourceTree = "<group>"; };
 		CEB6947A1A0336AF00AB627B /* ItemLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ItemLayer.csd; sourceTree = "<group>"; };
 		CEB6947D1A0350CF00AB627B /* ListPartsShortText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListPartsShortText.json; sourceTree = "<group>"; };
@@ -378,16 +378,13 @@
 			isa = PBXGroup;
 			children = (
 				CE9CC1A51A17350900AB9D0E /* models */,
+				CE9CC1A11A1734C700AB9D0E /* net */,
 				CE56FB0719FF7D200009A41F /* parts */,
 				CE56FAFD19FF786E0009A41F /* scene */,
 				CE8FC2D719FF15C9001DF599 /* modules */,
 				CE4930DA19FE803A003E9E59 /* util */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				CE8FC2D419FF0A77001DF599 /* NeglectHttpRequest.cpp */,
-				CE8FC2D519FF0A77001DF599 /* NeglectHttpRequest.h */,
-				CE56FAF819FF74D00009A41F /* NeglectSceneHelper.cpp */,
-				CE56FAF919FF74D00009A41F /* NeglectSceneHelper.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -453,6 +450,8 @@
 		CE56FAFD19FF786E0009A41F /* scene */ = {
 			isa = PBXGroup;
 			children = (
+				CE9CC1A81A17448600AB9D0E /* NeglectSceneHelper.cpp */,
+				CE9CC1A91A17448600AB9D0E /* NeglectSceneHelper.h */,
 				CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */,
 				CE56FAFF19FF789E0009A41F /* HelloWorldScene.h */,
 				CE56FB0019FF789E0009A41F /* MyPageScene.cpp */,
@@ -500,6 +499,15 @@
 				CE8FC2DB19FF161C001DF599 /* LICENSE.txt */,
 			);
 			path = json11;
+			sourceTree = "<group>";
+		};
+		CE9CC1A11A1734C700AB9D0E /* net */ = {
+			isa = PBXGroup;
+			children = (
+				CE9CC1A21A1734C700AB9D0E /* NeglectHttpRequest.cpp */,
+				CE9CC1A31A1734C700AB9D0E /* NeglectHttpRequest.h */,
+			);
+			path = net;
 			sourceTree = "<group>";
 		};
 		CE9CC1A51A17350900AB9D0E /* models */ = {
@@ -675,18 +683,18 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				CE56FB1A19FF857E0009A41F /* CommonFotterParts.cpp in Sources */,
 				CEBB72721A028E93007AE63F /* DialogSelectListViewLayer.cpp in Sources */,
+				CE9CC1AA1A17448600AB9D0E /* NeglectSceneHelper.cpp in Sources */,
 				CE56FB0319FF789E0009A41F /* MyPageScene.cpp in Sources */,
 				CE56FB0619FF7CAA0009A41F /* QuestListScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				CEBB727B1A02A094007AE63F /* ListViewPartsHelper.cpp in Sources */,
 				CEBB726F1A028E38007AE63F /* DialogShowListViewLayer.cpp in Sources */,
+				CE9CC1A41A1734C700AB9D0E /* NeglectHttpRequest.cpp in Sources */,
 				CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */,
-				CE56FAFA19FF74D00009A41F /* NeglectSceneHelper.cpp in Sources */,
 				CEBB72641A02534C007AE63F /* QuestPlayScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				CE56FB2219FF97730009A41F /* QuestStartScene.cpp in Sources */,
-				CE8FC2D619FF0A77001DF599 /* NeglectHttpRequest.cpp in Sources */,
 				CE56FB1D19FF85900009A41F /* CommonHeaderParts.cpp in Sources */,
 				CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */,
 			);
