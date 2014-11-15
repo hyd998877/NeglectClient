@@ -20,6 +20,8 @@
 #include "QuestStartScene.h"
 #include "ListViewPartsHelper.h"
 
+#include "MasterData.h"
+
 USING_NS_CC;
 using namespace cocos2d::network;
 using namespace cocostudio;
@@ -58,11 +60,10 @@ bool QuestListScene::init()
         auto listView = utils::findChildByName<ui::ListView*>(*_baseLayout, "Panel_main/ListView_quest");
         // Listの中身をセット
         for (auto item : mQuests.array_items()) {
-            auto listParts = ListViewPartsHelper::createListViewTextParts(item["QuestName"].string_value(),
-                                                                          StringUtils::format("%2dF", item["FloorCount"].int_value()));
-            // 行選択用にQuestIDをtagに埋め込む（いらないかも）
-            listParts->setTag(item["QuestID"].int_value());
+            auto quest = MasterData::create<MasterData::MQuest>(item);
             
+            auto listParts = ListViewPartsHelper::createListViewTextParts(quest.questName,
+                                                                          StringUtils::format("%2dF", quest.floorCount));
             auto winSize = Director::getInstance()->getVisibleSize();
             auto baseWidth = utils::findChildByName(*_baseLayout, "Panel_main")->getContentSize().width;
             listParts->setContentSize(Size(listParts->getContentSize().width * (winSize.width / baseWidth),
@@ -79,12 +80,10 @@ bool QuestListScene::init()
             auto listItem = listView->getItem(selectedIndex);
             listItem->getChildByName<ui::Layout*>("Panel_main")->setColor(Color3B::GREEN);
             
-            auto quest = mQuests.array_items().at(selectedIndex);
+            auto quest = MasterData::create<MasterData::MQuest>(mQuests.array_items().at(selectedIndex));
             // クエスト詳細画面へ
             auto scene = NeglectSceneHelper::createScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
-            scene->getChildByName<QuestStartScene*>("SceneLayer")->setup(QuestStartScene::Param{
-                quest["QuestID"].int_value(),
-            });
+            scene->getChildByName<QuestStartScene*>("SceneLayer")->setup(QuestStartScene::Param{quest.questID});
             Director::getInstance()->replaceScene(scene);
         });
     });

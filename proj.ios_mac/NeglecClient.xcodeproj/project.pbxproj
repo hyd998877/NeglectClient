@@ -206,6 +206,8 @@
 		CE8FC2D919FF161C001DF599 /* json11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json11.cpp; sourceTree = "<group>"; };
 		CE8FC2DA19FF161C001DF599 /* json11.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = json11.hpp; sourceTree = "<group>"; };
 		CE8FC2DB19FF161C001DF599 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		CE9CC1A61A17434E00AB9D0E /* MasterData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterData.h; sourceTree = "<group>"; };
+		CE9CC1A71A17435800AB9D0E /* UserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		CEB694791A0336AF00AB627B /* EquipItemLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EquipItemLayer.csd; sourceTree = "<group>"; };
 		CEB6947A1A0336AF00AB627B /* ItemLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ItemLayer.csd; sourceTree = "<group>"; };
 		CEB6947D1A0350CF00AB627B /* ListPartsShortText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListPartsShortText.json; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CE9CC1A51A17350900AB9D0E /* models */,
 				CE56FB0719FF7D200009A41F /* parts */,
 				CE56FAFD19FF786E0009A41F /* scene */,
 				CE8FC2D719FF15C9001DF599 /* modules */,
@@ -497,6 +500,15 @@
 				CE8FC2DB19FF161C001DF599 /* LICENSE.txt */,
 			);
 			path = json11;
+			sourceTree = "<group>";
+		};
+		CE9CC1A51A17350900AB9D0E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				CE9CC1A61A17434E00AB9D0E /* MasterData.h */,
+				CE9CC1A71A17435800AB9D0E /* UserData.h */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
