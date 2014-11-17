@@ -16,7 +16,7 @@ namespace UserData {
     
     struct TAccount {
         int64_t accountID;
-        std::string uUID; // TODO: 送らないようにする?
+        std::string UUID; // TODO: 送らないようにする?
         std::string name;
         std::string description;
     };
@@ -70,6 +70,18 @@ namespace UserData {
     template <typename T>
     static T create(json11::Json item) {
         assert(false);
+    }
+
+    template<>
+    TAccount create(json11::Json item) {
+        TAccount data;
+        
+        data.accountID    = item["AccountID"].number_value();
+        data.UUID    = item["UUID"].string_value();
+        data.name    = item["Name"].string_value();
+        data.description = item["Description"].string_value();
+        
+        return data;
     }
     
     template<>
