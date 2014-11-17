@@ -16,6 +16,8 @@
 
 #include "NeglectHttpRequest.h"
 
+#include "UserData.h"
+
 USING_NS_CC;
 using namespace cocos2d::network;
 using namespace cocostudio;
@@ -46,12 +48,16 @@ bool MyPageScene::init()
         auto userNameText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_unitStatus/Label_name");
         auto detailText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_message/Label_message_1");
         
-        auto detail = json["Description"].string_value();
-        if (detail == "") {
-            detail = "特にお知らせはないわ";
+        // アカウント情報の表示
+        auto account = UserData::create<UserData::TAccount>(json);
+        
+        if (account.description == "") {
+            account.description = "特にお知らせはないわ";
         }
-        detailText->setString(detail);
-        userNameText->setString(json["Name"].string_value());
+        detailText->setString(account.description);
+        userNameText->setString(account.name);
+        
+        // TODO: Playクエスト情報の表示（通信でもらってない）
     });
     
     auto winSize = Director::getInstance()->getVisibleSize();

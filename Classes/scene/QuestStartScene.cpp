@@ -21,6 +21,8 @@
 #include "DialogShowListViewLayer.h"
 #include "ListViewPartsHelper.h"
 
+#include "MasterData.h"
+
 USING_NS_CC;
 using namespace cocos2d::network;
 using namespace cocostudio;
@@ -143,13 +145,13 @@ void QuestStartScene::setup(Param param)
 {
     // questIDでクエスト情報を取得
     NeglectHttpRequest::getInstance()->dataMasterLoad([this, param](json11::Json json) {
-        
         auto mQuests = json["MQuest"];
         
         // TODO: filterつくりたい
-        json11::Json selectQuest;
-        for (auto quest : mQuests.array_items()) {
-            if (quest["QuestID"] != param.questID) {
+        MasterData::MQuest selectQuest;
+        for (auto item : mQuests.array_items()) {
+            auto quest = MasterData::create<MasterData::MQuest>(item);
+            if (quest.questID != param.questID) {
                 continue;
             }
             selectQuest = quest;
@@ -157,15 +159,12 @@ void QuestStartScene::setup(Param param)
         }
         
         // {xxxxxダンジョン名} 最下層 {xx}F
-        std::string questName = selectQuest["QuestName"].string_value();
-        int floorCount = selectQuest["FloorCount"].int_value();
-        auto titleStr = StringUtils::format("%s %2dF", questName.c_str(), floorCount);
+        auto titleStr = StringUtils::format("%s %2dF", selectQuest.questName.c_str(), selectQuest.floorCount);
         this->getChildByName<CommonHeaderParts*>("Header")->setTitleText(titleStr);
         
-        int questID = selectQuest["QuestID"].int_value();
         auto startButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_start");
-        startButton->addClickEventListener([this, questID](Ref *ref){
-            this->startQuest(questID);
+        startButton->addClickEventListener([this, selectQuest](Ref *ref){
+            this->startQuest(selectQuest.questID);
         });
     });
 }

@@ -20,6 +20,8 @@
 #include "DialogShowListViewLayer.h"
 #include "ListViewPartsHelper.h"
 
+#include "UserData.h"
+
 USING_NS_CC;
 using namespace cocos2d::network;
 using namespace cocostudio;
@@ -62,6 +64,7 @@ bool QuestPlayScene::init()
     utils::findChildByName<ui::Button*>(*_baseLayout, "Button_more")->addClickEventListener([this](Ref *ref) {
         auto dialog = DialogShowListViewLayer::create();
         dialog->setTitleText("Show List");
+        // TODO: クエストプレイログの情報をUIに反映する
         for (int i = 0; i < 5; i++) {
             auto iconText = ListViewPartsHelper::createListViewShortTextParts("10分前: 99Fに到達した。");
             dialog->pushListItem(iconText);
@@ -82,19 +85,16 @@ bool QuestPlayScene::init()
         CCLOG("playing quest %s", json.dump().c_str());
 
         // TODO: クエストプレイ中の情報をUIに反映する
-        
-        /*
-         {"MQuest": {"FloorCount": 5, "QuestDetail": "", "QuestID": 2, "QuestName": "hoge2"}, "TAccountStatus": {"AccountID": 1261213315, "EquipItem1ID": 1, "EquipItem2ID": 2, "EquipItem3ID": 3, "EquipItem4ID": 4, "Exp": 50, "Hp": 100, "Lv": 20, "MaxHp": 200, "MaxMp": 100, "Mp": 100}, "TPlayQuest": {"AccountID": 1261213315, "EndTime": "2014-11-07T10:54:16+09:00", "QuestID": 2, "StartTime": "2014-11-07T10:49:16+09:00"}, "TPlayQuestLogs": [{"AccountID": 1261213315, "Message": "10分前: ポーションを拾った", "QuestID": 2, "SeqID": 1}], "TQuest": {"AccountID": 1261213315, "Clear": 3, "QuestID": 2}, "TUserItems": []}
-         */
         this->setTextQuestDetail(1, 1, 15);
         
-        int lv    = json["TAccountStatus"]["Lv"].int_value();
-        int hp    = json["TAccountStatus"]["Hp"].int_value();
-        int maxHP = json["TAccountStatus"]["MaxHp"].int_value();
-        int mp    = json["TAccountStatus"]["Mp"].int_value();
-        int maxMP = json["TAccountStatus"]["MaxMp"].int_value();
-        this->setTextStatus(lv, hp, maxHP, mp, maxMP);
+        auto accountStatus = UserData::create<UserData::TAccountStatus>(json["TAccountStatus"]);
+        this->setTextStatus(accountStatus.lv,
+                            accountStatus.hp,
+                            accountStatus.maxHp,
+                            accountStatus.mp,
+                            accountStatus.maxMp);
         
+        // TODO: クエストプレイログの情報をUIに反映する
         std::string message = "";
         for (auto item : json["TPlayQuestLogs"].array_items()) {
             message += item["Message"].string_value();
