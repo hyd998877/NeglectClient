@@ -28,7 +28,7 @@ using namespace cocos2d::network;
 using namespace cocostudio;
 
 QuestStartScene::QuestStartScene()
-: _baseLayout(nullptr)
+: _view(nullptr)
 {
     
 }
@@ -50,93 +50,23 @@ bool QuestStartScene::init()
     
     // TODO: 所持アイテム、装備品と倉庫情報を取得
     
-    auto winSize = Director::getInstance()->getVisibleSize();
-    // CocosStudioのLayout読み込み
-    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("QuestStartScene.csd");
-    this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
-                                   winSize.height/2 - this->_baseLayout->getContentSize().height/2);
-    this->addChild(this->_baseLayout);
+    this->_view = QuestStartSceneView(this);
+    this->_view.init("QuestStartScene.csd");
 
-    auto equipLayer = utils::findChildByName(*_baseLayout, "Panel_main/EquipLayer");
-
-    for (int i = 0; i < 4; i++) {
-        auto name = StringUtils::format("Panel_equip/EquipItem_%d", i + 1);
-        auto equipItem = utils::findChildByName(*equipLayer, name);
-        auto equipName = utils::findChildByName<ui::Text*>(*equipItem, "Panel_main/Text_name");
-        auto equipIcon = utils::findChildByName<Sprite*>(*equipItem, "Panel_main/Sprite_icon");
-        utils::findChildByName<ui::Button*>(*equipItem, "Panel_main/Button_equip")->addClickEventListener([this, equipName, equipIcon](Ref *ref) {
-            
-            // TODO: テスト用
-            std::vector<std::tuple<std::string, std::string>> itemArray {
-                {"木の盾",                 "icon_set/item_1040.png"},
-                {"アイアンソード + 10",      "icon_set/item_768.png"},
-                {"デュランダル",             "icon_set/item_772.png"},
-                {"エクスカリバー",           "icon_set/item_774.png"},
-                {"レイピア",               "icon_set/item_778.png"},
-                {"12345678901234567890",  "icon_set/item_780.png"},
-            };
-            
-            // TODO: Dialogを保持しておいて中身だけ切り替えるほうがいいかも
-            auto dialog = DialogSelectListViewLayer::create();
-            dialog->setTitleText("Show List");
-            for (auto item : itemArray) {
-                auto iconText = ListViewPartsHelper::createListViewIconTextParts(std::get<1>(item), std::get<0>(item));
-                dialog->pushListItem(iconText);
-            }
-            dialog->setOkListener([dialog, itemArray, equipName, equipIcon](long selectedIndex) {
-                if (selectedIndex >= 0 && itemArray.size() > selectedIndex) {
-                    // 選択した行をもらう
-                    auto item = itemArray.at(selectedIndex);
-                    equipName->setString(std::get<0>(item));
-                    equipIcon->setTexture(std::get<1>(item));
-                }
-                dialog->setVisible(false);
-                dialog->removeAllChildren();
-            });
-            this->addChild(dialog);
-        });
-    }
-    
-    for (int i = 0; i < 5; i++) {
-        auto name = StringUtils::format("Panel_item/Item_%d", i + 1);
-        auto item = utils::findChildByName(*equipLayer, name);
-        auto itemIcon = utils::findChildByName<Sprite*>(*item, "Panel_main/Sprite_icon");
-        utils::findChildByName<ui::Button*>(*item, "Panel_main/Button_item")->addClickEventListener([this, itemIcon](Ref *ref) {
-            
-            // TODO: テスト用
-            std::vector<std::tuple<std::string, std::string>> itemArray {
-                {"ポーション",             "icon_set/item_641.png"},
-                {"ハイポーション",          "icon_set/item_645.png"},
-                {"帰還石",                 "icon_set/item_654.png"},
-                {"エナジードリンク",         "icon_set/item_669.png"},
-                {"エナジードリンクEX",       "icon_set/item_670.png"},
-                {"エナジードリンクEX-SUPER", "icon_set/item_671.png"},
-            };
-            // TODO: Dialogを保持しておいて中身だけ切り替えるほうがいいかも
-            auto dialog = DialogSelectListViewLayer::create();
-            dialog->setTitleText("Show List");
-            for (auto item : itemArray) {
-                auto iconText = ListViewPartsHelper::createListViewIconTextParts(std::get<1>(item), std::get<0>(item));
-                dialog->pushListItem(iconText);
-            }
-            dialog->setOkListener([dialog, itemArray, itemIcon](long selectedIndex) {
-                if (selectedIndex >= 0 && itemArray.size() > selectedIndex) {
-                    // 選択した行をもらう
-                    auto item = itemArray.at(selectedIndex);
-                    itemIcon->setTexture(std::get<1>(item));
-                }
-                dialog->setVisible(false);
-                dialog->removeAllChildren();
-            });
-            this->addChild(dialog);
-        });
-    }
-    
-    auto header = CommonHeaderParts::create();
-    this->addChild(header);
-    
-    auto fotter = CommonFotterParts::create();
-    this->addChild(fotter);
+    std::vector<MasterData::MItem> equipItemArray;
+    equipItemArray.push_back(MasterData::MItem{1, 1, 1, "item_1040", "木の盾",               "木で出来た盾です。"});
+    equipItemArray.push_back(MasterData::MItem{2, 1, 1, "item_768",  "アイアンソード + 10",    "普通の鉄の剣です。"});
+    equipItemArray.push_back(MasterData::MItem{3, 1, 1, "item_772",  "デュランダル",           "hoge"});
+    equipItemArray.push_back(MasterData::MItem{4, 1, 1, "item_774",  "エクスカリバー",          "アーサー王の剣です。"});
+    equipItemArray.push_back(MasterData::MItem{5, 1, 1, "item_778",  "12345678901234567890", "ふが"});
+    this->_view.setupEquipItem(equipItemArray);
+    std::vector<MasterData::MItem> itemArray;
+    itemArray.push_back(MasterData::MItem{1, 1, 1, "item_641",  "ポーション",             "HPが回復します。"});
+    itemArray.push_back(MasterData::MItem{2, 1, 1, "item_645",  "ハイポーション",          "HPが多く回復します。"});
+    itemArray.push_back(MasterData::MItem{3, 1, 1, "item_654",  "エナジードリンク",         "hoge"});
+    itemArray.push_back(MasterData::MItem{4, 1, 1, "item_669",  "エナジードリンクEX",       "aaa"});
+    itemArray.push_back(MasterData::MItem{5, 1, 1, "item_671",  "エナジードリンクEX-SUPER", "ふが"});
+    this->_view.setupItem(itemArray);
     
     return true;
 }
@@ -160,10 +90,9 @@ void QuestStartScene::setup(Param param)
         
         // {xxxxxダンジョン名} 最下層 {xx}F
         auto titleStr = StringUtils::format("%s %2dF", selectQuest.questName.c_str(), selectQuest.floorCount);
-        this->getChildByName<CommonHeaderParts*>("Header")->setTitleText(titleStr);
+        this->_view.setHeaderTitle(titleStr);
         
-        auto startButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_start");
-        startButton->addClickEventListener([this, selectQuest](Ref *ref){
+        this->_view.setOnClickStartButtonListener([this, selectQuest](Ref *ref){
             this->startQuest(selectQuest.questID);
         });
     });
@@ -179,4 +108,117 @@ void QuestStartScene::startQuest(int questID)
         // TODO: #12 errorダイアログ表示
         CCLOG("errorだよ");
     });
+}
+
+/////////////////////////////////////
+#pragma mark
+#pragma mark View
+
+void QuestStartSceneView::addChild(cocos2d::Node *node) {
+    this->_scene->addChild(node);
+}
+
+void QuestStartSceneView::init(const std::string &sceneFileName)
+{
+    auto winSize = Director::getInstance()->getVisibleSize();
+    // CocosStudioのLayout読み込み
+    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML(sceneFileName);
+    this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
+                                   winSize.height/2 - this->_baseLayout->getContentSize().height/2);
+    this->addChild(this->_baseLayout);
+    
+    auto header = CommonHeaderParts::create();
+    this->addChild(header);
+    
+    auto fotter = CommonFotterParts::create();
+    this->addChild(fotter);
+    
+    _equipLayer = utils::findChildByName(*_baseLayout, "Panel_main/EquipLayer");
+}
+
+void QuestStartSceneView::setHeaderTitle(const std::string &titleText)
+{
+    // {xxxxxダンジョン名} 最下層 {xx}F
+    this->_scene->getChildByName<CommonHeaderParts*>("Header")->setTitleText(titleText);
+}
+
+void QuestStartSceneView::setupEquipItem(const std::vector<MasterData::MItem> equipItemArray)
+{
+    for (int i = 0; i < 4; i++) {
+        this->setOnClickEquipButtonListener(i, [this, equipItemArray](Node *equipItemNode, Ref *ref) {
+            auto dialog = QuestStartSceneView::createItemListDialog(equipItemArray, [equipItemNode](MasterData::MItem mItem){
+                
+                auto equipName = utils::findChildByName<ui::Text*>(*equipItemNode, "Panel_main/Text_name");
+                auto equipIcon = utils::findChildByName<Sprite*>(*equipItemNode, "Panel_main/Sprite_icon");
+                
+                equipName->setString(mItem.name);
+                auto imagePath = StringUtils::format("icon_set/%s.png", mItem.imageID.c_str());
+                equipIcon->setTexture(imagePath);
+            });
+            this->addChild(dialog);
+        });
+    }
+}
+
+void QuestStartSceneView::setupItem(const std::vector<MasterData::MItem> itemArray)
+{
+    for (int i = 0; i < 5; i++) {
+        this->setOnClickItemButtonListener(i, [this, itemArray](Node *itemNode, Ref *ref) {
+            auto dialog = QuestStartSceneView::createItemListDialog(itemArray, [itemNode](MasterData::MItem mItem){
+                auto itemIcon = utils::findChildByName<Sprite*>(*itemNode, "Panel_main/Sprite_icon");
+                
+                auto imagePath = StringUtils::format("icon_set/%s.png", mItem.imageID.c_str());
+                itemIcon->setTexture(imagePath);
+            });
+            this->addChild(dialog);
+        });
+    }
+}
+
+void QuestStartSceneView::setOnClickStartButtonListener(const OnClickCallback &callback)
+{
+    auto startButton = utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_start");
+    startButton->addClickEventListener(callback);
+}
+
+void QuestStartSceneView::setOnClickItemButtonListener(int index, const ItemButtonOnClickCallback &callback)
+{
+    auto name = StringUtils::format("Panel_item/Item_%d", index + 1);
+    auto item = utils::findChildByName(*_equipLayer, name);
+    utils::findChildByName<ui::Button*>(*item, "Panel_main/Button_item")->addClickEventListener([item, callback](Ref *ref) {
+        callback(item, ref);
+    });
+}
+
+void QuestStartSceneView::setOnClickEquipButtonListener(int index, const ItemButtonOnClickCallback &callback)
+{
+    auto name = StringUtils::format("Panel_equip/EquipItem_%d", index + 1);
+    auto equipItem = utils::findChildByName(*_equipLayer, name);
+    utils::findChildByName<ui::Button*>(*equipItem, "Panel_main/Button_equip")->addClickEventListener([equipItem, callback](Ref *ref) {
+        callback(equipItem, ref);
+    });
+}
+
+#pragma mark
+#pragma mark Static
+
+cocos2d::Layer* QuestStartSceneView::createItemListDialog(const std::vector<MasterData::MItem> equipItemArray, const ItemSelectListener &listener)
+{
+    // TODO: Dialogを保持しておいて中身だけ切り替えるほうがいいかも
+    auto dialog = DialogSelectListViewLayer::create();
+    dialog->setTitleText("Show List");
+    for (auto equipItem : equipItemArray) {
+        auto imagePath = StringUtils::format("icon_set/%s.png", equipItem.imageID.c_str());
+        auto iconText = ListViewPartsHelper::createListViewIconTextParts(imagePath, equipItem.name);
+        dialog->pushListItem(iconText);
+    }
+    dialog->setOkListener([dialog, equipItemArray, listener](long selectedIndex) {
+        if (selectedIndex >= 0 && equipItemArray.size() > selectedIndex) {
+            // 選択した行をもらう
+            listener(equipItemArray.at(selectedIndex));
+        }
+        dialog->setVisible(false);
+        dialog->removeAllChildren();
+    });
+    return dialog;
 }
