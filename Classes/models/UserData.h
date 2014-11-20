@@ -102,6 +102,19 @@ namespace UserData {
         
         return data;
     }
+    
+    template<>
+    TPlayQuest create(json11::Json item) {
+        TPlayQuest data;
+        
+        data.accountID  = item["AccountID"].number_value();
+        data.questID    = item["QuestID"].int_value();
+        data.floorCount = item["FloorCount"].int_value();
+        data.startTime  = item["StartTime"].number_value();
+        data.endTime    = item["EndTime"].number_value();
+        
+        return data;
+    }
 };
 
 #endif
