@@ -17,6 +17,7 @@
 #include "NeglectHttpRequest.h"
 
 #include "UserData.h"
+#include "MasterData.h"
 
 USING_NS_CC;
 using namespace cocos2d::network;
@@ -43,23 +44,6 @@ bool MyPageScene::init()
         return false;
     }
     
-    // login通信
-    NeglectHttpRequest::getInstance()->login([this](json11::Json json) {
-        auto userNameText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_unitStatus/Label_name");
-        auto detailText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_message/Label_message_1");
-        
-        // アカウント情報の表示
-        auto account = UserData::create<UserData::TAccount>(json);
-        
-        if (account.description == "") {
-            account.description = "特にお知らせはないわ";
-        }
-        detailText->setString(account.description);
-        userNameText->setString(account.name);
-        
-        // TODO: Playクエスト情報の表示（通信でもらってない）
-    });
-    
     auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
     this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("MyPageScene.csd");
@@ -77,3 +61,37 @@ bool MyPageScene::init()
     
     return true;
 }
+
+void MyPageScene::onEnter()
+{
+    // login通信（TODO: あとでStart画面を作る）
+    NeglectHttpRequest::getInstance()->login([this](json11::Json json) {
+        
+        NeglectHttpRequest::getInstance()->mypage([this](json11::Json json) {
+            auto userNameText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_unitStatus/Label_name");
+            auto detailText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_message/Label_message_1");
+            
+            // アカウント情報の表示
+            auto account = UserData::create<UserData::TAccount>(json["TAccount"]);
+            
+            if (account.description == "") {
+                account.description = "特にお知らせはないわ";
+            }
+            detailText->setString(account.description);
+            userNameText->setString(account.name);
+            
+            // Playクエスト情報の表示
+            auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
+            if (playQuest.questID > 0) {
+                auto mQuest = MasterData::create<MasterData::MQuest>(json["MQuest"]);
+                account.description = "プレイ中のクエストがあるわ " + mQuest.questName;
+            }
+        });
+    });
+}
+
+void MyPageScene::onEnterTransitionDidFinish()
+{
+    
+}
+

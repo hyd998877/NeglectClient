@@ -31,6 +31,7 @@ public:
     void startQuest(int questID, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     
     // GET
+    void mypage(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     void dataMasterLoad(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     void playingQuest(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     void user(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
