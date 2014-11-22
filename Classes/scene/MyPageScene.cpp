@@ -86,8 +86,9 @@ void MyPageScene::onEnter()
             auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
             if (playQuest.questID > 0) {
                 auto mQuest = MasterData::create<MasterData::MQuest>(json["MQuest"]);
-                account.description = "プレイ中のクエストがあるわ " + mQuest.questName;
+                detailText->setString("プレイ中のクエストがあるわ " + mQuest.questName);
             }
+            // TODO: プレイ中クエストを確認するボタンを置く
         });
     });
 }
