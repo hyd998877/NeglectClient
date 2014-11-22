@@ -64,6 +64,8 @@ bool MyPageScene::init()
 
 void MyPageScene::onEnter()
 {
+    Layer::onEnter();
+    
     // login通信（TODO: あとでStart画面を作る）
     NeglectHttpRequest::getInstance()->login([this](json11::Json json) {
         
@@ -92,6 +94,6 @@ void MyPageScene::onEnter()
 
 void MyPageScene::onEnterTransitionDidFinish()
 {
-    
+    Layer::onEnterTransitionDidFinish();
 }
 
