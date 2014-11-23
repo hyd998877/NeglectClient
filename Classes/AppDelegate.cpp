@@ -46,7 +46,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     glview->setDesignResolutionSize(fitSize.width, fitSize.height, ResolutionPolicy::SHOW_ALL);
 
     // create a scene. it's an autorelease object
-    auto scene = NeglectSceneHelper::createScene(NeglectSceneHelper::SceneID::MY_PAGE);
+    auto scene = NeglectSceneHelper::createScene(NeglectSceneHelper::SceneID::START);
 
     // run
     director->runWithScene(scene);

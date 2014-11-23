@@ -169,6 +169,7 @@
         </Folder>
         <Project Name="EquipItemLayer.csd" />
         <Project Name="ItemLayer.csd" />
+        <Project Name="StartScene.csd" />
       </RootFolder>
     </Group>
   </SolutionFolder>

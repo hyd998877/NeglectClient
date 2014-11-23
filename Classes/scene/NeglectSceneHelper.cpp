@@ -8,6 +8,7 @@
 
 #include "NeglectSceneHelper.h"
 
+#include "StartScene.h"
 #include "MyPageScene.h"
 #include "QuestListScene.h"
 #include "QuestStartScene.h"
@@ -17,6 +18,9 @@ cocos2d::Scene* NeglectSceneHelper::createScene(SceneID sceneID)
 {
     cocos2d::Scene* scene = nullptr;
     switch (sceneID) {
+        case START:
+            scene = createScene<StartScene>();
+            break;
         case MY_PAGE:
             scene = createScene<MyPageScene>();
             break;

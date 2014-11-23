@@ -15,6 +15,7 @@ class NeglectSceneHelper
 {
 public:
     enum SceneID {
+        START,
         MY_PAGE,
         QUEST_LIST,
         QUEST_DETAIL,

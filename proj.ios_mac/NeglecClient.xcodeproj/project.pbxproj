@@ -88,6 +88,8 @@
 		CEBB726F1A028E38007AE63F /* DialogShowListViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB726D1A028E38007AE63F /* DialogShowListViewLayer.cpp */; };
 		CEBB72721A028E93007AE63F /* DialogSelectListViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72701A028E93007AE63F /* DialogSelectListViewLayer.cpp */; };
 		CEBB727B1A02A094007AE63F /* ListViewPartsHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72791A02A094007AE63F /* ListViewPartsHelper.cpp */; };
+		CEF3EAEC1A21A59800333FAA /* StartScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEF3EAEB1A21A59800333FAA /* StartScene.csd */; };
+		CEF3EAEF1A21A5E800333FAA /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEF3EAED1A21A5E800333FAA /* StartScene.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -227,6 +229,9 @@
 		CEBB72711A028E93007AE63F /* DialogSelectListViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogSelectListViewLayer.h; sourceTree = "<group>"; };
 		CEBB72791A02A094007AE63F /* ListViewPartsHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListViewPartsHelper.cpp; sourceTree = "<group>"; };
 		CEBB727A1A02A094007AE63F /* ListViewPartsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewPartsHelper.h; sourceTree = "<group>"; };
+		CEF3EAEB1A21A59800333FAA /* StartScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartScene.csd; sourceTree = "<group>"; };
+		CEF3EAED1A21A5E800333FAA /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StartScene.cpp; sourceTree = "<group>"; };
+		CEF3EAEE1A21A5E800333FAA /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -369,6 +374,7 @@
 				CEBB725F1A025231007AE63F /* QuestPlayScene.csd */,
 				CE70E4651A0102A80078C3C4 /* QuestStartScene.csd */,
 				CE70E4581A00FD990078C3C4 /* MyPageScene.csd */,
+				CEF3EAEB1A21A59800333FAA /* StartScene.csd */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -462,6 +468,8 @@
 				CE56FB2119FF97730009A41F /* QuestStartScene.h */,
 				CEBB72621A02534C007AE63F /* QuestPlayScene.cpp */,
 				CEBB72631A02534C007AE63F /* QuestPlayScene.h */,
+				CEF3EAED1A21A5E800333FAA /* StartScene.cpp */,
+				CEF3EAEE1A21A5E800333FAA /* StartScene.h */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -645,6 +653,7 @@
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				CE70E4791A0146340078C3C4 /* QuestListScene.json in Resources */,
 				CEBB72691A028CF9007AE63F /* ListPartsIconText.json in Resources */,
+				CEF3EAEC1A21A59800333FAA /* StartScene.csd in Resources */,
 				CE70E46F1A0102A80078C3C4 /* QuestListScene.csd in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				CEBB726C1A028CF9007AE63F /* ListViewLayerShow.json in Resources */,
@@ -689,6 +698,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				CEBB727B1A02A094007AE63F /* ListViewPartsHelper.cpp in Sources */,
 				CEBB726F1A028E38007AE63F /* DialogShowListViewLayer.cpp in Sources */,
+				CEF3EAEF1A21A5E800333FAA /* StartScene.cpp in Sources */,
 				CE9CC1A41A1734C700AB9D0E /* NeglectHttpRequest.cpp in Sources */,
 				CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */,
 				CEBB72641A02534C007AE63F /* QuestPlayScene.cpp in Sources */,
