@@ -8,6 +8,8 @@
 
 #include "QuestPlayScene.h"
 
+#include <chrono>
+
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
 
@@ -59,8 +61,23 @@ void QuestPlayScene::onEnter()
     NeglectHttpRequest::getInstance()->playingQuest([this](json11::Json json) {
         CCLOG("playing quest %s", json.dump().c_str());
         
-        // TODO: クエストプレイ中の情報をUIに反映する
-        this->setTextQuestDetail(1, 1, 15);
+        // クエストプレイ中の情報をUIに反映する
+        auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
+        time_t startTime = playQuest.startTime;
+        time_t endTime = playQuest.endTime;
+        time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+        
+        // 経過時間（秒）
+        auto playTime = difftime(now, startTime);
+        CCLOG("playTime 開始から %f秒経過", playTime);
+        // 終了までの時間（秒）
+        auto playEndTime = difftime(endTime, now);
+        CCLOG("playEndTime 終了まで %f秒", playEndTime);
+        
+        time_t diffTime = playEndTime;
+        auto endTm = gmtime(&diffTime);
+        auto min = endTm->tm_sec > 0 ? endTm->tm_min + 1 : endTm->tm_min;
+        this->setTextQuestDetail(playQuest.floorCount, endTm->tm_hour, min);
         
         auto accountStatus = UserData::create<UserData::TAccountStatus>(json["TAccountStatus"]);
         this->setTextStatus(accountStatus.lv,
