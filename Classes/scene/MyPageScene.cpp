@@ -15,6 +15,7 @@
 #include "CommonFotterParts.h"
 
 #include "NeglectHttpRequest.h"
+#include "NeglectSceneHelper.h"
 
 #include "UserData.h"
 #include "MasterData.h"
@@ -25,6 +26,8 @@ using namespace cocostudio;
 
 MyPageScene::MyPageScene()
 : _baseLayout(nullptr)
+, _userNameLabel(nullptr)
+, _detailLabel(nullptr)
 {
     
 }
@@ -39,25 +42,11 @@ bool MyPageScene::init()
 {
     //////////////////////////////
     // 1. super init first
-    if ( !Layer::init() )
-    {
+    if (!Layer::init()) {
         return false;
     }
     
-    auto winSize = Director::getInstance()->getVisibleSize();
-    // CocosStudioのLayout読み込み
-    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("MyPageScene.csd");
-    this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
-                                   winSize.height/2 - this->_baseLayout->getContentSize().height/2);
-    this->addChild(this->_baseLayout);
-    
-    auto header = CommonHeaderParts::create();
-    header->setTitleText("マイページ");
-    this->addChild(header);
-
-    auto fotter = CommonFotterParts::create();
-    fotter->setLockMenu(1);
-    this->addChild(fotter);
+    this->initView();
     
     return true;
 }
@@ -66,35 +55,58 @@ void MyPageScene::onEnter()
 {
     Layer::onEnter();
     
-    // login通信（TODO: あとでStart画面を作る）
-    NeglectHttpRequest::getInstance()->login([this](json11::Json json) {
+    NeglectHttpRequest::getInstance()->mypage([this](json11::Json json) {
+        // アカウント情報の表示
+        auto account = UserData::create<UserData::TAccount>(json["TAccount"]);
         
-        NeglectHttpRequest::getInstance()->mypage([this](json11::Json json) {
-            auto userNameText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_unitStatus/Label_name");
-            auto detailText = utils::findChildByName<ui::Text*>(*_baseLayout, "Panel_main/Panel_message/Label_message_1");
-            
-            // アカウント情報の表示
-            auto account = UserData::create<UserData::TAccount>(json["TAccount"]);
-            
-            if (account.description == "") {
-                account.description = "特にお知らせはないわ";
-            }
-            detailText->setString(account.description);
-            userNameText->setString(account.name);
-            
-            // Playクエスト情報の表示
-            auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
-            if (playQuest.questID > 0) {
-                auto mQuest = MasterData::create<MasterData::MQuest>(json["MQuest"]);
-                detailText->setString("プレイ中のクエストがあるわ " + mQuest.questName);
-            }
-            // TODO: プレイ中クエストを確認するボタンを置く
-        });
+        if (account.description == "") {
+            account.description = "特にお知らせはないわ";
+        }
+        _detailLabel->setString(account.description);
+        _userNameLabel->setString(account.name);
+        
+        // Playクエスト情報の表示
+        auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
+        if (playQuest.questID > 0) {
+            auto mQuest = MasterData::create<MasterData::MQuest>(json["MQuest"]);
+            _detailLabel->setString("プレイ中のクエストがあるわ " + mQuest.questName);
+            _playingButton->setVisible(true);
+            _playingButton->addClickEventListener([](Ref *ref) {
+                // QuestPlay画面へ
+                NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
+            });
+        } else {
+            _playingButton->setVisible(false);
+        }
     });
 }
 
 void MyPageScene::onEnterTransitionDidFinish()
 {
     Layer::onEnterTransitionDidFinish();
+}
+
+void MyPageScene::initView()
+{
+    auto winSize = Director::getInstance()->getVisibleSize();
+    // CocosStudioのLayout読み込み
+    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("MyPageScene.csd");
+    this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
+                                   winSize.height/2 - this->_baseLayout->getContentSize().height/2);
+    this->addChild(this->_baseLayout);
+    
+    //Label
+    this->_userNameLabel = utils::findChildByName<ui::Text*>(*this->_baseLayout, "Panel_main/Panel_unitStatus/Label_name");
+    this->_detailLabel = utils::findChildByName<ui::Text*>(*this->_baseLayout, "Panel_main/Panel_message/Label_message_1");
+    // Button
+    this->_playingButton = utils::findChildByName<ui::Button*>(*this->_baseLayout, "Panel_main/Button_questPlay");
+    
+    auto header = CommonHeaderParts::create();
+    header->setTitleText("マイページ");
+    this->addChild(header);
+    
+    auto fotter = CommonFotterParts::create();
+    fotter->setLockMenu(1);
+    this->addChild(fotter);
 }
 

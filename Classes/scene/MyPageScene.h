@@ -11,6 +11,13 @@
 
 #include "cocos2d.h"
 
+namespace cocos2d {
+    namespace ui {
+        class Text;
+        class Button;
+    }
+}
+
 class MyPageScene : public cocos2d::Layer
 {
 public:
@@ -26,6 +33,12 @@ public:
     CREATE_FUNC(MyPageScene);
     
 private:
+    void initView();
+private:
+    cocos2d::ui::Text* _userNameLabel;
+    cocos2d::ui::Text* _detailLabel;
+    cocos2d::ui::Button* _playingButton;
+    
     cocos2d::Node *_baseLayout;
 };
 

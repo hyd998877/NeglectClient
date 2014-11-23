@@ -19,7 +19,7 @@ NeglectHttpRequest *NeglectHttpRequest::getInstance() {
 
 void NeglectHttpRequest::mypage(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {
-    NeglectHttpRequest::Get("/", listener, errorListener, Option{false});
+    NeglectHttpRequest::Get("/", listener, errorListener);
 }
 
 // キャッシュOK
