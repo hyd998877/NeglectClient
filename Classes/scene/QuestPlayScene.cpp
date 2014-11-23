@@ -47,6 +47,49 @@ bool QuestPlayScene::init()
         return false;
     }
     
+    this->initView();
+    
+    return true;
+}
+void QuestPlayScene::onEnter()
+{
+    Layer::onEnter();
+    
+    // プレイ中クエストの情報を通信で取得
+    NeglectHttpRequest::getInstance()->playingQuest([this](json11::Json json) {
+        CCLOG("playing quest %s", json.dump().c_str());
+        
+        // TODO: クエストプレイ中の情報をUIに反映する
+        this->setTextQuestDetail(1, 1, 15);
+        
+        auto accountStatus = UserData::create<UserData::TAccountStatus>(json["TAccountStatus"]);
+        this->setTextStatus(accountStatus.lv,
+                            accountStatus.hp,
+                            accountStatus.maxHp,
+                            accountStatus.mp,
+                            accountStatus.maxMp);
+        
+        // TODO: クエストプレイログの情報をUIに反映する
+        std::string message = "";
+        for (auto item : json["TPlayQuestLogs"].array_items()) {
+            message += item["Message"].string_value();
+            message += "\n";
+        }
+        this->setTextLogMessage(message);
+        
+    }, [](long status, std::string error) {
+        // TODO: ダイアログを表示してマイページへ戻る
+        CCLOG("errorだよ status %ld quest %s", status, error.c_str());
+    });
+}
+
+void QuestPlayScene::onEnterTransitionDidFinish()
+{
+    Layer::onEnterTransitionDidFinish();
+}
+
+void QuestPlayScene::initView()
+{
     auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
     this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("QuestPlayScene.csd");
@@ -69,7 +112,7 @@ bool QuestPlayScene::init()
             auto iconText = ListViewPartsHelper::createListViewShortTextParts("10分前: 99Fに到達した。");
             dialog->pushListItem(iconText);
         }
-//        dialog->setCloseListener([]() {});
+        //        dialog->setCloseListener([]() {});
         this->addChild(dialog);
     });
     
@@ -79,32 +122,6 @@ bool QuestPlayScene::init()
     utils::findChildByName<ui::Button*>(*_baseLayout, "Button_menu")->addClickEventListener([](Ref *ref) {
         
     });
-
-    // プレイ中クエストの情報を通信で取得
-    NeglectHttpRequest::getInstance()->playingQuest([this](json11::Json json) {
-        CCLOG("playing quest %s", json.dump().c_str());
-
-        // TODO: クエストプレイ中の情報をUIに反映する
-        this->setTextQuestDetail(1, 1, 15);
-        
-        auto accountStatus = UserData::create<UserData::TAccountStatus>(json["TAccountStatus"]);
-        this->setTextStatus(accountStatus.lv,
-                            accountStatus.hp,
-                            accountStatus.maxHp,
-                            accountStatus.mp,
-                            accountStatus.maxMp);
-        
-        // TODO: クエストプレイログの情報をUIに反映する
-        std::string message = "";
-        for (auto item : json["TPlayQuestLogs"].array_items()) {
-            message += item["Message"].string_value();
-            message += "\n";
-        }
-        this->setTextLogMessage(message);
-        
-    });
-    
-    return true;
 }
 
 void QuestPlayScene::setTextQuestDetail(int floorCount, int hour, int minute)
