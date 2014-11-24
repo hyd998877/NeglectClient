@@ -10,6 +10,9 @@
 
 #include "deprecated/CCString.h"
 
+#include "ApplicationUtil.h"
+#include "UUIDUtil.h"
+
 using namespace json11;
 
 NeglectHttpRequest *NeglectHttpRequest::getInstance() {
@@ -84,9 +87,15 @@ void NeglectHttpRequest::Get(const std::string &url, const RequestListener &list
 // ログインは別でアプリ上の共通領域に持っておく
 void NeglectHttpRequest::login(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {
-    // TODO: #9 UUID生成
-    // TODO: #7 #10 UUIDをアプリ情報から取得
-    auto uuid = "cocos";
+    std::string uuid;
+    auto saveData = ApplicationUtil::loadData();
+    if (!saveData.empty()) {
+        uuid = saveData.at("uuid").asString();
+    } else {
+        // 新規登録
+        uuid = UUIDUtil::generateUUID();
+        ApplicationUtil::saveData(uuid);
+    }
     cocos2d::network::HttpClient::getInstance()->enableCookies(nullptr);
     NeglectHttpRequest::Post("/login", Json::object{{"uuid", uuid}, {"name", "kyokomi"}}, listener, errorListener);
 }
