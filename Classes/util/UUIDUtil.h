@@ -9,16 +9,12 @@
 #ifndef NeglecClient_UUIDUtil_h
 #define NeglecClient_UUIDUtil_h
 
-#include <string>
-#include <uuid/uuid.h>
+#include "sole.hpp"
 
 namespace UUIDUtil {
     std::string generateUUID() {
-        uuid_t value;
-        uuid_string_t uuidStr;
-        uuid_generate(value);
-        uuid_unparse_upper(value, uuidStr);
-        return std::string(uuidStr);
+        auto u0 = sole::uuid0();
+        return u0.str();
     }
 }
 

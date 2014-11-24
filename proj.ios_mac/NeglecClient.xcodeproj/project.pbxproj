@@ -88,6 +88,8 @@
 		CEBB726F1A028E38007AE63F /* DialogShowListViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB726D1A028E38007AE63F /* DialogShowListViewLayer.cpp */; };
 		CEBB72721A028E93007AE63F /* DialogSelectListViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72701A028E93007AE63F /* DialogSelectListViewLayer.cpp */; };
 		CEBB727B1A02A094007AE63F /* ListViewPartsHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72791A02A094007AE63F /* ListViewPartsHelper.cpp */; };
+		CEC819611A2315CB00BCAF86 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CEC8195E1A2315CB00BCAF86 /* LICENSE */; };
+		CEC819621A2315CB00BCAF86 /* sole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEC8195F1A2315CB00BCAF86 /* sole.cpp */; };
 		CEF3EAEC1A21A59800333FAA /* StartScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEF3EAEB1A21A59800333FAA /* StartScene.csd */; };
 		CEF3EAEF1A21A5E800333FAA /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEF3EAED1A21A5E800333FAA /* StartScene.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
@@ -231,6 +233,9 @@
 		CEBB727A1A02A094007AE63F /* ListViewPartsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewPartsHelper.h; sourceTree = "<group>"; };
 		CEC819591A22FF0C00BCAF86 /* UUIDUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UUIDUtil.h; sourceTree = "<group>"; };
 		CEC8195A1A2307CE00BCAF86 /* ApplicationUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationUtil.h; sourceTree = "<group>"; };
+		CEC8195E1A2315CB00BCAF86 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CEC8195F1A2315CB00BCAF86 /* sole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sole.cpp; sourceTree = "<group>"; };
+		CEC819601A2315CB00BCAF86 /* sole.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sole.hpp; sourceTree = "<group>"; };
 		CEF3EAEB1A21A59800333FAA /* StartScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartScene.csd; sourceTree = "<group>"; };
 		CEF3EAED1A21A5E800333FAA /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StartScene.cpp; sourceTree = "<group>"; };
 		CEF3EAEE1A21A5E800333FAA /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
@@ -498,6 +503,7 @@
 		CE8FC2D719FF15C9001DF599 /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				CEC8195D1A2315CB00BCAF86 /* sole */,
 				CE8FC2D819FF161C001DF599 /* json11 */,
 			);
 			path = modules;
@@ -529,6 +535,16 @@
 				CE9CC1A71A17435800AB9D0E /* UserData.h */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		CEC8195D1A2315CB00BCAF86 /* sole */ = {
+			isa = PBXGroup;
+			children = (
+				CEC8195E1A2315CB00BCAF86 /* LICENSE */,
+				CEC8195F1A2315CB00BCAF86 /* sole.cpp */,
+				CEC819601A2315CB00BCAF86 /* sole.hpp */,
+			);
+			path = sole;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -655,6 +671,7 @@
 				CEBB726A1A028CF9007AE63F /* ListPartsText.json in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				CEC819611A2315CB00BCAF86 /* LICENSE in Resources */,
 				CE70E4791A0146340078C3C4 /* QuestListScene.json in Resources */,
 				CEBB72691A028CF9007AE63F /* ListPartsIconText.json in Resources */,
 				CEF3EAEC1A21A59800333FAA /* StartScene.csd in Resources */,
@@ -706,6 +723,7 @@
 				CE9CC1A41A1734C700AB9D0E /* NeglectHttpRequest.cpp in Sources */,
 				CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */,
 				CEBB72641A02534C007AE63F /* QuestPlayScene.cpp in Sources */,
+				CEC819621A2315CB00BCAF86 /* sole.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				CE56FB2219FF97730009A41F /* QuestStartScene.cpp in Sources */,
