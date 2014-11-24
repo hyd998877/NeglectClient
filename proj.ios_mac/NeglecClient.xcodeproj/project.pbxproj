@@ -229,6 +229,7 @@
 		CEBB72711A028E93007AE63F /* DialogSelectListViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogSelectListViewLayer.h; sourceTree = "<group>"; };
 		CEBB72791A02A094007AE63F /* ListViewPartsHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListViewPartsHelper.cpp; sourceTree = "<group>"; };
 		CEBB727A1A02A094007AE63F /* ListViewPartsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewPartsHelper.h; sourceTree = "<group>"; };
+		CEC819591A22FF0C00BCAF86 /* UUIDUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UUIDUtil.h; sourceTree = "<group>"; };
 		CEF3EAEB1A21A59800333FAA /* StartScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartScene.csd; sourceTree = "<group>"; };
 		CEF3EAED1A21A5E800333FAA /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StartScene.cpp; sourceTree = "<group>"; };
 		CEF3EAEE1A21A5E800333FAA /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
@@ -449,6 +450,7 @@
 				CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */,
 				CE8FC2D219FEEECE001DF599 /* GLViewUtil.h */,
 				CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */,
+				CEC819591A22FF0C00BCAF86 /* UUIDUtil.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
