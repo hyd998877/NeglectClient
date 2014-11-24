@@ -55,30 +55,7 @@ void MyPageScene::onEnter()
 {
     Layer::onEnter();
     
-    NeglectHttpRequest::getInstance()->mypage([this](json11::Json json) {
-        // アカウント情報の表示
-        auto account = UserData::create<UserData::TAccount>(json["TAccount"]);
-        
-        if (account.description == "") {
-            account.description = "特にお知らせはないわ";
-        }
-        _detailLabel->setString(account.description);
-        _userNameLabel->setString(account.name);
-        
-        // Playクエスト情報の表示
-        auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
-        if (playQuest.questID > 0) {
-            auto mQuest = MasterData::create<MasterData::MQuest>(json["MQuest"]);
-            _detailLabel->setString("プレイ中のクエストがあるわ " + mQuest.questName);
-            _playingButton->setVisible(true);
-            _playingButton->addClickEventListener([](Ref *ref) {
-                // QuestPlay画面へ
-                NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
-            });
-        } else {
-            _playingButton->setVisible(false);
-        }
-    });
+    this->requestMyPage();
 }
 
 void MyPageScene::onEnterTransitionDidFinish()
@@ -108,5 +85,33 @@ void MyPageScene::initView()
     auto fotter = CommonFotterParts::create();
     fotter->setLockMenu(1);
     this->addChild(fotter);
+}
+
+void MyPageScene::requestMyPage()
+{
+    NeglectHttpRequest::getInstance()->mypage([this](json11::Json json) {
+        // アカウント情報の表示
+        auto account = UserData::create<UserData::TAccount>(json["TAccount"]);
+        
+        if (account.description == "") {
+            account.description = "特にお知らせはないわ";
+        }
+        _detailLabel->setString(account.description);
+        _userNameLabel->setString(account.name);
+        
+        // Playクエスト情報の表示
+        auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
+        if (playQuest.questID > 0) {
+            auto mQuest = MasterData::create<MasterData::MQuest>(json["MQuest"]);
+            _detailLabel->setString("プレイ中のクエストがあるわ " + mQuest.questName);
+            _playingButton->setVisible(true);
+            _playingButton->addClickEventListener([](Ref *ref) {
+                // QuestPlay画面へ
+                NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
+            });
+        } else {
+            _playingButton->setVisible(false);
+        }
+    });
 }
 

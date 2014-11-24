@@ -34,6 +34,7 @@ public:
     
 private:
     void initView();
+    void requestMyPage();
 private:
     cocos2d::ui::Text* _userNameLabel;
     cocos2d::ui::Text* _detailLabel;

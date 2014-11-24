@@ -27,6 +27,9 @@ public:
     
 private:
     void initView();
+    void requestPlayingQuest();
+    
+    // view
     void setTextQuestDetail(int floorCount, int hour, int minute);
     void setTextStatus(int lv, int hp, int maxHp, int mp, int maxMp);
     void setTextLogMessage(const std::string &message);

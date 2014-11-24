@@ -58,46 +58,7 @@ void QuestPlayScene::onEnter()
     Layer::onEnter();
     
     // プレイ中クエストの情報を通信で取得
-    NeglectHttpRequest::getInstance()->playingQuest([this](json11::Json json) {
-        CCLOG("playing quest %s", json.dump().c_str());
-        
-        // クエストプレイ中の情報をUIに反映する
-        auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
-        time_t startTime = playQuest.startTime;
-        time_t endTime = playQuest.endTime;
-        time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-        
-        // 経過時間（秒）
-        auto playTime = difftime(now, startTime);
-        CCLOG("playTime 開始から %f秒経過", playTime);
-        // 終了までの時間（秒）
-        auto playEndTime = difftime(endTime, now);
-        CCLOG("playEndTime 終了まで %f秒", playEndTime);
-        
-        time_t diffTime = playEndTime;
-        auto endTm = gmtime(&diffTime);
-        auto min = endTm->tm_sec > 0 ? endTm->tm_min + 1 : endTm->tm_min;
-        this->setTextQuestDetail(playQuest.floorCount, endTm->tm_hour, min);
-        
-        auto accountStatus = UserData::create<UserData::TAccountStatus>(json["TAccountStatus"]);
-        this->setTextStatus(accountStatus.lv,
-                            accountStatus.hp,
-                            accountStatus.maxHp,
-                            accountStatus.mp,
-                            accountStatus.maxMp);
-        
-        // TODO: クエストプレイログの情報をUIに反映する
-        std::string message = "";
-        for (auto item : json["TPlayQuestLogs"].array_items()) {
-            message += item["Message"].string_value();
-            message += "\n";
-        }
-        this->setTextLogMessage(message);
-        
-    }, [](long status, std::string error) {
-        // TODO: ダイアログを表示してマイページへ戻る
-        CCLOG("errorだよ status %ld quest %s", status, error.c_str());
-    });
+    this->requestPlayingQuest();
 }
 
 void QuestPlayScene::onEnterTransitionDidFinish()
@@ -140,6 +101,55 @@ void QuestPlayScene::initView()
         
     });
 }
+
+void QuestPlayScene::requestPlayingQuest()
+{
+    // プレイ中クエストの情報を通信で取得
+    NeglectHttpRequest::getInstance()->playingQuest([this](json11::Json json) {
+        CCLOG("playing quest %s", json.dump().c_str());
+        
+        // クエストプレイ中の情報をUIに反映する
+        auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
+        time_t startTime = playQuest.startTime;
+        time_t endTime = playQuest.endTime;
+        time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+        
+        // 経過時間（秒）
+        auto playTime = difftime(now, startTime);
+        CCLOG("playTime 開始から %f秒経過", playTime);
+        // 終了までの時間（秒）
+        auto playEndTime = difftime(endTime, now);
+        CCLOG("playEndTime 終了まで %f秒", playEndTime);
+        
+        time_t diffTime = playEndTime;
+        auto endTm = gmtime(&diffTime);
+        // 秒は切り上げ
+        auto min = endTm->tm_sec > 0 ? endTm->tm_min + 1 : endTm->tm_min;
+        this->setTextQuestDetail(playQuest.floorCount, endTm->tm_hour, min);
+        
+        auto accountStatus = UserData::create<UserData::TAccountStatus>(json["TAccountStatus"]);
+        this->setTextStatus(accountStatus.lv,
+                            accountStatus.hp,
+                            accountStatus.maxHp,
+                            accountStatus.mp,
+                            accountStatus.maxMp);
+        
+        // TODO: クエストプレイログの情報をUIに反映する
+        std::string message = "";
+        for (auto item : json["TPlayQuestLogs"].array_items()) {
+            message += item["Message"].string_value();
+            message += "\n";
+        }
+        this->setTextLogMessage(message);
+        
+    }, [](long status, std::string error) {
+        // TODO: ダイアログを表示してマイページへ戻る
+        CCLOG("errorだよ status %ld quest %s", status, error.c_str());
+    });
+}
+
+#pragma mark
+#pragma mark View
 
 void QuestPlayScene::setTextQuestDetail(int floorCount, int hour, int minute)
 {

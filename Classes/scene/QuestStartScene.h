@@ -64,6 +64,8 @@ public:
     
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
     virtual bool init();
+    virtual void onEnter();
+    virtual void onEnterTransitionDidFinish();
     
     // implement the "static create()" method manually
     CREATE_FUNC(QuestStartScene);
@@ -75,8 +77,10 @@ public:
     void setup(Param param);
     
 private:
-    void startQuest(int questID);
+    void requestStartQuest(int questID);
+    void requestDataMasterLoad();
 private:
+    Param _param;
     QuestStartSceneView _view;
 };
 

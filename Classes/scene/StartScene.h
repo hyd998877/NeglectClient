@@ -33,6 +33,7 @@ public:
     
 private:
     void initView();
+    void requestLogin();
 private:
     cocos2d::ui::Button *_startButton;
     cocos2d::Node *_baseLayout;

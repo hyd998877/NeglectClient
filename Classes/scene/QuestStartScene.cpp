@@ -29,6 +29,7 @@ using namespace cocostudio;
 
 QuestStartScene::QuestStartScene()
 : _view(nullptr)
+, _param()
 {
     
 }
@@ -36,6 +37,11 @@ QuestStartScene::QuestStartScene()
 QuestStartScene::~QuestStartScene()
 {
     
+}
+
+void QuestStartScene::setup(Param param)
+{
+    this->_param = param;
 }
 
 // on "init" you need to initialize your instance
@@ -48,11 +54,19 @@ bool QuestStartScene::init()
         return false;
     }
     
-    // TODO: 所持アイテム、装備品と倉庫情報を取得
-    
     this->_view = QuestStartSceneView(this);
     this->_view.init("QuestStartScene.csd");
 
+    return true;
+}
+
+void QuestStartScene::onEnter()
+{
+    Layer::onEnter();
+    
+    this->requestDataMasterLoad();
+    
+    // TODO: 所持アイテム、装備品と倉庫情報を取得
     std::vector<MasterData::MItem> equipItemArray;
     equipItemArray.push_back(MasterData::MItem{1, 1, 1, "item_1040", "木の盾",               "木で出来た盾です。"});
     equipItemArray.push_back(MasterData::MItem{2, 1, 1, "item_768",  "アイアンソード + 10",    "普通の鉄の剣です。"});
@@ -60,6 +74,7 @@ bool QuestStartScene::init()
     equipItemArray.push_back(MasterData::MItem{4, 1, 1, "item_774",  "エクスカリバー",          "アーサー王の剣です。"});
     equipItemArray.push_back(MasterData::MItem{5, 1, 1, "item_778",  "12345678901234567890", "ふが"});
     this->_view.setupEquipItem(equipItemArray);
+    
     std::vector<MasterData::MItem> itemArray;
     itemArray.push_back(MasterData::MItem{1, 1, 1, "item_641",  "ポーション",             "HPが回復します。"});
     itemArray.push_back(MasterData::MItem{2, 1, 1, "item_645",  "ハイポーション",          "HPが多く回復します。"});
@@ -67,21 +82,28 @@ bool QuestStartScene::init()
     itemArray.push_back(MasterData::MItem{4, 1, 1, "item_669",  "エナジードリンクEX",       "aaa"});
     itemArray.push_back(MasterData::MItem{5, 1, 1, "item_671",  "エナジードリンクEX-SUPER", "ふが"});
     this->_view.setupItem(itemArray);
-    
-    return true;
 }
 
-void QuestStartScene::setup(Param param)
+void QuestStartScene::onEnterTransitionDidFinish()
 {
+    Layer::onEnterTransitionDidFinish();
+}
+
+void QuestStartScene::requestDataMasterLoad()
+{
+    int questID = _param.questID;
+    if (questID <= 0) {
+        return;
+    }
     // questIDでクエスト情報を取得
-    NeglectHttpRequest::getInstance()->dataMasterLoad([this, param](json11::Json json) {
+    NeglectHttpRequest::getInstance()->dataMasterLoad([this, questID](json11::Json json) {
         auto mQuests = json["MQuest"];
         
         // TODO: filterつくりたい
         MasterData::MQuest selectQuest;
         for (auto item : mQuests.array_items()) {
             auto quest = MasterData::create<MasterData::MQuest>(item);
-            if (quest.questID != param.questID) {
+            if (quest.questID != questID) {
                 continue;
             }
             selectQuest = quest;
@@ -93,12 +115,12 @@ void QuestStartScene::setup(Param param)
         this->_view.setHeaderTitle(titleStr);
         
         this->_view.setOnClickStartButtonListener([this, selectQuest](Ref *ref){
-            this->startQuest(selectQuest.questID);
+            this->requestStartQuest(selectQuest.questID);
         });
     });
 }
 
-void QuestStartScene::startQuest(int questID)
+void QuestStartScene::requestStartQuest(int questID)
 {
     // questIDで通信してクエストを開始
     NeglectHttpRequest::getInstance()->startQuest(questID, [](json11::Json json) {

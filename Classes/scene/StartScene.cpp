@@ -51,13 +51,7 @@ void StartScene::onEnter()
 {
     Layer::onEnter();
     
-    // login通信
-    NeglectHttpRequest::getInstance()->login([this](json11::Json json) {
-        // Mypageへ
-        this->_startButton->addClickEventListener([](Ref *ref) {
-            NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::MY_PAGE);
-        });
-    });
+    this->requestLogin();
 }
 
 void StartScene::onEnterTransitionDidFinish()
@@ -78,3 +72,16 @@ void StartScene::initView()
     this->_startButton = utils::findChildByName<ui::Button*>(*this->_baseLayout, "Button_start");
 }
 
+void StartScene::requestLogin()
+{
+    // login通信
+    NeglectHttpRequest::getInstance()->login([this](json11::Json json) {
+        // Mypageへ
+        this->_startButton->addClickEventListener([](Ref *ref) {
+            NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::MY_PAGE);
+        });
+    }, [](long statusCode, std::string error) {
+        // TODO: login失敗のダイアログ -> リトライボタン
+        CCLOG("login error[%ld] %s", statusCode, error.c_str());
+    });
+}

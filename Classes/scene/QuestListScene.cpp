@@ -46,12 +46,42 @@ bool QuestListScene::init()
     {
         return false;
     }
+
+    this->initView();
     
+    return true;
+}
+
+void QuestListScene::onEnter()
+{
+    Layer::onEnter();
+    
+    this->requestDataMasterLoad();
+}
+
+void QuestListScene::onEnterTransitionDidFinish()
+{
+    Layer::onEnterTransitionDidFinish();
+}
+
+void QuestListScene::initView()
+{
     // TODO: #1 ccs v2対応する
     // CocosStudioのLayout読み込み
     this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("QuestListScene.json");
     this->addChild(this->_baseLayout);
     
+    auto header = CommonHeaderParts::create();
+    header->setTitleText("ダンジョン一覧");
+    this->addChild(header);
+    
+    auto fotter = CommonFotterParts::create();
+    fotter->setLockMenu(2);
+    this->addChild(fotter);
+}
+
+void QuestListScene::requestDataMasterLoad()
+{
     NeglectHttpRequest::getInstance()->dataMasterLoad([this](json11::Json json) {
         
         auto mQuests = json["MQuest"];
@@ -67,7 +97,7 @@ bool QuestListScene::init()
             auto winSize = Director::getInstance()->getVisibleSize();
             auto baseWidth = utils::findChildByName(*_baseLayout, "Panel_main")->getContentSize().width;
             listParts->setContentSize(Size(listParts->getContentSize().width * (winSize.width / baseWidth),
-                                          listParts->getContentSize().height));
+                                           listParts->getContentSize().height));
             listView->pushBackCustomItem(listParts);
         }
         // Listの行選択イベントを制御
@@ -87,14 +117,4 @@ bool QuestListScene::init()
             Director::getInstance()->replaceScene(scene);
         });
     });
-    
-    auto header = CommonHeaderParts::create();
-    header->setTitleText("ダンジョン一覧");
-    this->addChild(header);
-    
-    auto fotter = CommonFotterParts::create();
-    fotter->setLockMenu(2);
-    this->addChild(fotter);
-    
-    return true;
 }
