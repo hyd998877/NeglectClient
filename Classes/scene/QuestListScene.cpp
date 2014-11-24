@@ -84,13 +84,12 @@ void QuestListScene::requestDataMasterLoad()
 {
     NeglectHttpRequest::getInstance()->dataMasterLoad([this](json11::Json json) {
         
-        auto mQuests = json["MQuest"];
+        auto mQuests = MasterData::createList<MasterData::MQuest>(json["MQuest"]);
         
         // Listを取得
         auto listView = utils::findChildByName<ui::ListView*>(*_baseLayout, "Panel_main/ListView_quest");
         // Listの中身をセット
-        for (auto item : mQuests.array_items()) {
-            auto quest = MasterData::create<MasterData::MQuest>(item);
+        for (auto quest : mQuests) {
             
             auto listParts = ListViewPartsHelper::createListViewTextParts(quest.questName,
                                                                           StringUtils::format("%2dF", quest.floorCount));
@@ -110,7 +109,7 @@ void QuestListScene::requestDataMasterLoad()
             auto listItem = listView->getItem(selectedIndex);
             listItem->getChildByName<ui::Layout*>("Panel_main")->setColor(Color3B::GREEN);
             
-            auto quest = MasterData::create<MasterData::MQuest>(mQuests.array_items().at(selectedIndex));
+            auto quest = mQuests.at(selectedIndex);
             // クエスト詳細画面へ
             auto scene = NeglectSceneHelper::createScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
             scene->getChildByName<QuestStartScene*>("SceneLayer")->setup(QuestStartScene::Param{quest.questID});

@@ -27,6 +27,7 @@ using namespace cocostudio;
 MyPageScene::MyPageScene()
 : _baseLayout(nullptr)
 , _userNameLabel(nullptr)
+, _userRankLabel(nullptr)
 , _detailLabel(nullptr)
 {
     
@@ -74,6 +75,7 @@ void MyPageScene::initView()
     
     //Label
     this->_userNameLabel = utils::findChildByName<ui::Text*>(*this->_baseLayout, "Panel_main/Panel_unitStatus/Label_name");
+    this->_userRankLabel = utils::findChildByName<ui::Text*>(*this->_baseLayout, "Panel_main/Panel_unitStatus/Label_rank");
     this->_detailLabel = utils::findChildByName<ui::Text*>(*this->_baseLayout, "Panel_main/Panel_message/Label_message_1");
     // Button
     this->_playingButton = utils::findChildByName<ui::Button*>(*this->_baseLayout, "Panel_main/Button_questPlay");
@@ -91,12 +93,17 @@ void MyPageScene::requestMyPage()
 {
     NeglectHttpRequest::getInstance()->mypage([this](json11::Json json) {
         // アカウント情報の表示
+        // TODO: #7 login時に保持したやつを使うようにする
         auto account = UserData::create<UserData::TAccount>(json["TAccount"]);
+        auto accountStatus = UserData::create<UserData::TAccountStatus>(json["TAccountStatus"]);
         
         if (account.description == "") {
             account.description = "特にお知らせはないわ";
         }
         _detailLabel->setString(account.description);
+
+        auto rankMessage = StringUtils::format("Rank %3d", accountStatus.lv);
+        _userRankLabel->setString(rankMessage);
         _userNameLabel->setString(account.name);
         
         // Playクエスト情報の表示
@@ -114,4 +121,3 @@ void MyPageScene::requestMyPage()
         }
     });
 }
-

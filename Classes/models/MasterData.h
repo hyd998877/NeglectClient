@@ -40,9 +40,20 @@ namespace MasterData {
         assert(false);
     }
 
+    template <typename T>
+    static std::vector<T> createList(json11::Json items) {
+        std::vector<T> dataList;
+        
+        for (auto item : items.array_items()) {
+            dataList.push_back(create<T>(item));
+        }
+        return dataList;
+    }
+    
     template<>
     MItem create(json11::Json item) {
         MItem data;
+        
         data.itemID     = item["ItemID"].int_value();
         data.itemType   = item["Type"].int_value();
         data.param      = item["Param"].int_value();
@@ -55,6 +66,7 @@ namespace MasterData {
     template<>
     MQuest create(json11::Json item) {
         MQuest data;
+        
         data.questID     = item["QuestID"].int_value();
         data.floorCount  = item["FloorCount"].int_value();
         data.questName   = item["QuestName"].string_value();

@@ -68,18 +68,28 @@ namespace UserData {
 //    std::vector<TPlayQuestLogs> tPlayQuestLogs;
     
     template <typename T>
-    static T create(json11::Json item) {
+    static T create(json11::Json json) {
         assert(false);
     }
 
+    template <typename T>
+    static std::vector<T> createList(json11::Json items) {
+        std::vector<T> dataList;
+        
+        for (auto item : items.array_items()) {
+            dataList.push_back(create<T>(item));
+        }
+        return dataList;
+    }
+    
     template<>
     TAccount create(json11::Json item) {
         TAccount data;
         
         data.accountID    = item["AccountID"].number_value();
-        data.UUID    = item["UUID"].string_value();
-        data.name    = item["Name"].string_value();
-        data.description = item["Description"].string_value();
+        data.UUID         = item["UUID"].string_value();
+        data.name         = item["Name"].string_value();
+        data.description  = item["Description"].string_value();
         
         return data;
     }
@@ -89,12 +99,12 @@ namespace UserData {
         TAccountStatus data;
         
         data.accountID    = item["AccountID"].int_value();
-        data.lv    = item["Lv"].int_value();
-        data.exp    = item["Exp"].int_value();
-        data.hp    = item["Hp"].int_value();
-        data.maxHp = item["MaxHp"].int_value();
-        data.mp    = item["Mp"].int_value();
-        data.maxMp = item["MaxMp"].int_value();
+        data.lv           = item["Lv"].int_value();
+        data.exp          = item["Exp"].int_value();
+        data.hp           = item["Hp"].int_value();
+        data.maxHp        = item["MaxHp"].int_value();
+        data.mp           = item["Mp"].int_value();
+        data.maxMp        = item["MaxMp"].int_value();
         data.equipItem1ID = item["EquipItem1ID"].int_value();
         data.equipItem2ID = item["EquipItem2ID"].int_value();
         data.equipItem3ID = item["EquipItem3ID"].int_value();

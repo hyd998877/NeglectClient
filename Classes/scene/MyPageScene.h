@@ -37,6 +37,7 @@ private:
     void requestMyPage();
 private:
     cocos2d::ui::Text* _userNameLabel;
+    cocos2d::ui::Text* _userRankLabel;
     cocos2d::ui::Text* _detailLabel;
     cocos2d::ui::Button* _playingButton;
     
