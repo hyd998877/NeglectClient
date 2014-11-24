@@ -9,7 +9,8 @@
 #ifndef NeglecClient_ApplicationUtil_h
 #define NeglecClient_ApplicationUtil_h
 
-#include "cocos2d.h"
+#include "base/CCValue.h"
+#include "platform/CCFileUtils.h"
 
 // TODO: 一旦平文で保存してるけど、いずれ暗号化とかする
 class ApplicationUtil
