@@ -39,10 +39,14 @@ public:
     void onLocalMode() { this->_localMode = true; }
     void offLocalMode() { this->_localMode = false; }
     bool isLocalMode() const { return _localMode; }
+    
+    void setLoadingTarget(cocos2d::Node *target);
+    
 private:
     NeglectHttpRequest()
     : _reqsponseCache()
     , _localMode(false)
+    , _loadingTarget(nullptr)
     {
     }
     
@@ -58,6 +62,7 @@ private:
     
     std::string createURL(const std::string &url);
 private:
+    cocos2d::Node *_loadingTarget;
     bool _localMode;
     std::unordered_map<std::string, json11::Json> _reqsponseCache;
 };

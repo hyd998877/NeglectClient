@@ -55,6 +55,7 @@ bool QuestListScene::init()
 void QuestListScene::onEnter()
 {
     Layer::onEnter();
+    NeglectHttpRequest::getInstance()->setLoadingTarget(this);
     
     this->requestDataMasterLoad();
 }

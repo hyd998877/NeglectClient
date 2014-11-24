@@ -14,8 +14,7 @@
 #include "NeglectHttpRequest.h"
 #include "NeglectSceneHelper.h"
 
-//#include "UserData.h"
-//#include "MasterData.h"
+#include "LoadingDialogLayer.h"
 
 USING_NS_CC;
 using namespace cocos2d::network;
@@ -50,6 +49,7 @@ bool StartScene::init()
 void StartScene::onEnter()
 {
     Layer::onEnter();
+    NeglectHttpRequest::getInstance()->setLoadingTarget(this);
 }
 
 void StartScene::onEnterTransitionDidFinish()

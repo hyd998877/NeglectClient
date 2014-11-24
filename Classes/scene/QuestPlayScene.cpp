@@ -57,6 +57,8 @@ void QuestPlayScene::onEnter()
 {
     Layer::onEnter();
     
+    NeglectHttpRequest::getInstance()->setLoadingTarget(this);
+    
     // プレイ中クエストの情報を通信で取得
     this->requestPlayingQuest();
 }

@@ -13,6 +13,8 @@
 #include "ApplicationUtil.h"
 #include "UUIDUtil.h"
 
+#include "LoadingDialogLayer.h"
+
 using namespace json11;
 
 NeglectHttpRequest *NeglectHttpRequest::getInstance() {
@@ -52,8 +54,12 @@ void NeglectHttpRequest::Get(const std::string &url, const RequestListener &list
     }
     
     // TODO: #6 Loading表示
+    auto loadingDialog = LoadingDialogLayer::create();
+    if (_loadingTarget) {
+        _loadingTarget->addChild(loadingDialog);
+    }
     
-    auto request = HttpClientUtil::createGetRequest(createURL(url), [this, url, listener, errorListener](long statusCode, std::string response) {
+    auto request = HttpClientUtil::createGetRequest(createURL(url), [this, loadingDialog, url, listener, errorListener](long statusCode, std::string response) {
         CCLOG("response code: %ld response = %s", statusCode, response.c_str());
 
         std::string err = "";
@@ -71,12 +77,15 @@ void NeglectHttpRequest::Get(const std::string &url, const RequestListener &list
             listener(json);
         }
         // TODO: #6 Loading終了
-    }, [errorListener](long statusCode, std::string error) {
+        this->_loadingTarget->removeChild(loadingDialog);
+        
+    }, [this, loadingDialog, errorListener](long statusCode, std::string error) {
         CCLOG("response code: %ld error = %s", statusCode, error.c_str());
         if (errorListener) {
             errorListener(statusCode, error);
         }
         // TODO: #6 Loading終了
+        this->_loadingTarget->removeChild(loadingDialog);
     });
     cocos2d::network::HttpClient::getInstance()->send(request);
     request->release();
@@ -109,8 +118,12 @@ void NeglectHttpRequest::startQuest(int questID, const RequestListener &listener
 void NeglectHttpRequest::Post(const std::string &url, const json11::Json &json, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {
     // TODO: #6 Loading表示
+    auto loadingDialog = LoadingDialogLayer::create();
+    if (_loadingTarget) {
+        _loadingTarget->addChild(loadingDialog);
+    }
     
-    auto request = HttpClientUtil::createPostRequest(createURL(url), "param=" + json.dump(), [listener, errorListener](long statusCode, std::string response) {
+    auto request = HttpClientUtil::createPostRequest(createURL(url), "param=" + json.dump(), [this, loadingDialog, listener, errorListener](long statusCode, std::string response) {
         CCLOG("response code: %ld response = %s", statusCode, response.c_str());
         
         std::string err = "";
@@ -126,15 +139,23 @@ void NeglectHttpRequest::Post(const std::string &url, const json11::Json &json, 
             listener(json);
         }
         // TODO: #6 Loading終了
-    }, [errorListener](long statusCode, std::string error) {
+        this->_loadingTarget->removeChild(loadingDialog);
+        
+    }, [this, loadingDialog, errorListener](long statusCode, std::string error) {
         CCLOG("response code: %ld error = %s", statusCode, error.c_str());
         if (errorListener) {
             errorListener(statusCode, error);
         }
         // TODO: #6 Loading終了
+        this->_loadingTarget->removeChild(loadingDialog);
     });
     cocos2d::network::HttpClient::getInstance()->send(request);
     request->release();
+}
+
+void NeglectHttpRequest::setLoadingTarget(cocos2d::Node *target)
+{
+    _loadingTarget = target;
 }
 
 /////////////////////

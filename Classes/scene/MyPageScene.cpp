@@ -56,6 +56,8 @@ void MyPageScene::onEnter()
 {
     Layer::onEnter();
     
+    NeglectHttpRequest::getInstance()->setLoadingTarget(this);
+    
     this->requestMyPage();
 }
 

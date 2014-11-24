@@ -165,11 +165,54 @@
               <PlistImageFile Name="actor_4_5_bottom_2.png" Key="actor_4_5_bottom_2.png" />
               <PlistImageFile Name="actor_4_5_bottom_1.png" Key="actor_4_5_bottom_1.png" />
             </PlistImageFolder>
+            <Folder Name="actor_4_0_PList.Dir">
+              <Image Name="actor_4_0_bottom_1.png" />
+              <Image Name="actor_4_0_bottom_2.png" />
+              <Image Name="actor_4_0_bottom_3.png" />
+              <Image Name="actor_4_0_left_1.png" />
+              <Image Name="actor_4_0_left_2.png" />
+              <Image Name="actor_4_0_left_3.png" />
+              <Image Name="actor_4_0_right_1.png" />
+              <Image Name="actor_4_0_right_2.png" />
+              <Image Name="actor_4_0_right_3.png" />
+              <Image Name="actor_4_0_top_1.png" />
+              <Image Name="actor_4_0_top_2.png" />
+              <Image Name="actor_4_0_top_3.png" />
+            </Folder>
+            <Folder Name="actor_4_1_PList.Dir">
+              <Image Name="actor_4_1_bottom_1.png" />
+              <Image Name="actor_4_1_bottom_2.png" />
+              <Image Name="actor_4_1_bottom_3.png" />
+              <Image Name="actor_4_1_left_1.png" />
+              <Image Name="actor_4_1_left_2.png" />
+              <Image Name="actor_4_1_left_3.png" />
+              <Image Name="actor_4_1_right_1.png" />
+              <Image Name="actor_4_1_right_2.png" />
+              <Image Name="actor_4_1_right_3.png" />
+              <Image Name="actor_4_1_top_1.png" />
+              <Image Name="actor_4_1_top_2.png" />
+              <Image Name="actor_4_1_top_3.png" />
+            </Folder>
+            <Folder Name="actor_4_3_PList.Dir">
+              <Image Name="actor_4_3_bottom_1.png" />
+              <Image Name="actor_4_3_bottom_2.png" />
+              <Image Name="actor_4_3_bottom_3.png" />
+              <Image Name="actor_4_3_left_1.png" />
+              <Image Name="actor_4_3_left_2.png" />
+              <Image Name="actor_4_3_left_3.png" />
+              <Image Name="actor_4_3_right_1.png" />
+              <Image Name="actor_4_3_right_2.png" />
+              <Image Name="actor_4_3_right_3.png" />
+              <Image Name="actor_4_3_top_1.png" />
+              <Image Name="actor_4_3_top_2.png" />
+              <Image Name="actor_4_3_top_3.png" />
+            </Folder>
           </Folder>
         </Folder>
         <Project Name="EquipItemLayer.csd" />
         <Project Name="ItemLayer.csd" />
         <Project Name="StartScene.csd" />
+        <Project Name="LoadingLayer.csd" />
       </RootFolder>
     </Group>
   </SolutionFolder>

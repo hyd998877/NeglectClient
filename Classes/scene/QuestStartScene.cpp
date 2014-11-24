@@ -63,6 +63,7 @@ bool QuestStartScene::init()
 void QuestStartScene::onEnter()
 {
     Layer::onEnter();
+    NeglectHttpRequest::getInstance()->setLoadingTarget(this);
     
     this->requestDataMasterLoad();
     
