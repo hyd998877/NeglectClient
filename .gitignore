@@ -117,3 +117,9 @@ tests/*/publish/
 # Android
 project.properties
 
+# gradle 
+.gradle
+cocos2d/cocos/platform/android/java/build
+build
+
+
