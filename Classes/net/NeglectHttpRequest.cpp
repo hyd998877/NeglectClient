@@ -53,7 +53,7 @@ void NeglectHttpRequest::Get(const std::string &url, const RequestListener &list
     
     // TODO: #6 Loading表示
     
-    auto request = HttpClientUtil::createGetRequest(BASE_URL + url, [this, url, listener, errorListener](long statusCode, std::string response) {
+    auto request = HttpClientUtil::createGetRequest(createURL(url), [this, url, listener, errorListener](long statusCode, std::string response) {
         CCLOG("response code: %ld response = %s", statusCode, response.c_str());
 
         std::string err = "";
@@ -110,7 +110,7 @@ void NeglectHttpRequest::Post(const std::string &url, const json11::Json &json, 
 {
     // TODO: #6 Loading表示
     
-    auto request = HttpClientUtil::createPostRequest(BASE_URL + url, "param=" + json.dump(), [listener, errorListener](long statusCode, std::string response) {
+    auto request = HttpClientUtil::createPostRequest(createURL(url), "param=" + json.dump(), [listener, errorListener](long statusCode, std::string response) {
         CCLOG("response code: %ld response = %s", statusCode, response.c_str());
         
         std::string err = "";
@@ -136,3 +136,16 @@ void NeglectHttpRequest::Post(const std::string &url, const json11::Json &json, 
     cocos2d::network::HttpClient::getInstance()->send(request);
     request->release();
 }
+
+/////////////////////
+
+std::string NeglectHttpRequest::createURL(const std::string &url)
+{
+    if (isLocalMode()) {
+        return "http://localhost:8000" + url;
+    } else {
+        return BASE_URL + url;
+    }
+}
+
+

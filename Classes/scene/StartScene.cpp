@@ -50,8 +50,6 @@ bool StartScene::init()
 void StartScene::onEnter()
 {
     Layer::onEnter();
-    
-    this->requestLogin();
 }
 
 void StartScene::onEnterTransitionDidFinish()
@@ -70,6 +68,20 @@ void StartScene::initView()
     
     // Button
     this->_startButton = utils::findChildByName<ui::Button*>(*this->_baseLayout, "Button_start");
+    this->_startButton->addClickEventListener([this](Ref *ref) {
+        this->requestLogin();
+    });
+    
+    auto localModeButton = utils::findChildByName<ui::Button*>(*this->_baseLayout, "Button_localMode");
+    localModeButton->addClickEventListener([localModeButton](Ref *ref) {
+        if (NeglectHttpRequest::getInstance()->isLocalMode()) {
+            NeglectHttpRequest::getInstance()->offLocalMode();
+            localModeButton->setTitleText("LOCAL_MODE_OFF");
+        } else {
+            NeglectHttpRequest::getInstance()->onLocalMode();
+            localModeButton->setTitleText("LOCAL_MODE_ON");
+        }
+    });
 }
 
 void StartScene::requestLogin()
@@ -77,9 +89,7 @@ void StartScene::requestLogin()
     // login通信
     NeglectHttpRequest::getInstance()->login([this](json11::Json json) {
         // Mypageへ
-        this->_startButton->addClickEventListener([](Ref *ref) {
-            NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::MY_PAGE);
-        });
+        NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::MY_PAGE);
     }, [](long statusCode, std::string error) {
         // TODO: login失敗のダイアログ -> リトライボタン
         CCLOG("login error[%ld] %s", statusCode, error.c_str());

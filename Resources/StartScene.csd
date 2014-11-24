@@ -45,6 +45,19 @@
             <PreSize X="0" Y="0" />
             <FileData Type="Normal" Path="icon_set/item_697.png" />
           </NodeObjectData>
+          <NodeObjectData Name="Button_localMode" ActionTag="57612525" FrameEvent="" Tag="18" ObjectIndex="2" PrePositionEnabled="True" TouchEnable="True" FontSize="24" ButtonText="LOCAL_MODE_OFF" Scale9Enable="True" Scale9Width="46" Scale9Height="36" ctype="ButtonObjectData">
+            <Position X="320" Y="95.99999" />
+            <Scale ScaleX="1" ScaleY="1" />
+            <AnchorPoint ScaleX="0.5" ScaleY="0.5" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <Size X="250" Y="36" />
+            <PrePosition X="0.5" Y="0.09999999" />
+            <PreSize X="0.390625" Y="0.0375" />
+            <TextColor A="255" R="255" G="0" B="26" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" />
+            <PressedFileData Type="Default" Path="Default/Button_Press.png" />
+            <NormalFileData Type="Default" Path="Default/Button_Normal.png" />
+          </NodeObjectData>
         </Children>
       </ObjectData>
     </Content>

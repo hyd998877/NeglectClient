@@ -35,9 +35,14 @@ public:
     void dataMasterLoad(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     void playingQuest(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     void user(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
+    
+    void onLocalMode() { this->_localMode = true; }
+    void offLocalMode() { this->_localMode = false; }
+    bool isLocalMode() const { return _localMode; }
 private:
     NeglectHttpRequest()
     : _reqsponseCache()
+    , _localMode(false)
     {
     }
     
@@ -45,12 +50,15 @@ private:
     NeglectHttpRequest(const NeglectHttpRequest&) = delete;
     NeglectHttpRequest& operator=(const NeglectHttpRequest&) = delete;
     
-    constexpr static auto BASE_URL = "http://localhost:8000";
+    // TODO: AppConfigとかで持つようにする
+    constexpr static auto BASE_URL = "https://neglect-game.herokuapp.com";
     
     void Get(const std::string &url, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener, Option option = {});
     void Post(const std::string &url, const json11::Json &json, const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener);
     
+    std::string createURL(const std::string &url);
 private:
+    bool _localMode;
     std::unordered_map<std::string, json11::Json> _reqsponseCache;
 };
 
