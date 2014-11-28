@@ -86,10 +86,17 @@ void StartScene::initView()
 
 void StartScene::requestLogin()
 {
-    // login通信
-    NeglectHttpRequest::getInstance()->login([this](json11::Json json) {
+    auto dataLoadFunc = std::bind(&NeglectHttpRequest::dataMasterLoad, NeglectHttpRequest::getInstance(), [](json11::Json json) {
         // Mypageへ
         NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::MY_PAGE);
+    }, [](long statusCode, std::string error) {
+        // TODO: login失敗のダイアログ -> リトライボタン
+        CCLOG("dataMasterLoad error[%ld] %s", statusCode, error.c_str());
+    });
+    
+    // login通信
+    NeglectHttpRequest::getInstance()->login([dataLoadFunc](json11::Json json) {
+        dataLoadFunc();
     }, [](long statusCode, std::string error) {
         // TODO: login失敗のダイアログ -> リトライボタン
         CCLOG("login error[%ld] %s", statusCode, error.c_str());
