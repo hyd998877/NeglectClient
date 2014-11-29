@@ -73,6 +73,8 @@
 		CEA35C9F1A29918B00CA904E /* ListViewLayerShow.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C981A29918B00CA904E /* ListViewLayerShow.json */; };
 		CEA35CA01A29918B00CA904E /* QuestListParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C991A29918B00CA904E /* QuestListParts.json */; };
 		CEA35CA11A29918B00CA904E /* QuestListScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C9A1A29918B00CA904E /* QuestListScene.json */; };
+		CEA35CA41A299F2700CA904E /* CommonPopupLayer.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEA35CA31A299F2700CA904E /* CommonPopupLayer.csb */; };
+		CEA35CA81A299F7400CA904E /* CommonPopupLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA35CA61A299F7400CA904E /* CommonPopupLayer.cpp */; };
 		CEBB725D1A022ED6007AE63F /* Default in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725C1A022ED6007AE63F /* Default */; };
 		CEBB72601A025231007AE63F /* actor in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725E1A025231007AE63F /* actor */; };
 		CEBB72641A02534C007AE63F /* QuestPlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72621A02534C007AE63F /* QuestPlayScene.cpp */; };
@@ -215,6 +217,9 @@
 		CEA35C981A29918B00CA904E /* ListViewLayerShow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListViewLayerShow.json; sourceTree = "<group>"; };
 		CEA35C991A29918B00CA904E /* QuestListParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListParts.json; sourceTree = "<group>"; };
 		CEA35C9A1A29918B00CA904E /* QuestListScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListScene.json; sourceTree = "<group>"; };
+		CEA35CA31A299F2700CA904E /* CommonPopupLayer.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = CommonPopupLayer.csb; sourceTree = "<group>"; };
+		CEA35CA61A299F7400CA904E /* CommonPopupLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommonPopupLayer.cpp; sourceTree = "<group>"; };
+		CEA35CA71A299F7400CA904E /* CommonPopupLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonPopupLayer.h; sourceTree = "<group>"; };
 		CEBB725C1A022ED6007AE63F /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
 		CEBB725E1A025231007AE63F /* actor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = actor; sourceTree = "<group>"; };
 		CEBB72621A02534C007AE63F /* QuestPlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestPlayScene.cpp; sourceTree = "<group>"; };
@@ -370,6 +375,7 @@
 				CEA35C981A29918B00CA904E /* ListViewLayerShow.json */,
 				CEA35C991A29918B00CA904E /* QuestListParts.json */,
 				CEA35C9A1A29918B00CA904E /* QuestListScene.json */,
+				CEA35CA31A299F2700CA904E /* CommonPopupLayer.csb */,
 				CEC962501A29850300AA88FA /* EquipItemLayer.csb */,
 				CEC962511A29850300AA88FA /* EquipLayer.csb */,
 				CEC962521A29850300AA88FA /* FotterParts.csb */,
@@ -506,6 +512,8 @@
 				CEBB727A1A02A094007AE63F /* ListViewPartsHelper.h */,
 				CE2B34C31A23678400D488C4 /* LoadingDialogLayer.cpp */,
 				CE2B34C41A23678400D488C4 /* LoadingDialogLayer.h */,
+				CEA35CA61A299F7400CA904E /* CommonPopupLayer.cpp */,
+				CEA35CA71A299F7400CA904E /* CommonPopupLayer.h */,
 			);
 			path = parts;
 			sourceTree = "<group>";
@@ -696,6 +704,7 @@
 				CEC962601A29850300AA88FA /* ItemLayer.csb in Resources */,
 				CEA35C9F1A29918B00CA904E /* ListViewLayerShow.json in Resources */,
 				CEC9625C1A29850300AA88FA /* EquipItemLayer.csb in Resources */,
+				CEA35CA41A299F2700CA904E /* CommonPopupLayer.csb in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				CE70E46D1A0102A80078C3C4 /* novel in Resources */,
@@ -728,6 +737,7 @@
 				CE56FB0319FF789E0009A41F /* MyPageScene.cpp in Sources */,
 				CE56FB0619FF7CAA0009A41F /* QuestListScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				CEA35CA81A299F7400CA904E /* CommonPopupLayer.cpp in Sources */,
 				CEBB727B1A02A094007AE63F /* ListViewPartsHelper.cpp in Sources */,
 				CEBB726F1A028E38007AE63F /* DialogShowListViewLayer.cpp in Sources */,
 				CEF3EAEF1A21A5E800333FAA /* StartScene.cpp in Sources */,

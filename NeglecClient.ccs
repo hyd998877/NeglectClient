@@ -171,6 +171,7 @@
         <Project Name="ItemLayer.csd" />
         <Project Name="StartScene.csd" />
         <Project Name="LoadingLayer.csd" />
+        <Project Name="CommonPopupLayer.csd" />
       </RootFolder>
     </Group>
   </SolutionFolder>
