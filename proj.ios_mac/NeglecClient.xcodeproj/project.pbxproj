@@ -368,13 +368,6 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEA35C941A29918B00CA904E /* ListPartsIconText.json */,
-				CEA35C951A29918B00CA904E /* ListPartsShortText.json */,
-				CEA35C961A29918B00CA904E /* ListPartsText.json */,
-				CEA35C971A29918B00CA904E /* ListViewLayerSelect.json */,
-				CEA35C981A29918B00CA904E /* ListViewLayerShow.json */,
-				CEA35C991A29918B00CA904E /* QuestListParts.json */,
-				CEA35C9A1A29918B00CA904E /* QuestListScene.json */,
 				CEA35CA31A299F2700CA904E /* CommonPopupLayer.csb */,
 				CEC962501A29850300AA88FA /* EquipItemLayer.csb */,
 				CEC962511A29850300AA88FA /* EquipLayer.csb */,
@@ -388,6 +381,13 @@
 				CEC962591A29850300AA88FA /* QuestPlayScene.csb */,
 				CEC9625A1A29850300AA88FA /* QuestStartScene.csb */,
 				CEC9625B1A29850300AA88FA /* StartScene.csb */,
+				CEA35C941A29918B00CA904E /* ListPartsIconText.json */,
+				CEA35C951A29918B00CA904E /* ListPartsShortText.json */,
+				CEA35C961A29918B00CA904E /* ListPartsText.json */,
+				CEA35C971A29918B00CA904E /* ListViewLayerSelect.json */,
+				CEA35C981A29918B00CA904E /* ListViewLayerShow.json */,
+				CEA35C991A29918B00CA904E /* QuestListParts.json */,
+				CEA35C9A1A29918B00CA904E /* QuestListScene.json */,
 				CEBB725E1A025231007AE63F /* actor */,
 				CEBB725C1A022ED6007AE63F /* Default */,
 				CE70E45C1A0102A80078C3C4 /* bg */,

@@ -11,6 +11,7 @@
 #include "ui/CocosGUI.h"
 #include "CSLoaderUtil.h"
 
+#include "CommonPopupLayer.h"
 #include "CommonHeaderParts.h"
 #include "CommonFotterParts.h"
 
@@ -127,9 +128,10 @@ void QuestStartScene::requestStartQuest(int questID)
     NeglectHttpRequest::getInstance()->startQuest(questID, [](json11::Json json) {
         // Play中ページへ飛ぶ
         NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
-    }, [](int statusCode, std::string error) {
-        // TODO: #12 errorダイアログ表示
-        CCLOG("errorだよ");
+    }, [this](long statusCode, std::string error) {
+        auto errorMessage = StringUtils::format("startQuest error [%ld] %s", statusCode, error.c_str());
+        CCLOG("%s", errorMessage.c_str());
+        CommonPopupLayer::show(this, "通信エラー", errorMessage, [](Ref *ref){});
     });
 }
 

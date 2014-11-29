@@ -13,6 +13,7 @@
 #include "ui/CocosGUI.h"
 #include "CSLoaderUtil.h"
 
+#include "CommonPopupLayer.h"
 #include "CommonHeaderParts.h"
 #include "CommonFotterParts.h"
 
@@ -96,11 +97,13 @@ void QuestPlayScene::initView()
         this->addChild(dialog);
     });
     
-    utils::findChildByName<ui::Button*>(*_baseLayout, "Button_item")->addClickEventListener([](Ref *ref) {
-        
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Button_item")->addClickEventListener([this](Ref *ref) {
+        // TODO: アイテム使用表示
+        CommonPopupLayer::show(this, "開発中", "開発中です...すみません...", [](Ref *ref){});
     });
-    utils::findChildByName<ui::Button*>(*_baseLayout, "Button_menu")->addClickEventListener([](Ref *ref) {
-        
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Button_menu")->addClickEventListener([this](Ref *ref) {
+        // TODO: メニュー表示
+        CommonPopupLayer::show(this, "開発中", "開発中です...すみません...", [](Ref *ref){});
     });
 }
 
@@ -144,9 +147,11 @@ void QuestPlayScene::requestPlayingQuest()
         }
         this->setTextLogMessage(message);
         
-    }, [](long status, std::string error) {
+    }, [this](long status, std::string error) {
         // TODO: ダイアログを表示してマイページへ戻る
-        CCLOG("errorだよ status %ld quest %s", status, error.c_str());
+        auto errorMessage = StringUtils::format("errorだよ status %ld quest %s", status, error.c_str());
+        CCLOG("%s", errorMessage.c_str());
+        CommonPopupLayer::show(this, "通信エラー", errorMessage, [](Ref *ref){});
     });
 }
 

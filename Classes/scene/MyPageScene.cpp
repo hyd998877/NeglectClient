@@ -11,6 +11,7 @@
 #include "ui/CocosGUI.h"
 #include "CSLoaderUtil.h"
 
+#include "CommonPopupLayer.h"
 #include "CommonHeaderParts.h"
 #include "CommonFotterParts.h"
 
@@ -121,5 +122,9 @@ void MyPageScene::requestMyPage()
         } else {
             _playingButton->setVisible(false);
         }
+    }, [this](long statusCode, std::string error) {
+        auto errorMessage = StringUtils::format("mypage error [%ld] %s", statusCode, error.c_str());
+        CCLOG("%s", errorMessage.c_str());
+        CommonPopupLayer::show(this, "通信エラー", errorMessage, [](Ref *ref){});
     });
 }

@@ -11,6 +11,8 @@
 #include "ui/CocosGUI.h"
 #include "CSLoaderUtil.h"
 
+#include "CommonPopupLayer.h"
+
 #include "NeglectSceneHelper.h"
 
 USING_NS_CC;
@@ -47,19 +49,20 @@ bool CommonFotterParts::init()
     utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_2")->addClickEventListener([](Ref *ref){
         NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_LIST);
     });
-    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_3")->addClickEventListener([](Ref *ref){
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_3")->addClickEventListener([this](Ref *ref){
         // 倉庫へ
         CCLOG("まだ未実装");
-        NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
+        CommonPopupLayer::show(this, "まだ未実装", "ダンジョンで獲得したアイテムの整理や\n装備の整理をできるようにする予定です。", [](Ref *ref){});
     });
-    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_4")->addClickEventListener([](Ref *ref){
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_4")->addClickEventListener([this](Ref *ref){
         // お店へ
         CCLOG("まだ未実装");
+        CommonPopupLayer::show(this, "まだ未実装", "ダンジョンで獲得したアイテムの売却や\nアイテムの購入をする予定です。", [](Ref *ref){});
     });
-    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_5")->addClickEventListener([](Ref *ref){
+    utils::findChildByName<ui::Button*>(*_baseLayout, "Panel_main/Button_5")->addClickEventListener([this](Ref *ref){
         // メニュー
         CCLOG("まだ未実装");
-        NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_DETAIL);
+        CommonPopupLayer::show(this, "まだ未実装", "設定とかその他色々の\nメニューを表示する予定です。", [](Ref *ref){});
     });
     
     this->addChild(_baseLayout);

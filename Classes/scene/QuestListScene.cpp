@@ -11,6 +11,7 @@
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
 
+#include "CommonPopupLayer.h"
 #include "CommonHeaderParts.h"
 #include "CommonFotterParts.h"
 
@@ -116,5 +117,9 @@ void QuestListScene::requestDataMasterLoad()
             scene->getChildByName<QuestStartScene*>("SceneLayer")->setup(QuestStartScene::Param{quest.questID});
             Director::getInstance()->replaceScene(scene);
         });
+    }, [this](long statusCode, std::string error) {
+        auto errorMessage = StringUtils::format("dataMasterLoad error [%ld] %s", statusCode, error.c_str());
+        CCLOG("%s", errorMessage.c_str());
+        CommonPopupLayer::show(this, "通信エラー", errorMessage, [](Ref *ref){});
     });
 }

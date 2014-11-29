@@ -11,6 +11,8 @@
 #include "ui/CocosGUI.h"
 #include "CSLoaderUtil.h"
 
+#include "CommonPopupLayer.h"
+
 #include "NeglectHttpRequest.h"
 #include "NeglectSceneHelper.h"
 
@@ -89,16 +91,20 @@ void StartScene::requestLogin()
     auto dataLoadFunc = std::bind(&NeglectHttpRequest::dataMasterLoad, NeglectHttpRequest::getInstance(), [](json11::Json json) {
         // Mypageへ
         NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::MY_PAGE);
-    }, [](long statusCode, std::string error) {
+    }, [this](long statusCode, std::string error) {
         // TODO: login失敗のダイアログ -> リトライボタン
-        CCLOG("dataMasterLoad error[%ld] %s", statusCode, error.c_str());
+        auto errorMessage = StringUtils::format("dataMasterLoad error [%ld] %s", statusCode, error.c_str());
+        CCLOG("%s", errorMessage.c_str());
+        CommonPopupLayer::show(this, "通信エラー", errorMessage, [](Ref *ref){});
     });
     
     // login通信
     NeglectHttpRequest::getInstance()->login([dataLoadFunc](json11::Json json) {
         dataLoadFunc();
-    }, [](long statusCode, std::string error) {
+    }, [this](long statusCode, std::string error) {
         // TODO: login失敗のダイアログ -> リトライボタン
-        CCLOG("login error[%ld] %s", statusCode, error.c_str());
+        auto errorMessage = StringUtils::format("login error [%ld] %s", statusCode, error.c_str());
+        CCLOG("%s", errorMessage.c_str());
+        CommonPopupLayer::show(this, "通信エラー", errorMessage, [](Ref *ref){});
     });
 }
