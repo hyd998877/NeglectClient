@@ -8,8 +8,8 @@
 
 #include "CommonHeaderParts.h"
 
-#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "CSLoaderUtil.h"
 
 USING_NS_CC;
 
@@ -35,7 +35,7 @@ bool CommonHeaderParts::init()
     
     auto winSize = Director::getInstance()->getVisibleSize();
     
-    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("HeaderParts.csd");
+    this->_baseLayout = CSLoaderUtil::create("HeaderParts");
     _baseLayout->setScale(winSize.width / _baseLayout->getContentSize().width);
     _baseLayout->setPosition(cocos2d::Vec2(winSize.width/2, winSize.height - _baseLayout->getContentSize().height/2));
     this->addChild(_baseLayout);

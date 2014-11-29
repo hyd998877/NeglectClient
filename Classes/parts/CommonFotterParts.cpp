@@ -8,8 +8,8 @@
 
 #include "CommonFotterParts.h"
 
-#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "CSLoaderUtil.h"
 
 #include "NeglectSceneHelper.h"
 
@@ -36,7 +36,7 @@ bool CommonFotterParts::init()
     auto winSize = Director::getInstance()->getVisibleSize();
     
     // create Header
-    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("FotterParts.csd");
+    this->_baseLayout = CSLoaderUtil::create("FotterParts");
     _baseLayout->setScale(winSize.width / _baseLayout->getContentSize().width);
     _baseLayout->setPosition(cocos2d::Vec2(winSize.width/2, _baseLayout->getContentSize().height/2));
     

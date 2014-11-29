@@ -9,7 +9,7 @@
 #include "StartScene.h"
 
 #include "ui/CocosGUI.h"
-#include "cocostudio/CocoStudio.h"
+#include "CSLoaderUtil.h"
 
 #include "NeglectHttpRequest.h"
 #include "NeglectSceneHelper.h"
@@ -61,7 +61,7 @@ void StartScene::initView()
 {
     auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
-    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("StartScene.csd");
+    this->_baseLayout = CSLoaderUtil::create("StartScene");
     this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
                                    winSize.height/2 - this->_baseLayout->getContentSize().height/2);
     this->addChild(this->_baseLayout);

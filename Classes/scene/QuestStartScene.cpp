@@ -9,7 +9,7 @@
 #include "QuestStartScene.h"
 
 #include "ui/CocosGUI.h"
-#include "cocostudio/CocoStudio.h"
+#include "CSLoaderUtil.h"
 
 #include "CommonHeaderParts.h"
 #include "CommonFotterParts.h"
@@ -55,7 +55,7 @@ bool QuestStartScene::init()
     }
     
     this->_view = QuestStartSceneView(this);
-    this->_view.init("QuestStartScene.csd");
+    this->_view.init("QuestStartScene");
 
     return true;
 }
@@ -145,7 +145,7 @@ void QuestStartSceneView::init(const std::string &sceneFileName)
 {
     auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
-    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML(sceneFileName);
+    this->_baseLayout = CSLoaderUtil::create(sceneFileName);
     this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
                                    winSize.height/2 - this->_baseLayout->getContentSize().height/2);
     this->addChild(this->_baseLayout);

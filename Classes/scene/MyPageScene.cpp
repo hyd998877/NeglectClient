@@ -9,7 +9,7 @@
 #include "MyPageScene.h"
 
 #include "ui/CocosGUI.h"
-#include "cocostudio/CocoStudio.h"
+#include "CSLoaderUtil.h"
 
 #include "CommonHeaderParts.h"
 #include "CommonFotterParts.h"
@@ -70,7 +70,7 @@ void MyPageScene::initView()
 {
     auto winSize = Director::getInstance()->getVisibleSize();
     // CocosStudioのLayout読み込み
-    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("MyPageScene.csd");
+    this->_baseLayout = CSLoaderUtil::create("MyPageScene");
     this->_baseLayout->setPosition(winSize.width/2 - this->_baseLayout->getContentSize().width/2,
                                    winSize.height/2 - this->_baseLayout->getContentSize().height/2);
     this->addChild(this->_baseLayout);

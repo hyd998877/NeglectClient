@@ -242,6 +242,7 @@
 		CEC8195F1A2315CB00BCAF86 /* sole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sole.cpp; sourceTree = "<group>"; };
 		CEC819601A2315CB00BCAF86 /* sole.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sole.hpp; sourceTree = "<group>"; };
 		CEF3EAEB1A21A59800333FAA /* StartScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartScene.csd; sourceTree = "<group>"; };
+		CEC9624F1A29833A00AA88FA /* CSLoaderUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSLoaderUtil.h; sourceTree = "<group>"; };
 		CEF3EAED1A21A5E800333FAA /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StartScene.cpp; sourceTree = "<group>"; };
 		CEF3EAEE1A21A5E800333FAA /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -464,6 +465,7 @@
 				CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */,
 				CEC819591A22FF0C00BCAF86 /* UUIDUtil.h */,
 				CEC8195A1A2307CE00BCAF86 /* ApplicationUtil.h */,
+				CEC9624F1A29833A00AA88FA /* CSLoaderUtil.h */,
 			);
 			path = util;
 			sourceTree = "<group>";

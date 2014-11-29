@@ -8,8 +8,8 @@
 
 #include "LoadingDialogLayer.h"
 
-#include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "CSLoaderUtil.h"
 
 USING_NS_CC;
 
@@ -40,7 +40,7 @@ bool LoadingDialogLayer::init()
     this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(listener, this);
     
     //    auto winSize = Director::getInstance()->getVisibleSize();
-    this->_baseLayout = CSLoader::getInstance()->createNodeFromXML("LoadingLayer.csd");
+    this->_baseLayout = CSLoaderUtil::create("LoadingLayer");
     this->addChild(this->_baseLayout);
     
     return true;
