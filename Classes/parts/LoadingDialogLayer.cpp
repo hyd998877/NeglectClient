@@ -42,6 +42,13 @@ bool LoadingDialogLayer::init()
     //    auto winSize = Director::getInstance()->getVisibleSize();
     this->_baseLayout = CSLoaderUtil::create("LoadingLayer");
     this->addChild(this->_baseLayout);
+    // animation呼び出し ちょっと早いので1/2倍速
+    auto action = timeline::ActionTimelineCache::getInstance()->createActionFromProtocolBuffers("LoadingLayer.csb");
+    if(action) {
+        action->setTimeSpeed(action->getTimeSpeed() / 2);
+        this->_baseLayout->runAction(action);
+        action->gotoFrameAndPlay(0, true);
+    }
     
     return true;
 }
