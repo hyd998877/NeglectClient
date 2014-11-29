@@ -1,42 +1,12 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:0.14.0'
-    }
-}
-
-project(':cocos2d:cocos:platform:android:java') {
-    buildscript {
-        repositories {
-            jcenter()
-        }
-        dependencies {
-            classpath 'com.android.tools.build:gradle:0.14.0'
-        }
-    }
-}
-
-
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 
 dependencies {
-    //compile 'com.android.support:appcompat-v7:20.+'
-    compile 'com.android.support:support-v4:20.+'
     compile project(':cocos2d:cocos:platform:android:java')
-}
-
-
-allprojects {
-    tasks.withType(JavaCompile) {
-        options.encoding = 'UTF-8'
-    }
 }
 
 android {
     compileSdkVersion 10
-    buildToolsVersion "20.0.0"
+    buildToolsVersion "21.1.1"
 
     defaultConfig {
         versionCode 1
@@ -45,35 +15,13 @@ android {
         targetSdkVersion 9
     }
 
-//    // 複数のバージョン作りたいなら
-//    productFlavors {
-//       dev {
-//           versionCode 1
-//           versionName "1.0"
-//       }
-//       pro {
-//           versionCode 1
-//           versionName "1.0"
-//       }
-//    }
-
-
-    // 署名関係
-    signingConfigs {
-        debug {
-//            storeFile file("signingConfigs/debug.keystore")
-        }
-    }
-
     buildTypes {
         debug {
-            packageNameSuffix ".debug"
+            applicationIdSuffix ".debug"
             // 署名と難読化はやらない
             debuggable true
-            jniDebugBuild true
-            zipAlign true
-//          runProguard true
-//          proguardFile getDefaultProguardFile('proguard-android.txt')
+            jniDebuggable true
+            minifyEnabled false
         }
     }
 

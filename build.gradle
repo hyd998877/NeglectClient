@@ -3,11 +3,11 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.14.0'
+        classpath 'com.android.tools.build:gradle:0.14.4'
     }
 }
 
-subprojects {
+allprojects {
     repositories {
         jcenter()   
     }
