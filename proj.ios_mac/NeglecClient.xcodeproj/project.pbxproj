@@ -50,7 +50,6 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
-		CE2B34C21A23642500D488C4 /* LoadingLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE2B34C11A23642500D488C4 /* LoadingLayer.csd */; };
 		CE2B34C51A23678400D488C4 /* LoadingDialogLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE2B34C31A23678400D488C4 /* LoadingDialogLayer.cpp */; };
 		CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */; };
 		CE56FB0319FF789E0009A41F /* MyPageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB0019FF789E0009A41F /* MyPageScene.cpp */; };
@@ -58,41 +57,42 @@
 		CE56FB1A19FF857E0009A41F /* CommonFotterParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB1819FF857E0009A41F /* CommonFotterParts.cpp */; };
 		CE56FB1D19FF85900009A41F /* CommonHeaderParts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB1B19FF85900009A41F /* CommonHeaderParts.cpp */; };
 		CE56FB2219FF97730009A41F /* QuestStartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB2019FF97730009A41F /* QuestStartScene.cpp */; };
-		CE70E4591A00FD990078C3C4 /* MyPageScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4581A00FD990078C3C4 /* MyPageScene.csd */; };
 		CE70E4671A0102A80078C3C4 /* bg in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45C1A0102A80078C3C4 /* bg */; };
 		CE70E4681A0102A80078C3C4 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45D1A0102A80078C3C4 /* fonts */; };
-		CE70E4691A0102A80078C3C4 /* FotterParts.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45E1A0102A80078C3C4 /* FotterParts.csd */; };
-		CE70E46A1A0102A80078C3C4 /* HeaderParts.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E45F1A0102A80078C3C4 /* HeaderParts.csd */; };
 		CE70E46C1A0102A80078C3C4 /* icon_set in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4611A0102A80078C3C4 /* icon_set */; };
 		CE70E46D1A0102A80078C3C4 /* novel in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4621A0102A80078C3C4 /* novel */; };
-		CE70E46E1A0102A80078C3C4 /* QuestListParts.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4631A0102A80078C3C4 /* QuestListParts.csd */; };
-		CE70E46F1A0102A80078C3C4 /* QuestListScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4641A0102A80078C3C4 /* QuestListScene.csd */; };
-		CE70E4701A0102A80078C3C4 /* QuestStartScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4651A0102A80078C3C4 /* QuestStartScene.csd */; };
 		CE70E4711A0102A80078C3C4 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4661A0102A80078C3C4 /* ui */; };
-		CE70E4771A0145C90078C3C4 /* QuestListParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4761A0145C90078C3C4 /* QuestListParts.json */; };
-		CE70E4791A0146340078C3C4 /* QuestListScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CE70E4781A0146340078C3C4 /* QuestListScene.json */; };
 		CE8FC2DD19FF161C001DF599 /* json11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE8FC2D919FF161C001DF599 /* json11.cpp */; };
 		CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = CE8FC2DB19FF161C001DF599 /* LICENSE.txt */; };
 		CE9CC1A41A1734C700AB9D0E /* NeglectHttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE9CC1A21A1734C700AB9D0E /* NeglectHttpRequest.cpp */; };
 		CE9CC1AA1A17448600AB9D0E /* NeglectSceneHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE9CC1A81A17448600AB9D0E /* NeglectSceneHelper.cpp */; };
-		CEB6947B1A0336AF00AB627B /* EquipItemLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEB694791A0336AF00AB627B /* EquipItemLayer.csd */; };
-		CEB6947C1A0336AF00AB627B /* ItemLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEB6947A1A0336AF00AB627B /* ItemLayer.csd */; };
-		CEB6947E1A0350CF00AB627B /* ListPartsShortText.json in Resources */ = {isa = PBXBuildFile; fileRef = CEB6947D1A0350CF00AB627B /* ListPartsShortText.json */; };
-		CEBB725B1A0221A4007AE63F /* EquipLayer.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725A1A0221A4007AE63F /* EquipLayer.csd */; };
+		CEA35C9B1A29918B00CA904E /* ListPartsIconText.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C941A29918B00CA904E /* ListPartsIconText.json */; };
+		CEA35C9C1A29918B00CA904E /* ListPartsShortText.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C951A29918B00CA904E /* ListPartsShortText.json */; };
+		CEA35C9D1A29918B00CA904E /* ListPartsText.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C961A29918B00CA904E /* ListPartsText.json */; };
+		CEA35C9E1A29918B00CA904E /* ListViewLayerSelect.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C971A29918B00CA904E /* ListViewLayerSelect.json */; };
+		CEA35C9F1A29918B00CA904E /* ListViewLayerShow.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C981A29918B00CA904E /* ListViewLayerShow.json */; };
+		CEA35CA01A29918B00CA904E /* QuestListParts.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C991A29918B00CA904E /* QuestListParts.json */; };
+		CEA35CA11A29918B00CA904E /* QuestListScene.json in Resources */ = {isa = PBXBuildFile; fileRef = CEA35C9A1A29918B00CA904E /* QuestListScene.json */; };
 		CEBB725D1A022ED6007AE63F /* Default in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725C1A022ED6007AE63F /* Default */; };
 		CEBB72601A025231007AE63F /* actor in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725E1A025231007AE63F /* actor */; };
-		CEBB72611A025231007AE63F /* QuestPlayScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEBB725F1A025231007AE63F /* QuestPlayScene.csd */; };
 		CEBB72641A02534C007AE63F /* QuestPlayScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72621A02534C007AE63F /* QuestPlayScene.cpp */; };
-		CEBB72691A028CF9007AE63F /* ListPartsIconText.json in Resources */ = {isa = PBXBuildFile; fileRef = CEBB72651A028CF9007AE63F /* ListPartsIconText.json */; };
-		CEBB726A1A028CF9007AE63F /* ListPartsText.json in Resources */ = {isa = PBXBuildFile; fileRef = CEBB72661A028CF9007AE63F /* ListPartsText.json */; };
-		CEBB726B1A028CF9007AE63F /* ListViewLayerSelect.json in Resources */ = {isa = PBXBuildFile; fileRef = CEBB72671A028CF9007AE63F /* ListViewLayerSelect.json */; };
-		CEBB726C1A028CF9007AE63F /* ListViewLayerShow.json in Resources */ = {isa = PBXBuildFile; fileRef = CEBB72681A028CF9007AE63F /* ListViewLayerShow.json */; };
 		CEBB726F1A028E38007AE63F /* DialogShowListViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB726D1A028E38007AE63F /* DialogShowListViewLayer.cpp */; };
 		CEBB72721A028E93007AE63F /* DialogSelectListViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72701A028E93007AE63F /* DialogSelectListViewLayer.cpp */; };
 		CEBB727B1A02A094007AE63F /* ListViewPartsHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEBB72791A02A094007AE63F /* ListViewPartsHelper.cpp */; };
 		CEC819611A2315CB00BCAF86 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = CEC8195E1A2315CB00BCAF86 /* LICENSE */; };
 		CEC819621A2315CB00BCAF86 /* sole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEC8195F1A2315CB00BCAF86 /* sole.cpp */; };
-		CEF3EAEC1A21A59800333FAA /* StartScene.csd in Resources */ = {isa = PBXBuildFile; fileRef = CEF3EAEB1A21A59800333FAA /* StartScene.csd */; };
+		CEC9625C1A29850300AA88FA /* EquipItemLayer.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962501A29850300AA88FA /* EquipItemLayer.csb */; };
+		CEC9625D1A29850300AA88FA /* EquipLayer.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962511A29850300AA88FA /* EquipLayer.csb */; };
+		CEC9625E1A29850300AA88FA /* FotterParts.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962521A29850300AA88FA /* FotterParts.csb */; };
+		CEC9625F1A29850300AA88FA /* HeaderParts.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962531A29850300AA88FA /* HeaderParts.csb */; };
+		CEC962601A29850300AA88FA /* ItemLayer.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962541A29850300AA88FA /* ItemLayer.csb */; };
+		CEC962611A29850300AA88FA /* LoadingLayer.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962551A29850300AA88FA /* LoadingLayer.csb */; };
+		CEC962621A29850300AA88FA /* MyPageScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962561A29850300AA88FA /* MyPageScene.csb */; };
+		CEC962631A29850300AA88FA /* QuestListParts.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962571A29850300AA88FA /* QuestListParts.csb */; };
+		CEC962641A29850300AA88FA /* QuestListScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962581A29850300AA88FA /* QuestListScene.csb */; };
+		CEC962651A29850300AA88FA /* QuestPlayScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC962591A29850300AA88FA /* QuestPlayScene.csb */; };
+		CEC962661A29850300AA88FA /* QuestStartScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC9625A1A29850300AA88FA /* QuestStartScene.csb */; };
+		CEC962671A29850300AA88FA /* StartScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = CEC9625B1A29850300AA88FA /* StartScene.csb */; };
 		CEF3EAEF1A21A5E800333FAA /* StartScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEF3EAED1A21A5E800333FAA /* StartScene.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
@@ -177,7 +177,6 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		CE2B34C11A23642500D488C4 /* LoadingLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LoadingLayer.csd; sourceTree = "<group>"; };
 		CE2B34C31A23678400D488C4 /* LoadingDialogLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingDialogLayer.cpp; sourceTree = "<group>"; };
 		CE2B34C41A23678400D488C4 /* LoadingDialogLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingDialogLayer.h; sourceTree = "<group>"; };
 		CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClientUtil.h; sourceTree = "<group>"; };
@@ -193,19 +192,11 @@
 		CE56FB1C19FF85900009A41F /* CommonHeaderParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonHeaderParts.h; sourceTree = "<group>"; };
 		CE56FB2019FF97730009A41F /* QuestStartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestStartScene.cpp; sourceTree = "<group>"; };
 		CE56FB2119FF97730009A41F /* QuestStartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestStartScene.h; sourceTree = "<group>"; };
-		CE70E4581A00FD990078C3C4 /* MyPageScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MyPageScene.csd; sourceTree = "<group>"; };
 		CE70E45C1A0102A80078C3C4 /* bg */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bg; sourceTree = "<group>"; };
 		CE70E45D1A0102A80078C3C4 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
-		CE70E45E1A0102A80078C3C4 /* FotterParts.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FotterParts.csd; sourceTree = "<group>"; };
-		CE70E45F1A0102A80078C3C4 /* HeaderParts.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HeaderParts.csd; sourceTree = "<group>"; };
 		CE70E4611A0102A80078C3C4 /* icon_set */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon_set; sourceTree = "<group>"; };
 		CE70E4621A0102A80078C3C4 /* novel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = novel; sourceTree = "<group>"; };
-		CE70E4631A0102A80078C3C4 /* QuestListParts.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestListParts.csd; sourceTree = "<group>"; };
-		CE70E4641A0102A80078C3C4 /* QuestListScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestListScene.csd; sourceTree = "<group>"; };
-		CE70E4651A0102A80078C3C4 /* QuestStartScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestStartScene.csd; sourceTree = "<group>"; };
 		CE70E4661A0102A80078C3C4 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
-		CE70E4761A0145C90078C3C4 /* QuestListParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListParts.json; sourceTree = "<group>"; };
-		CE70E4781A0146340078C3C4 /* QuestListScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListScene.json; sourceTree = "<group>"; };
 		CE8FC2D219FEEECE001DF599 /* GLViewUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLViewUtil.h; sourceTree = "<group>"; };
 		CE8FC2D319FEF04C001DF599 /* WidgetUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WidgetUtil.h; sourceTree = "<group>"; };
 		CE8FC2D919FF161C001DF599 /* json11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json11.cpp; sourceTree = "<group>"; };
@@ -217,19 +208,17 @@
 		CE9CC1A71A17435800AB9D0E /* UserData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		CE9CC1A81A17448600AB9D0E /* NeglectSceneHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NeglectSceneHelper.cpp; sourceTree = "<group>"; };
 		CE9CC1A91A17448600AB9D0E /* NeglectSceneHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeglectSceneHelper.h; sourceTree = "<group>"; };
-		CEB694791A0336AF00AB627B /* EquipItemLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EquipItemLayer.csd; sourceTree = "<group>"; };
-		CEB6947A1A0336AF00AB627B /* ItemLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ItemLayer.csd; sourceTree = "<group>"; };
-		CEB6947D1A0350CF00AB627B /* ListPartsShortText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListPartsShortText.json; sourceTree = "<group>"; };
-		CEBB725A1A0221A4007AE63F /* EquipLayer.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = EquipLayer.csd; sourceTree = "<group>"; };
+		CEA35C941A29918B00CA904E /* ListPartsIconText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListPartsIconText.json; sourceTree = "<group>"; };
+		CEA35C951A29918B00CA904E /* ListPartsShortText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListPartsShortText.json; sourceTree = "<group>"; };
+		CEA35C961A29918B00CA904E /* ListPartsText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListPartsText.json; sourceTree = "<group>"; };
+		CEA35C971A29918B00CA904E /* ListViewLayerSelect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListViewLayerSelect.json; sourceTree = "<group>"; };
+		CEA35C981A29918B00CA904E /* ListViewLayerShow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListViewLayerShow.json; sourceTree = "<group>"; };
+		CEA35C991A29918B00CA904E /* QuestListParts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListParts.json; sourceTree = "<group>"; };
+		CEA35C9A1A29918B00CA904E /* QuestListScene.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = QuestListScene.json; sourceTree = "<group>"; };
 		CEBB725C1A022ED6007AE63F /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
 		CEBB725E1A025231007AE63F /* actor */ = {isa = PBXFileReference; lastKnownFileType = folder; path = actor; sourceTree = "<group>"; };
-		CEBB725F1A025231007AE63F /* QuestPlayScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuestPlayScene.csd; sourceTree = "<group>"; };
 		CEBB72621A02534C007AE63F /* QuestPlayScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestPlayScene.cpp; sourceTree = "<group>"; };
 		CEBB72631A02534C007AE63F /* QuestPlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestPlayScene.h; sourceTree = "<group>"; };
-		CEBB72651A028CF9007AE63F /* ListPartsIconText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListPartsIconText.json; sourceTree = "<group>"; };
-		CEBB72661A028CF9007AE63F /* ListPartsText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListPartsText.json; sourceTree = "<group>"; };
-		CEBB72671A028CF9007AE63F /* ListViewLayerSelect.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListViewLayerSelect.json; sourceTree = "<group>"; };
-		CEBB72681A028CF9007AE63F /* ListViewLayerShow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListViewLayerShow.json; sourceTree = "<group>"; };
 		CEBB726D1A028E38007AE63F /* DialogShowListViewLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DialogShowListViewLayer.cpp; sourceTree = "<group>"; };
 		CEBB726E1A028E38007AE63F /* DialogShowListViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogShowListViewLayer.h; sourceTree = "<group>"; };
 		CEBB72701A028E93007AE63F /* DialogSelectListViewLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DialogSelectListViewLayer.cpp; sourceTree = "<group>"; };
@@ -241,8 +230,19 @@
 		CEC8195E1A2315CB00BCAF86 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		CEC8195F1A2315CB00BCAF86 /* sole.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sole.cpp; sourceTree = "<group>"; };
 		CEC819601A2315CB00BCAF86 /* sole.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = sole.hpp; sourceTree = "<group>"; };
-		CEF3EAEB1A21A59800333FAA /* StartScene.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StartScene.csd; sourceTree = "<group>"; };
 		CEC9624F1A29833A00AA88FA /* CSLoaderUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSLoaderUtil.h; sourceTree = "<group>"; };
+		CEC962501A29850300AA88FA /* EquipItemLayer.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = EquipItemLayer.csb; sourceTree = "<group>"; };
+		CEC962511A29850300AA88FA /* EquipLayer.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = EquipLayer.csb; sourceTree = "<group>"; };
+		CEC962521A29850300AA88FA /* FotterParts.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = FotterParts.csb; sourceTree = "<group>"; };
+		CEC962531A29850300AA88FA /* HeaderParts.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = HeaderParts.csb; sourceTree = "<group>"; };
+		CEC962541A29850300AA88FA /* ItemLayer.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = ItemLayer.csb; sourceTree = "<group>"; };
+		CEC962551A29850300AA88FA /* LoadingLayer.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = LoadingLayer.csb; sourceTree = "<group>"; };
+		CEC962561A29850300AA88FA /* MyPageScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyPageScene.csb; sourceTree = "<group>"; };
+		CEC962571A29850300AA88FA /* QuestListParts.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuestListParts.csb; sourceTree = "<group>"; };
+		CEC962581A29850300AA88FA /* QuestListScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuestListScene.csb; sourceTree = "<group>"; };
+		CEC962591A29850300AA88FA /* QuestPlayScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuestPlayScene.csb; sourceTree = "<group>"; };
+		CEC9625A1A29850300AA88FA /* QuestStartScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuestStartScene.csb; sourceTree = "<group>"; };
+		CEC9625B1A29850300AA88FA /* StartScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = StartScene.csb; sourceTree = "<group>"; };
 		CEF3EAED1A21A5E800333FAA /* StartScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StartScene.cpp; sourceTree = "<group>"; };
 		CEF3EAEE1A21A5E800333FAA /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -363,32 +363,32 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEB6947D1A0350CF00AB627B /* ListPartsShortText.json */,
-				CEBB72651A028CF9007AE63F /* ListPartsIconText.json */,
-				CEBB72661A028CF9007AE63F /* ListPartsText.json */,
-				CEBB72671A028CF9007AE63F /* ListViewLayerSelect.json */,
-				CEBB72681A028CF9007AE63F /* ListViewLayerShow.json */,
-				CE70E4781A0146340078C3C4 /* QuestListScene.json */,
-				CE70E4761A0145C90078C3C4 /* QuestListParts.json */,
+				CEA35C941A29918B00CA904E /* ListPartsIconText.json */,
+				CEA35C951A29918B00CA904E /* ListPartsShortText.json */,
+				CEA35C961A29918B00CA904E /* ListPartsText.json */,
+				CEA35C971A29918B00CA904E /* ListViewLayerSelect.json */,
+				CEA35C981A29918B00CA904E /* ListViewLayerShow.json */,
+				CEA35C991A29918B00CA904E /* QuestListParts.json */,
+				CEA35C9A1A29918B00CA904E /* QuestListScene.json */,
+				CEC962501A29850300AA88FA /* EquipItemLayer.csb */,
+				CEC962511A29850300AA88FA /* EquipLayer.csb */,
+				CEC962521A29850300AA88FA /* FotterParts.csb */,
+				CEC962531A29850300AA88FA /* HeaderParts.csb */,
+				CEC962541A29850300AA88FA /* ItemLayer.csb */,
+				CEC962551A29850300AA88FA /* LoadingLayer.csb */,
+				CEC962561A29850300AA88FA /* MyPageScene.csb */,
+				CEC962571A29850300AA88FA /* QuestListParts.csb */,
+				CEC962581A29850300AA88FA /* QuestListScene.csb */,
+				CEC962591A29850300AA88FA /* QuestPlayScene.csb */,
+				CEC9625A1A29850300AA88FA /* QuestStartScene.csb */,
+				CEC9625B1A29850300AA88FA /* StartScene.csb */,
 				CEBB725E1A025231007AE63F /* actor */,
 				CEBB725C1A022ED6007AE63F /* Default */,
-				CEB694791A0336AF00AB627B /* EquipItemLayer.csd */,
-				CEB6947A1A0336AF00AB627B /* ItemLayer.csd */,
-				CEBB725A1A0221A4007AE63F /* EquipLayer.csd */,
-				CE70E45E1A0102A80078C3C4 /* FotterParts.csd */,
-				CE70E45F1A0102A80078C3C4 /* HeaderParts.csd */,
-				CE2B34C11A23642500D488C4 /* LoadingLayer.csd */,
 				CE70E45C1A0102A80078C3C4 /* bg */,
 				CE70E45D1A0102A80078C3C4 /* fonts */,
 				CE70E4611A0102A80078C3C4 /* icon_set */,
 				CE70E4621A0102A80078C3C4 /* novel */,
 				CE70E4661A0102A80078C3C4 /* ui */,
-				CE70E4631A0102A80078C3C4 /* QuestListParts.csd */,
-				CE70E4641A0102A80078C3C4 /* QuestListScene.csd */,
-				CEBB725F1A025231007AE63F /* QuestPlayScene.csd */,
-				CE70E4651A0102A80078C3C4 /* QuestStartScene.csd */,
-				CE70E4581A00FD990078C3C4 /* MyPageScene.csd */,
-				CEF3EAEB1A21A59800333FAA /* StartScene.csd */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -657,52 +657,52 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEC962631A29850300AA88FA /* QuestListParts.csb in Resources */,
 				CE8FC2DE19FF161C001DF599 /* LICENSE.txt in Resources */,
+				CEA35C9B1A29918B00CA904E /* ListPartsIconText.json in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
-				CE70E46A1A0102A80078C3C4 /* HeaderParts.csd in Resources */,
+				CEC962661A29850300AA88FA /* QuestStartScene.csb in Resources */,
 				CE70E4671A0102A80078C3C4 /* bg in Resources */,
-				CEBB726B1A028CF9007AE63F /* ListViewLayerSelect.json in Resources */,
+				CEC962641A29850300AA88FA /* QuestListScene.csb in Resources */,
+				CEC9625D1A29850300AA88FA /* EquipLayer.csb in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
-				CE70E4691A0102A80078C3C4 /* FotterParts.csd in Resources */,
-				CE70E46E1A0102A80078C3C4 /* QuestListParts.csd in Resources */,
+				CEC9625E1A29850300AA88FA /* FotterParts.csb in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				CEC962671A29850300AA88FA /* StartScene.csb in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
-				CE70E4591A00FD990078C3C4 /* MyPageScene.csd in Resources */,
 				CEBB725D1A022ED6007AE63F /* Default in Resources */,
+				CEA35CA01A29918B00CA904E /* QuestListParts.json in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
-				CEBB725B1A0221A4007AE63F /* EquipLayer.csd in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				CE70E4681A0102A80078C3C4 /* fonts in Resources */,
 				CEBB72601A025231007AE63F /* actor in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				CEA35C9D1A29918B00CA904E /* ListPartsText.json in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
-				CEBB726A1A028CF9007AE63F /* ListPartsText.json in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				CEC819611A2315CB00BCAF86 /* LICENSE in Resources */,
-				CE2B34C21A23642500D488C4 /* LoadingLayer.csd in Resources */,
-				CE70E4791A0146340078C3C4 /* QuestListScene.json in Resources */,
-				CEBB72691A028CF9007AE63F /* ListPartsIconText.json in Resources */,
-				CEF3EAEC1A21A59800333FAA /* StartScene.csd in Resources */,
-				CE70E46F1A0102A80078C3C4 /* QuestListScene.csd in Resources */,
+				CEC962651A29850300AA88FA /* QuestPlayScene.csb in Resources */,
+				CEC9625F1A29850300AA88FA /* HeaderParts.csb in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
-				CEBB726C1A028CF9007AE63F /* ListViewLayerShow.json in Resources */,
-				CEB6947B1A0336AF00AB627B /* EquipItemLayer.csd in Resources */,
+				CEC962621A29850300AA88FA /* MyPageScene.csb in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
+				CEA35C9C1A29918B00CA904E /* ListPartsShortText.json in Resources */,
+				CEC962611A29850300AA88FA /* LoadingLayer.csb in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
-				CEB6947E1A0350CF00AB627B /* ListPartsShortText.json in Resources */,
-				CEBB72611A025231007AE63F /* QuestPlayScene.csd in Resources */,
+				CEA35CA11A29918B00CA904E /* QuestListScene.json in Resources */,
+				CEC962601A29850300AA88FA /* ItemLayer.csb in Resources */,
+				CEA35C9F1A29918B00CA904E /* ListViewLayerShow.json in Resources */,
+				CEC9625C1A29850300AA88FA /* EquipItemLayer.csb in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				CE70E46D1A0102A80078C3C4 /* novel in Resources */,
-				CE70E4701A0102A80078C3C4 /* QuestStartScene.csd in Resources */,
 				CE70E4711A0102A80078C3C4 /* ui in Resources */,
 				CE70E46C1A0102A80078C3C4 /* icon_set in Resources */,
-				CEB6947C1A0336AF00AB627B /* ItemLayer.csd in Resources */,
-				CE70E4771A0145C90078C3C4 /* QuestListParts.json in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
+				CEA35C9E1A29918B00CA904E /* ListViewLayerSelect.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
