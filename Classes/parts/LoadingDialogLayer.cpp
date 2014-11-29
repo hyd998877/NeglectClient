@@ -33,6 +33,8 @@ bool LoadingDialogLayer::init()
         return false;
     }
     
+    auto winSize = Director::getInstance()->getVisibleSize();
+    
     // TouchEvent settings
     auto listener = EventListenerTouchOneByOne::create();
     listener->setSwallowTouches(true);
@@ -42,6 +44,10 @@ bool LoadingDialogLayer::init()
     //    auto winSize = Director::getInstance()->getVisibleSize();
     this->_baseLayout = CSLoaderUtil::create("LoadingLayer");
     this->addChild(this->_baseLayout);
+    
+    auto maskPanel = utils::findChildByName<Layer*>(*_baseLayout, "Panel_mask");
+    maskPanel->setContentSize(winSize * 1.2);
+    
     // animation呼び出し ちょっと早いので1/2倍速
     auto action = timeline::ActionTimelineCache::getInstance()->createActionFromProtocolBuffers("LoadingLayer.csb");
     if(action) {

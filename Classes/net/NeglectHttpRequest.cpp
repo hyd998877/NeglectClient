@@ -120,7 +120,7 @@ void NeglectHttpRequest::Post(const std::string &url, const json11::Json &json, 
     // TODO: #6 Loading表示
     auto loadingDialog = LoadingDialogLayer::create();
     if (_loadingTarget) {
-        _loadingTarget->addChild(loadingDialog);
+        _loadingTarget->addChild(loadingDialog, 99999);
     }
     
     auto request = HttpClientUtil::createPostRequest(createURL(url), "param=" + json.dump(), [this, loadingDialog, listener, errorListener](long statusCode, std::string response) {

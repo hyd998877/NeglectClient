@@ -2,23 +2,7 @@
   <PropertyGroup Type="Layer" Name="LoadingLayer" ID="a17e9fa3-fddf-403e-9089-075480f96cc4" Version="2.0.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="25" Speed="1.0000">
-        <Timeline ActionTag="11" FrameType="PositionFrame">
-          <PointFrame FrameIndex="0" X="316.0001" Y="256.0001" />
-          <PointFrame FrameIndex="10" X="316.0001" Y="256.0001" />
-          <PointFrame FrameIndex="25" X="316.0001" Y="256.0001" />
-        </Timeline>
-        <Timeline ActionTag="11" FrameType="ScaleFrame">
-          <PointFrame FrameIndex="0" X="1.0000" Y="1.0000" />
-        </Timeline>
-        <Timeline ActionTag="11" FrameType="RotationSkewFrame">
-          <PointFrame FrameIndex="0" X="0.0000" Y="0.0000" />
-        </Timeline>
-        <Timeline ActionTag="11" FrameType="VisibleFrame">
-          <BoolFrame FrameIndex="0" Value="True" />
-          <BoolFrame FrameIndex="20" Value="True" />
-          <BoolFrame FrameIndex="25" Value="False" />
-        </Timeline>
+      <Animation Duration="20" Speed="1.0000">
         <Timeline ActionTag="7" FrameType="PositionFrame">
           <PointFrame FrameIndex="0" X="310.0002" Y="236.0001" />
           <PointFrame FrameIndex="5" X="310.0002" Y="236.0001" />
@@ -91,18 +75,6 @@
           <BoolFrame FrameIndex="15" Value="True" />
           <BoolFrame FrameIndex="20" Value="False" />
         </Timeline>
-        <Timeline ActionTag="11" FrameType="PositionFrame">
-          <PointFrame FrameIndex="0" X="316.0001" Y="256.0001" />
-          <PointFrame FrameIndex="20" X="316.0001" Y="256.0001" />
-        </Timeline>
-        <Timeline ActionTag="11" FrameType="ScaleFrame">
-          <PointFrame FrameIndex="0" X="3.0000" Y="3.0000" />
-          <PointFrame FrameIndex="20" X="3.0000" Y="3.0000" />
-        </Timeline>
-        <Timeline ActionTag="11" FrameType="VisibleFrame">
-          <BoolFrame FrameIndex="0" Value="False" />
-          <BoolFrame FrameIndex="20" Value="True" />
-        </Timeline>
       </Animation>
       <ObjectData Name="Layer" CanEdit="False" FrameEvent="" ComboBoxIndex="1" ColorAngle="0.0000" ctype="PanelObjectData">
         <Position X="0.0000" Y="0.0000" />
@@ -113,14 +85,14 @@
         <PrePosition X="0.0000" Y="0.0000" />
         <PreSize X="0.0000" Y="0.0000" />
         <Children>
-          <NodeObjectData Name="Panel_1" ActionTag="11" FrameEvent="" Tag="9" ObjectIndex="1" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
-            <Position X="316.0001" Y="256.0001" />
+          <NodeObjectData Name="Panel_mask" ActionTag="-1644856173" FrameEvent="" Tag="10" ObjectIndex="2" PrePositionEnabled="True" PreSizeEnable="True" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Position X="320.0000" Y="480.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <Size X="960.0000" Y="1440.0000" />
+            <Size X="640.0000" Y="960.0000" />
             <PrePosition X="0.5000" Y="0.5000" />
-            <PreSize X="1.5000" Y="1.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
             <SingleColor A="255" R="0" G="0" B="0" />
             <FirstColor A="255" R="0" G="0" B="0" />
             <EndColor A="255" R="255" G="255" B="255" />
