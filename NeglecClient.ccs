@@ -79,6 +79,10 @@
           <Image Name="keypad_press.png" />
           <Image Name="l_image.png" />
           <Image Name="window_b_00.png" />
+          <Image Name="button1.png" />
+          <Image Name="button2.png" />
+          <Image Name="button1_disable.png" />
+          <Image Name="button1_press.png" />
         </Folder>
         <Project Name="FotterParts.csd" />
         <Project Name="HeaderParts.csd" />
