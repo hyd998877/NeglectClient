@@ -83,6 +83,8 @@
           <Image Name="button2.png" />
           <Image Name="button1_disable.png" />
           <Image Name="button1_press.png" />
+          <Image Name="menu_setting.png" />
+          <Image Name="menu_shop.png" />
         </Folder>
         <Project Name="FotterParts.csd" />
         <Project Name="HeaderParts.csd" />
