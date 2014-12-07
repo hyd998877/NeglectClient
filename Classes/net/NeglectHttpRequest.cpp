@@ -39,6 +39,12 @@ void NeglectHttpRequest::playingQuest(const RequestListener &listener, const Htt
     NeglectHttpRequest::Get("/play-quest", listener, errorListener);
 }
 
+// キャッシュなし
+void NeglectHttpRequest::resultQuest(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
+{
+    NeglectHttpRequest::Get("/result-quest", listener, errorListener);
+}
+
 // TODO: キャッシュOK
 void NeglectHttpRequest::user(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener)
 {

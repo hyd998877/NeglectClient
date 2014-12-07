@@ -20,6 +20,7 @@ public:
         QUEST_LIST,
         QUEST_DETAIL,
         QUEST_PLAY,
+        QUEST_RESULT,
     };
 
     static cocos2d::Scene* createScene(SceneID sceneID);

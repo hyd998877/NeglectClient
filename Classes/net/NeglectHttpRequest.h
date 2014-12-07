@@ -34,6 +34,7 @@ public:
     void mypage(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     void dataMasterLoad(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     void playingQuest(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
+    void resultQuest(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     void user(const RequestListener &listener, const HttpClientUtil::HttpRequestErrorListener &errorListener = nullptr);
     
     void onLocalMode() { this->_localMode = true; }

@@ -13,6 +13,7 @@
 #include "QuestListScene.h"
 #include "QuestStartScene.h"
 #include "QuestPlayScene.h"
+#include "QuestResultScene.h"
 
 cocos2d::Scene* NeglectSceneHelper::createScene(SceneID sceneID)
 {
@@ -33,7 +34,11 @@ cocos2d::Scene* NeglectSceneHelper::createScene(SceneID sceneID)
         case QUEST_PLAY:
             scene = createScene<QuestPlayScene>();
             break;
+        case QUEST_RESULT:
+            scene = createScene<QuestResultScene>();
+            break;
         default:
+            assert(false && "まだ未実装な画面です");
             break;
     }
     return scene;

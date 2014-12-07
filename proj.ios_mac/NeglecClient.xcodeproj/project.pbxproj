@@ -50,6 +50,9 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		CE05BE491A34050A0044BF77 /* QuestResultScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE05BE471A34050A0044BF77 /* QuestResultScene.cpp */; };
+		CE05BE4C1A3406AC0044BF77 /* NeglectHttpResponse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE05BE4A1A3406AC0044BF77 /* NeglectHttpResponse.cpp */; };
+		CE05BE4E1A3407A10044BF77 /* QuestResultScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = CE05BE4D1A3407A10044BF77 /* QuestResultScene.csb */; };
 		CE2B34C51A23678400D488C4 /* LoadingDialogLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE2B34C31A23678400D488C4 /* LoadingDialogLayer.cpp */; };
 		CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FAFE19FF789E0009A41F /* HelloWorldScene.cpp */; };
 		CE56FB0319FF789E0009A41F /* MyPageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE56FB0019FF789E0009A41F /* MyPageScene.cpp */; };
@@ -179,6 +182,11 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CE05BE471A34050A0044BF77 /* QuestResultScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QuestResultScene.cpp; sourceTree = "<group>"; };
+		CE05BE481A34050A0044BF77 /* QuestResultScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestResultScene.h; sourceTree = "<group>"; };
+		CE05BE4A1A3406AC0044BF77 /* NeglectHttpResponse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NeglectHttpResponse.cpp; sourceTree = "<group>"; };
+		CE05BE4B1A3406AC0044BF77 /* NeglectHttpResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NeglectHttpResponse.h; sourceTree = "<group>"; };
+		CE05BE4D1A3407A10044BF77 /* QuestResultScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuestResultScene.csb; sourceTree = "<group>"; };
 		CE2B34C31A23678400D488C4 /* LoadingDialogLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadingDialogLayer.cpp; sourceTree = "<group>"; };
 		CE2B34C41A23678400D488C4 /* LoadingDialogLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingDialogLayer.h; sourceTree = "<group>"; };
 		CE4930DB19FE806B003E9E59 /* HttpClientUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpClientUtil.h; sourceTree = "<group>"; };
@@ -380,6 +388,7 @@
 				CEC962581A29850300AA88FA /* QuestListScene.csb */,
 				CEC962591A29850300AA88FA /* QuestPlayScene.csb */,
 				CEC9625A1A29850300AA88FA /* QuestStartScene.csb */,
+				CE05BE4D1A3407A10044BF77 /* QuestResultScene.csb */,
 				CEC9625B1A29850300AA88FA /* StartScene.csb */,
 				CEA35C941A29918B00CA904E /* ListPartsIconText.json */,
 				CEA35C951A29918B00CA904E /* ListPartsShortText.json */,
@@ -493,6 +502,8 @@
 				CEBB72631A02534C007AE63F /* QuestPlayScene.h */,
 				CEF3EAED1A21A5E800333FAA /* StartScene.cpp */,
 				CEF3EAEE1A21A5E800333FAA /* StartScene.h */,
+				CE05BE471A34050A0044BF77 /* QuestResultScene.cpp */,
+				CE05BE481A34050A0044BF77 /* QuestResultScene.h */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -542,6 +553,8 @@
 			children = (
 				CE9CC1A21A1734C700AB9D0E /* NeglectHttpRequest.cpp */,
 				CE9CC1A31A1734C700AB9D0E /* NeglectHttpRequest.h */,
+				CE05BE4A1A3406AC0044BF77 /* NeglectHttpResponse.cpp */,
+				CE05BE4B1A3406AC0044BF77 /* NeglectHttpResponse.h */,
 			);
 			path = net;
 			sourceTree = "<group>";
@@ -690,6 +703,7 @@
 				CEA35C9D1A29918B00CA904E /* ListPartsText.json in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				CE05BE4E1A3407A10044BF77 /* QuestResultScene.csb in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				CEC819611A2315CB00BCAF86 /* LICENSE in Resources */,
 				CEC962651A29850300AA88FA /* QuestPlayScene.csb in Resources */,
@@ -741,9 +755,11 @@
 				CEBB727B1A02A094007AE63F /* ListViewPartsHelper.cpp in Sources */,
 				CEBB726F1A028E38007AE63F /* DialogShowListViewLayer.cpp in Sources */,
 				CEF3EAEF1A21A5E800333FAA /* StartScene.cpp in Sources */,
+				CE05BE4C1A3406AC0044BF77 /* NeglectHttpResponse.cpp in Sources */,
 				CE2B34C51A23678400D488C4 /* LoadingDialogLayer.cpp in Sources */,
 				CE9CC1A41A1734C700AB9D0E /* NeglectHttpRequest.cpp in Sources */,
 				CE56FB0219FF789E0009A41F /* HelloWorldScene.cpp in Sources */,
+				CE05BE491A34050A0044BF77 /* QuestResultScene.cpp in Sources */,
 				CEBB72641A02534C007AE63F /* QuestPlayScene.cpp in Sources */,
 				CEC819621A2315CB00BCAF86 /* sole.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
