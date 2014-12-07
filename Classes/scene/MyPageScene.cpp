@@ -16,6 +16,7 @@
 #include "CommonFotterParts.h"
 
 #include "NeglectHttpRequest.h"
+#include "NeglectHttpResponse.h"
 #include "NeglectSceneHelper.h"
 
 #include "UserData.h"
@@ -109,18 +110,37 @@ void MyPageScene::requestMyPage()
         _userRankLabel->setString(rankMessage);
         _userNameLabel->setString(account.name);
         
-        // Playクエスト情報の表示
-        auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
-        if (playQuest.questID > 0) {
-            auto mQuest = MasterData::create<MasterData::MQuest>(json["MQuest"]);
-            _detailLabel->setString("プレイ中のクエストがあるわ " + mQuest.questName);
-            _playingButton->setVisible(true);
-            _playingButton->addClickEventListener([](Ref *ref) {
-                // QuestPlay画面へ
-                NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
-            });
-        } else {
+        auto playStatus = static_cast<NeglectHttpResponse::PlayStatusType>(json["PlayStatus"].int_value());
+        if (playStatus == NeglectHttpResponse::PlayStatusType::NOT_PLAY) {
             _playingButton->setVisible(false);
+            return;
+        }
+        
+        auto mQuest = MasterData::create<MasterData::MQuest>(json["MQuest"]);
+
+        switch (playStatus) {
+            case NeglectHttpResponse::PlayStatusType::PLAYING:
+                // Playクエスト情報の表示
+                _detailLabel->setString("プレイ中のクエストがあるわ " + mQuest.questName);
+                _playingButton->setVisible(true);
+                _playingButton->addClickEventListener([](Ref *ref) {
+                    // QuestPlay画面へ
+                    NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_PLAY);
+                });
+                break;
+            case NeglectHttpResponse::PlayStatusType::ENGIND:
+                // リザルト画面への動線表示
+                _detailLabel->setString("冒険から帰ってきているわ ");
+                _playingButton->setVisible(true);
+                _playingButton->setTitleText("冒険結果の確認");
+                _playingButton->addClickEventListener([](Ref *ref) {
+                    // QuestPlay画面へ
+                    NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_RESULT);
+                });
+                break;
+            default:
+                assert(false && "playStatus error");
+                break;
         }
     }, [this](long statusCode, std::string error) {
         auto errorMessage = StringUtils::format("mypage error [%ld] %s", statusCode, error.c_str());

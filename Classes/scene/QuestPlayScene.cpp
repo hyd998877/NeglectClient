@@ -18,6 +18,8 @@
 #include "CommonFotterParts.h"
 
 #include "NeglectHttpRequest.h"
+#include "NeglectHttpResponse.h"
+#include "NeglectSceneHelper.h"
 
 #include "DialogSelectListViewLayer.h"
 #include "DialogShowListViewLayer.h"
@@ -99,11 +101,11 @@ void QuestPlayScene::initView()
     
     utils::findChildByName<ui::Button*>(*_baseLayout, "Button_item")->addClickEventListener([this](Ref *ref) {
         // TODO: アイテム使用表示
-        CommonPopupLayer::show(this, "開発中", "開発中です...すみません...", [](Ref *ref){});
+        CommonPopupLayer::show(this, "開発中", "アイテムの使用選択画面が\n出る予定", [](Ref *ref){});
     });
     utils::findChildByName<ui::Button*>(*_baseLayout, "Button_menu")->addClickEventListener([this](Ref *ref) {
         // TODO: メニュー表示
-        CommonPopupLayer::show(this, "開発中", "開発中です...すみません...", [](Ref *ref){});
+        CommonPopupLayer::show(this, "開発中", "装備変更とアイテム使用以外の\nコマンドとか（命大事にとか？）", [](Ref *ref){});
     });
 }
 
@@ -112,6 +114,18 @@ void QuestPlayScene::requestPlayingQuest()
     // プレイ中クエストの情報を通信で取得
     NeglectHttpRequest::getInstance()->playingQuest([this](json11::Json json) {
         CCLOG("playing quest %s", json.dump().c_str());
+        
+        auto playStatus = static_cast<NeglectHttpResponse::PlayStatusType>(json["PlayStatus"].int_value());
+        if (playStatus == NeglectHttpResponse::PlayStatusType::NOT_PLAY) {
+            // TODO: クエスト開始できてない error
+            return;
+        }
+        
+        // TODO: playStatusがENDINGだったらresult画面へ
+        if (playStatus == NeglectHttpResponse::PlayStatusType::ENGIND) {
+            NeglectSceneHelper::replaceScene(NeglectSceneHelper::SceneID::QUEST_RESULT);
+            return;
+        }
         
         // クエストプレイ中の情報をUIに反映する
         auto playQuest = UserData::create<UserData::TPlayQuest>(json["TPlayQuest"]);
