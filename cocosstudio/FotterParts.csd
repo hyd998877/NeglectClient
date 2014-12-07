@@ -21,18 +21,18 @@
             <PrePosition X="0.0000" Y="0.0000" />
             <PreSize X="0.0000" Y="0.0000" />
             <Children>
-              <NodeObjectData Name="Button_1" ActionTag="2809125" IsAutoSize="True" FrameEvent="" Tag="19" TouchEnable="True" FontSize="14" ButtonText="" ctype="ButtonObjectData">
+              <NodeObjectData Name="Button_1" ActionTag="2809125" IsAutoSize="True" FrameEvent="" Tag="19" TouchEnable="True" FontSize="14" ButtonText="" Scale9Width="500" Scale9Height="500" ctype="ButtonObjectData">
                 <Position X="61.9996" Y="58.9987" />
-                <Scale ScaleX="5.0000" ScaleY="5.0000" />
+                <Scale ScaleX="0.2500" ScaleY="0.2500" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <Size X="24.0000" Y="24.0000" />
+                <Size X="500.0000" Y="500.0000" />
                 <PrePosition X="0.1000" Y="0.1000" />
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="255" G="255" B="255" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" />
-                <PressedFileData Type="Normal" Path="icon_set/item_702.png" />
-                <NormalFileData Type="Normal" Path="icon_set/item_702.png" />
+                <DisabledFileData Type="Normal" Path="ui/menu_home.png" />
+                <PressedFileData Type="Normal" Path="ui/menu_home.png" />
+                <NormalFileData Type="Normal" Path="ui/menu_home.png" />
               </NodeObjectData>
               <NodeObjectData Name="Button_2" ActionTag="39196283" IsAutoSize="True" FrameEvent="" Tag="23" TouchEnable="True" FontSize="14" ButtonText="" ctype="ButtonObjectData">
                 <Position X="192.0000" Y="60.0000" />

@@ -85,6 +85,7 @@
           <Image Name="button1_press.png" />
           <Image Name="menu_setting.png" />
           <Image Name="menu_shop.png" />
+          <Image Name="menu_home.png" />
         </Folder>
         <Project Name="FotterParts.csd" />
         <Project Name="HeaderParts.csd" />
@@ -171,6 +172,38 @@
               <PlistImageFile Name="actor_4_5_bottom_2.png" Key="actor_4_5_bottom_2.png" />
               <PlistImageFile Name="actor_4_5_bottom_1.png" Key="actor_4_5_bottom_1.png" />
             </PlistImageFolder>
+            <Image Name="actor_4_cutin_s.jpg" />
+            <Image Name="actor_4_cutin_l.jpg" />
+            <PlistImageFolder PListFile="actor_4_f_0.plist" LastPlistWriteTime="2014-12-07T12:36:11+09:00" LastImageWriteTime="2013-06-27T22:38:32+09:00" Name=".actor_4_f_0_PList.Dir">
+              <PlistImageFile Name="actor_4_f_0_0.png" Key="actor_4_f_0_0.png" />
+              <PlistImageFile Name="actor_4_f_0_1.png" Key="actor_4_f_0_1.png" />
+              <PlistImageFile Name="actor_4_f_0_2.png" Key="actor_4_f_0_2.png" />
+              <PlistImageFile Name="actor_4_f_0_3.png" Key="actor_4_f_0_3.png" />
+              <PlistImageFile Name="actor_4_f_0_4.png" Key="actor_4_f_0_4.png" />
+              <PlistImageFile Name="actor_4_f_0_5.png" Key="actor_4_f_0_5.png" />
+              <PlistImageFile Name="actor_4_f_0_6.png" Key="actor_4_f_0_6.png" />
+              <PlistImageFile Name="actor_4_f_0_7.png" Key="actor_4_f_0_7.png" />
+            </PlistImageFolder>
+            <PlistImageFolder PListFile="actor_4_f_1.plist" LastPlistWriteTime="2014-12-07T12:37:16+09:00" LastImageWriteTime="2013-06-27T22:38:36+09:00" Name="../../.actor_4_f_1_PList.Dir">
+              <PlistImageFile Name="actor_4_f_1_0.png" Key="actor_4_f_1_0.png" />
+              <PlistImageFile Name="actor_4_f_1_1.png" Key="actor_4_f_1_1.png" />
+              <PlistImageFile Name="actor_4_f_1_2.png" Key="actor_4_f_1_2.png" />
+              <PlistImageFile Name="actor_4_f_1_3.png" Key="actor_4_f_1_3.png" />
+              <PlistImageFile Name="actor_4_f_1_4.png" Key="actor_4_f_1_4.png" />
+              <PlistImageFile Name="actor_4_f_1_5.png" Key="actor_4_f_1_5.png" />
+              <PlistImageFile Name="actor_4_f_1_6.png" Key="actor_4_f_1_6.png" />
+              <PlistImageFile Name="actor_4_f_1_7.png" Key="actor_4_f_1_7.png" />
+            </PlistImageFolder>
+            <PlistImageFolder PListFile="actor_4_f_2.plist" LastPlistWriteTime="2014-12-07T12:37:24+09:00" LastImageWriteTime="2013-06-27T22:38:40+09:00" Name="../../.actor_4_f_2_PList.Dir">
+              <PlistImageFile Name="actor_4_f_2_0.png" Key="actor_4_f_2_0.png" />
+              <PlistImageFile Name="actor_4_f_2_1.png" Key="actor_4_f_2_1.png" />
+              <PlistImageFile Name="actor_4_f_2_2.png" Key="actor_4_f_2_2.png" />
+              <PlistImageFile Name="actor_4_f_2_3.png" Key="actor_4_f_2_3.png" />
+              <PlistImageFile Name="actor_4_f_2_4.png" Key="actor_4_f_2_4.png" />
+              <PlistImageFile Name="actor_4_f_2_5.png" Key="actor_4_f_2_5.png" />
+              <PlistImageFile Name="actor_4_f_2_6.png" Key="actor_4_f_2_6.png" />
+              <PlistImageFile Name="actor_4_f_2_7.png" Key="actor_4_f_2_7.png" />
+            </PlistImageFolder>
           </Folder>
         </Folder>
         <Project Name="EquipItemLayer.csd" />
@@ -178,6 +211,7 @@
         <Project Name="StartScene.csd" />
         <Project Name="LoadingLayer.csd" />
         <Project Name="CommonPopupLayer.csd" />
+        <Project Name="QuestResultScene.csd" />
       </RootFolder>
     </Group>
   </SolutionFolder>
