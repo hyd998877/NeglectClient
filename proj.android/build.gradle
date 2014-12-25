@@ -5,10 +5,11 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 10
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
+        applicationId "com.kyokomi.neglectgame"
         versionCode 1
         versionName "0.0.1"
         minSdkVersion 9
@@ -18,10 +19,6 @@ android {
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
-            // 署名と難読化はやらない
-            debuggable true
-            jniDebuggable true
-            minifyEnabled false
         }
     }
 
