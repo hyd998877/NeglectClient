@@ -49,7 +49,7 @@ bool LoadingDialogLayer::init()
     maskPanel->setContentSize(winSize * 1.2);
     
     // animation呼び出し ちょっと早いので1/2倍速
-    auto action = timeline::ActionTimelineCache::getInstance()->createActionFromProtocolBuffers("LoadingLayer.csb");
+    auto action = timeline::ActionTimelineCache::getInstance()->createAction("LoadingLayer.csb");
     if(action) {
         action->setTimeSpeed(action->getTimeSpeed() / 2);
         this->_baseLayout->runAction(action);

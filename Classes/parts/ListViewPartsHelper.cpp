@@ -10,6 +10,7 @@
 
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "CSLoaderUtil.h"
 
 USING_NS_CC;
 
@@ -46,5 +47,14 @@ cocos2d::ui::Widget* ListViewPartsHelper::createListViewTextParts(const std::str
     auto parts = GUIReader::getInstance()->widgetFromJsonFile("QuestListParts.json");
     utils::findChildByName<ui::Text*>(*parts, "Label_dName_1")->setString(text1);
     utils::findChildByName<ui::Text*>(*parts, "Label_dName_2")->setString(text2);
+    return parts;
+}
+
+// TODO: CocosStudio v2でWidgetが作れないのでListViewの中身だけv1.6で作るしか無いので一旦使わない
+cocos2d::Node* ListViewPartsHelper::createListViewTextParts2(const std::string &text1, const std::string &text2)
+{
+    auto parts = CSLoaderUtil::create("QuestListParts");
+    utils::findChildByName<ui::Text*>(*parts, "Panel_main/Label_dName_1")->setString(text1);
+    utils::findChildByName<ui::Text*>(*parts, "Panel_main/Label_dName_2")->setString(text2);
     return parts;
 }

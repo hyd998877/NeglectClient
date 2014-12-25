@@ -10,6 +10,7 @@
 
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
+#include "CSLoaderUtil.h"
 
 #include "CommonPopupLayer.h"
 #include "CommonHeaderParts.h"
@@ -68,9 +69,8 @@ void QuestListScene::onEnterTransitionDidFinish()
 
 void QuestListScene::initView()
 {
-    // TODO: #1 ccs v2対応する
     // CocosStudioのLayout読み込み
-    this->_baseLayout = GUIReader::getInstance()->widgetFromJsonFile("QuestListScene.json");
+    this->_baseLayout = CSLoaderUtil::create("QuestListScene");
     this->addChild(this->_baseLayout);
     
     auto header = CommonHeaderParts::create();
